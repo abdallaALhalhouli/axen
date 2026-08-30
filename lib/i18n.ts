@@ -1,7 +1,7 @@
 export type Lang = 'en' | 'ar'
 
-export const WHATSAPP_NUMBER = '962790000000'
-export const CONTACT_EMAIL = 'hello@axen.agency'
+export const WHATSAPP_NUMBER = '962788701710'
+export const CONTACT_EMAIL = 'axencomp@gmail.com'
 
 export const dictionary = {
   en: {
