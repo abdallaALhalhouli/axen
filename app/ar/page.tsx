@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { HomePage } from '@/components/site-page'
 import { alternatesFor } from '@/lib/seo'
 
-const TITLE = 'AXEN — منصات ويب وأتمتة ذكية'
+const TITLE = 'AXEN — بوت واتساب يحجز المواعيد، وتصميم مواقع في الأردن'
 const DESCRIPTION =
-  'AXEN تبني منصات ويب مخصّصة وأنظمة واتساب تعمل ٢٤/٧ للشركات في الأردن. مواقع سريعة، وبوتات تحجز وترد بالعربية الأردنية.'
+  'بوت واتساب يرد على زبائنك ويحجز مواعيدهم بالعربي الأردني، وموقع سريع لعملك. للعيادات والمحلات في الأردن.'
 
 export const metadata: Metadata = {
   // Absolute: the root template would otherwise append a second '— AXEN'.

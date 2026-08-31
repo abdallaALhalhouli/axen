@@ -41,15 +41,15 @@ export const dictionary = {
       langLabel: 'عربي',
     },
     hero: {
-      badge: 'WhatsApp systems, built in Amman',
-      headline: 'Autonomous Operations & Precision Web Platforms.',
-      sub: 'We engineer ultra-fast web platforms and eliminate manual bottlenecks through 24/7 intelligent WhatsApp workflows.',
+      badge: 'For clinics and shops in Jordan',
+      headline: 'Someone answers your WhatsApp all day — and books the appointments.',
+      sub: 'Your customer messages you on WhatsApp and gets an answer straight away, in Arabic — your prices, your hours, their appointment booked. Nobody on your side picks up the phone. We build the website that brings them to you, too.',
       primary: 'Book Free Consultation',
       secondary: 'Test WhatsApp Demo',
       metrics: [
-        { value: '24/7', label: 'Always Answering' },
-        { value: 'AR + EN', label: 'Native Both Ways' },
-        { value: 'JD 0', label: 'Per-Seat Fees' },
+        { value: '24/7', label: 'Answers while you sleep' },
+        { value: 'AR + EN', label: 'Speaks both languages' },
+        { value: 'JD 0', label: 'Fees per employee' },
       ],
       chat: [
         { from: 'user' as const, text: 'بدي أحجز موعد' },
@@ -69,7 +69,7 @@ export const dictionary = {
       tag: 'محادثة حجز حقيقية',
       title: 'Watch an Appointment Book Itself',
       subtitle:
-        'Every reply below is the exact text our clinic receptionist sends. Consent first, real availability, and nothing written to the calendar until the patient confirms.',
+        'Every message below is exactly what a patient sees. It asks permission first, offers only times the doctor is actually free, and nothing goes in the calendar until the patient says yes.',
       header: 'ClinicFlow · Clinic Receptionist',
       status: 'ONLINE',
       replay: 'Replay Conversation',
@@ -117,8 +117,8 @@ export const dictionary = {
         'AXEN is new, so here is the honest picture: one system running in production, and three we build on commission. No borrowed logos.',
       filters: {
         all: 'Everything',
-        web: 'Web Development',
-        automation: 'AI & WhatsApp Automations',
+        web: 'Websites',
+        automation: 'WhatsApp replies',
       },
       liveDemo: 'See It Running',
       caseStudy: 'Read Case Study',
@@ -133,7 +133,7 @@ export const dictionary = {
           id: 'p2',
           kind: 'live' as const,
           category: 'automation' as const,
-          categoryLabel: 'WhatsApp Automation',
+          categoryLabel: 'WhatsApp replies',
           title: 'ClinicFlow — Clinic Receptionist',
           description:
             'Patients book on WhatsApp in Jordanian Arabic. Real availability, consent before any personal data, and nothing written to the calendar until they confirm.',
@@ -151,9 +151,9 @@ export const dictionary = {
           kind: 'capability' as const,
           category: 'web' as const,
           categoryLabel: 'Web Development',
-          title: 'Custom Web Platforms',
+          title: 'A website that is yours',
           description:
-            'Next.js platforms engineered for speed and conversion. The site you are reading is one of them — same stack, same standards.',
+            'A fast website built from scratch for you. The one you are reading is one of them — same work, same standard.',
           image: '/projects/web-platform.webp',
           tech: ['Next.js', 'TypeScript', 'Tailwind'],
           includes: [
@@ -184,8 +184,8 @@ export const dictionary = {
           id: 'p4',
           kind: 'capability' as const,
           category: 'automation' as const,
-          categoryLabel: 'API Integration',
-          title: 'Business Logic & Integrations',
+          categoryLabel: 'Connecting programs',
+          title: 'Your programs, connected',
           description:
             'The plumbing between the tools you already pay for — CRM, spreadsheets, databases — so nobody retypes anything.',
           image: '/projects/api-integration.webp',
@@ -201,70 +201,69 @@ export const dictionary = {
     },
     services: {
       eyebrow: 'What We Do',
-      title: 'Modular Systems, Built to Scale',
-      subtitle:
-        'Pick a single system or combine them into one autonomous operation.',
+      title: 'Three things. Take one, or all three.',
+      subtitle: 'Each one works on its own. They work better together.',
       items: [
         {
-          title: 'Custom Web Platforms & Landing Pages',
+          title: 'A website that is yours',
           description:
-            'Fast, responsive, enterprise-grade architecture engineered for conversion and scale.',
+            'Fast enough to open in under a second, right on a phone, and findable on Google when someone searches for what you do.',
           points: [
-            'Sub-second load times',
-            'Fully responsive design',
-            'SEO-ready architecture',
+            'Opens in under a second',
+            'Looks right on a phone',
+            'Shows up on Google',
           ],
         },
         {
-          title: 'WhatsApp & Instagram Automated Workflows',
+          title: 'Automatic replies on WhatsApp & Instagram',
           description:
-            'Instant ordering, a 24/7 smart assistant, and automated lead qualification.',
+            'Answers your customers, gives them prices and opening hours, and books their appointment or takes their order — all day, in Arabic.',
           points: [
-            'Instant order processing',
-            '24/7 smart assistant',
-            'Automated lead capture',
+            'Books appointments and takes orders',
+            'Replies at 2am',
+            'Answers in Jordanian Arabic',
           ],
         },
         {
-          title: 'Custom Business Logic & API Integrations',
+          title: 'Your programs, connected',
           description:
-            'Connect your CRM, spreadsheets, and databases into a single automated pipeline.',
+            'If you use several programs and keep typing the same thing into each one, we join them up so the work happens once.',
           points: [
-            'CRM & database sync',
-            'Spreadsheet automation',
-            'Third-party API glue',
+            'No typing the same thing twice',
+            'Sheets that fill themselves',
+            'Every program talks to the others',
           ],
         },
       ],
     },
     why: {
       eyebrow: 'Why AXEN',
-      title: 'Engineering Over Templates',
+      title: 'Built for you, not from a template',
       cards: {
         speed: {
-          title: 'Fast Delivery Cycles',
+          title: 'Running in weeks, not months',
           description:
-            'Rapid sprints get your system live in weeks, not quarters — without cutting corners.',
+            'We build in short stretches, so you see the thing working on your own phone within weeks.',
         },
         bloat: {
-          title: 'Infrastructure at Cost, No Licence Fees',
+          title: 'No monthly fee to us',
           description:
-            'Your system still needs hosting, a database and the WhatsApp API — you pay those providers directly at their published rates. What you never pay is a licence fee to us or a charge per user, and the code is yours to move anywhere.',
+            'Your system needs hosting, a database and WhatsApp — you pay those companies directly, at their own price. We take no monthly fee and nothing per employee, and the program ends up belonging to you.',
         },
         scalable: {
-          title: 'Scalable Codebases',
+          title: 'It grows with you',
           description:
-            'Clean, documented architecture that grows with your business instead of blocking it.',
+            'Open a second branch or add three more staff and the program stretches to fit, instead of starting over.',
         },
         local: {
-          title: 'Local Market Expertise',
+          title: 'We know this market',
           description:
-            'Deep understanding of the regional market, Arabic-first UX, and local buyer behavior.',
+            'Your customers write in Jordanian Arabic, and the system understands them. We also know how people here actually decide to buy.',
         },
-        stat: { value: '24/7', label: 'Autonomous operations' },
+        stat: { value: '24/7', label: 'Working without a break' },
       },
       costNote:
-        'Running costs stay with your providers — hosting, database and WhatsApp conversations — so they track your actual volume rather than your headcount. Every clinic books a different number of appointments, so we size the monthly cost with you before anything is signed.',
+        'The monthly running cost is paid to the companies that host it — the website, the database, and WhatsApp messages. It goes up with how many bookings and messages you get, not with how many people you employ. Every clinic is a different size, so we work the number out with you before you sign anything.',
     },
     contact: {
       eyebrow: 'Get Started',
@@ -298,7 +297,7 @@ export const dictionary = {
       },
     },
     footer: {
-      tagline: 'Elite web platforms & AI automation for growing businesses.',
+      tagline: 'Websites and WhatsApp systems that answer your customers, for businesses in Jordan.',
       rights: 'All rights reserved.',
       madeIn: 'Engineered in Jordan 🇯🇴',
       linksTitle: 'Navigate',
@@ -317,15 +316,15 @@ export const dictionary = {
       langLabel: 'EN',
     },
     hero: {
-      badge: 'أنظمة واتساب، مبنية في عمّان',
-      headline: 'بنية تحتية للويب والأتمتة الذكية للشركات.',
-      sub: 'نصمّم منصات ويب فائقة السرعة ونزيل العقبات اليدوية عبر سير عمل ذكي على واتساب يعمل ٢٤/٧.',
+      badge: 'للعيادات والمحلات في الأردن',
+      headline: 'موظف بيرد على واتساب طول اليوم، وبيحجز المواعيد لحاله.',
+      sub: 'زبونك بيراسلك على واتساب وبيلاقي رد فوراً بالعربي: أسعارك، أوقات دوامك، وحجز موعده. بدون ما حدا من عندك يمسك التلفون. ومنعملّك كمان الموقع اللي بيوصّلهم إلك.',
       primary: 'احجز استشارة مجانية',
       secondary: 'جرّب واتساب مباشرة',
       metrics: [
-        { value: '٢٤/٧', label: 'رد متواصل' },
-        { value: 'عربي + إنجليزي', label: 'بطلاقة باللغتين' },
-        { value: '٠ دينار', label: 'رسوم شهرية لكل مستخدم' },
+        { value: '٢٤/٧', label: 'بيرد حتى وإنت نايم' },
+        { value: 'عربي + إنجليزي', label: 'بيحكي اللغتين' },
+        { value: '٠ دينار', label: 'رسوم على كل موظف' },
       ],
       chat: [
         { from: 'user' as const, text: 'بدي أحجز موعد' },
@@ -345,7 +344,7 @@ export const dictionary = {
       tag: 'محادثة حجز حقيقية',
       title: 'شاهد الموعد يحجز نفسه',
       subtitle:
-        'كل رد بالأسفل هو النص الحرفي اللي بيبعته موظف الاستقبال. الموافقة أولاً، أوقات متاحة حقيقية، ولا شيء يُكتب في التقويم قبل أن يؤكّد المريض.',
+        'كل رسالة تحت هي بالضبط اللي بيشوفها المريض. بيسأل عن الموافقة أول إشي، وبيعطي بس الأوقات اللي الدكتور فاضي فيها فعلاً، وما بينحفظ موعد قبل ما المريض يوافق.',
       header: 'ClinicFlow · موظف استقبال العيادة',
       status: 'متصل',
       replay: 'إعادة المحادثة',
@@ -393,8 +392,8 @@ export const dictionary = {
         'AXEN شركة جديدة، وهاي الصورة بصراحة: نظام واحد شغّال فعلياً، وثلاثة نبنيهم عند الطلب. بدون شعارات مستعارة.',
       filters: {
         all: 'الكل',
-        web: 'تطوير الويب',
-        automation: 'الذكاء الاصطناعي وأتمتة واتساب',
+        web: 'مواقع',
+        automation: 'رد تلقائي على واتساب',
       },
       liveDemo: 'شوفه شغّال',
       caseStudy: 'اقرأ دراسة الحالة',
@@ -409,7 +408,7 @@ export const dictionary = {
           id: 'p2',
           kind: 'live' as const,
           category: 'automation' as const,
-          categoryLabel: 'أتمتة واتساب',
+          categoryLabel: 'رد تلقائي على واتساب',
           title: 'ClinicFlow — موظف استقبال العيادة',
           description:
             'المريض يحجز على واتساب بالعربية الأردنية. أوقات متاحة حقيقية، وموافقة قبل أي بيانات شخصية، ولا يُكتب موعد قبل أن يؤكّد.',
@@ -427,9 +426,9 @@ export const dictionary = {
           kind: 'capability' as const,
           category: 'web' as const,
           categoryLabel: 'تطوير الويب',
-          title: 'منصات ويب مخصّصة',
+          title: 'موقع خاص فيك',
           description:
-            'منصات Next.js مبنية للسرعة والتحويل. الموقع اللي بتقرأ فيه هلأ واحد منهم — نفس الأدوات ونفس المعايير.',
+            'موقع سريع مبني من الصفر إلك. الموقع اللي بتقرأ فيه هلأ واحد منهم — نفس الشغل ونفس المستوى.',
           image: '/projects/web-platform.webp',
           tech: ['Next.js', 'TypeScript', 'Tailwind'],
           includes: [
@@ -460,8 +459,8 @@ export const dictionary = {
           id: 'p4',
           kind: 'capability' as const,
           category: 'automation' as const,
-          categoryLabel: 'تكامل الأنظمة',
-          title: 'منطق أعمال وربط أنظمة',
+          categoryLabel: 'ربط برامج',
+          title: 'ربط برامجك مع بعض',
           description:
             'الربط بين الأدوات اللي أصلاً بتدفع عليها — CRM وجداول وقواعد بيانات — حتى ما حدا يعيد الإدخال.',
           image: '/projects/api-integration.webp',
@@ -477,69 +476,69 @@ export const dictionary = {
     },
     services: {
       eyebrow: 'ماذا نقدّم',
-      title: 'أنظمة معيارية مصمّمة للتوسّع',
-      subtitle: 'اختر نظامًا واحدًا أو ادمجها في عملية تشغيل ذاتية واحدة.',
+      title: 'ثلاث خدمات. خذ وحدة، أو الثلاثة.',
+      subtitle: 'كل وحدة بتشتغل لحالها، وبتشتغل أحسن مع بعض.',
       items: [
         {
-          title: 'منصات ويب ولوحات هبوط مخصّصة',
+          title: 'موقع خاص فيك',
           description:
-            'بنية سريعة ومتجاوبة بمستوى المؤسسات، مصمّمة للتحويل والتوسّع.',
+            'بيفتح بأقل من ثانية، وبيبيّن مضبوط على الموبايل، وبيطلع بجوجل لما حدا يدوّر على خدمتك.',
           points: [
-            'زمن تحميل أقل من ثانية',
-            'تصميم متجاوب بالكامل',
-            'بنية جاهزة لمحركات البحث',
+            'بيفتح بأقل من ثانية',
+            'مضبوط على الموبايل',
+            'بيطلع بنتائج جوجل',
           ],
         },
         {
-          title: 'أتمتة واتساب وإنستغرام',
+          title: 'رد تلقائي على واتساب وانستقرام',
           description:
-            'طلبات فورية، ومساعد ذكي يعمل ٢٤/٧، وتأهيل تلقائي للعملاء.',
+            'بيرد على أسئلة زبائنك، بيعطيهم الأسعار وأوقات الدوام، وبيسجّل موعدهم أو طلبهم — طول اليوم، بالعربي.',
           points: [
-            'معالجة الطلبات فورًا',
-            'مساعد ذكي على مدار الساعة',
-            'التقاط تلقائي للعملاء',
+            'بيسجّل المواعيد والطلبات',
+            'بيرد الساعة ٢ بالليل',
+            'بيجاوب بالعربي الأردني',
           ],
         },
         {
-          title: 'منطق أعمال وتكامل واجهات API',
+          title: 'ربط برامجك مع بعض',
           description:
-            'اربط CRM والجداول وقواعد البيانات في خط أتمتة واحد.',
+            'إذا عندك أكثر من برنامج وبتعيد إدخال نفس المعلومة بكل واحد، منربطهم مع بعض عشان يصير الشغل مرة وحدة.',
           points: [
-            'مزامنة CRM وقواعد البيانات',
-            'أتمتة الجداول',
-            'ربط واجهات الطرف الثالث',
+            'بلا إعادة إدخال',
+            'الجداول بتتعبّى لحالها',
+            'كل برامجك بتحكي مع بعض',
           ],
         },
       ],
     },
     why: {
       eyebrow: 'لماذا AXEN',
-      title: 'هندسة حقيقية بدل القوالب الجاهزة',
+      title: 'مبني إلك إنت، مش قالب جاهز',
       cards: {
         speed: {
-          title: 'دورات تسليم سريعة',
+          title: 'شغّال خلال أسابيع، مش شهور',
           description:
-            'مراحل عمل سريعة تُطلق نظامك خلال أسابيع، لا أرباع سنوات، دون تنازلات.',
+            'منشتغل على دفعات قصيرة، فبتشوف النظام شغّال على تلفونك خلال أسابيع.',
         },
         bloat: {
-          title: 'تكلفة تشغيل مباشرة، بلا رسوم ترخيص',
+          title: 'ما في رسوم شهرية إلنا',
           description:
-            'نظامك بدّه استضافة وقاعدة بيانات وواتساب API — وهاي بتدفعها للمزوّد مباشرة بسعره المعلن. اللي ما بتدفعه أبداً: رسوم ترخيص إلنا أو رسوم على كل مستخدم. والكود ملكك، تنقله وين ما بدك.',
+            'نظامك بدّه استضافة وقاعدة بيانات وواتساب — هاي بتدفعها للشركات المزوّدة مباشرة، بسعرها هي. إحنا ما بناخد رسوم شهرية ولا رسوم على كل موظف، والبرنامج بالآخر بيصير ملكك.',
         },
         scalable: {
-          title: 'قواعد كود قابلة للتوسّع',
+          title: 'بيكبر معك',
           description:
-            'بنية نظيفة وموثّقة تنمو مع عملك بدل أن تعيقه.',
+            'لما تفتح فرع تاني أو تزيد أطباء، البرنامج بيتوسّع معك بدل ما تبدأ من الصفر.',
         },
         local: {
-          title: 'خبرة بالسوق المحلي',
+          title: 'بنفهم السوق هون',
           description:
-            'فهم عميق للسوق الإقليمي، وتجربة استخدام عربية أولًا، وسلوك المشتري المحلي.',
+            'زبائنك بيكتبوا بالعربي الأردني، والنظام بيفهمهم. وبنعرف كيف بيقرر الناس هون يشتروا.',
         },
-        stat: { value: '٢٤/٧', label: 'عمليات ذاتية' },
+        stat: { value: '٢٤/٧', label: 'شغّال بدون توقف' },
       },
       costNote:
-        'تكاليف التشغيل بتضل عند المزوّدين — استضافة وقاعدة بيانات ومحادثات واتساب — يعني بتكبر مع حجم شغلك الحقيقي مش مع عدد موظفينك. كل عيادة إلها عدد حجوزات مختلف، فمنحسب الكلفة الشهرية معك قبل ما توقّع أي إشي.',
+        'الكلفة الشهرية بتدفعها للشركات اللي بتشغّل النظام — الموقع، وقاعدة البيانات، ورسائل واتساب. وبتزيد حسب عدد الحجوزات والرسائل اللي بتوصلك، مش حسب عدد موظفينك. وكل عيادة حجمها مختلف، فمنحسب الرقم معك قبل ما توقّع أي إشي.',
     },
     contact: {
       eyebrow: 'ابدأ الآن',
@@ -572,7 +571,7 @@ export const dictionary = {
       },
     },
     footer: {
-      tagline: 'منصات ويب متطورة وأتمتة ذكية للشركات الطموحة.',
+      tagline: 'مواقع وأنظمة واتساب بترد على زبائنك، للشركات في الأردن.',
       rights: 'جميع الحقوق محفوظة.',
       madeIn: 'صُمّم في الأردن 🇯🇴',
       linksTitle: 'تصفّح',
