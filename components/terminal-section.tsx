@@ -45,18 +45,18 @@ export function TerminalSection() {
           subtitle={t.terminal.subtitle}
         />
 
-        <div className="corner-frame mx-auto mt-12 max-w-2xl border border-border bg-card">
+        <div className="mx-auto mt-12 max-w-2xl rounded-xl border border-border bg-card">
           {/* Terminal header */}
           <div className="flex items-center justify-between border-b border-border bg-secondary/50 px-4 py-3">
             <div className="flex items-center gap-2.5">
               <Terminal className="h-4 w-4 text-muted-foreground" />
-              <span className="font-mono text-xs tracking-wider text-foreground">
+              <span className="text-xs font-medium text-foreground">
                 {t.terminal.header}
               </span>
             </div>
             <div className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-foreground" />
-              <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+              <span className="text-[11px] text-muted-foreground">
                 {t.terminal.status}
               </span>
             </div>
@@ -87,7 +87,7 @@ export function TerminalSection() {
                 <div className="font-mono text-sm font-semibold text-foreground">
                   {m.value}
                 </div>
-                <div className="mt-0.5 font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
+                <div className="mt-0.5 font-mono text-[9px] text-muted-foreground">
                   {m.label}
                 </div>
               </div>
@@ -100,7 +100,7 @@ export function TerminalSection() {
             type="button"
             onClick={replay}
             disabled={running}
-            className="inline-flex items-center gap-2 border border-border px-4 py-2.5 text-xs font-semibold uppercase tracking-widest text-foreground transition-colors hover:bg-secondary disabled:opacity-40"
+            className="inline-flex items-center gap-2 border border-border px-4 py-2.5 text-xs font-semibold text-foreground transition-colors hover:bg-secondary disabled:opacity-40"
           >
             <RotateCw className={cn('h-4 w-4', running && 'animate-spin')} />
             {running ? t.terminal.running : t.terminal.replay}
@@ -120,7 +120,7 @@ function TerminalLine({
 }) {
   if (from === 'system') {
     return (
-      <div className="animate-fade-up border border-border bg-secondary/40 px-3 py-2 font-mono text-[11px] leading-relaxed text-muted-foreground">
+      <div className="animate-fade-up border border-border bg-secondary/40 px-3 py-2 text-[11px] leading-relaxed text-muted-foreground">
         <span className="text-foreground">$</span> {text}
       </div>
     )

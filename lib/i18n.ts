@@ -41,7 +41,7 @@ export const dictionary = {
       langLabel: 'عربي',
     },
     hero: {
-      badge: '[ SYSTEM ARCHITECTURE & AI OPERATIONS ]',
+      badge: 'WhatsApp systems, built in Amman',
       headline: 'Autonomous Operations & Precision Web Platforms.',
       sub: 'We engineer ultra-fast web platforms and eliminate manual bottlenecks through 24/7 intelligent WhatsApp workflows.',
       primary: 'Book Free Consultation',
@@ -51,9 +51,22 @@ export const dictionary = {
         { value: 'AR + EN', label: 'Native Both Ways' },
         { value: 'JD 0', label: 'Per-Seat Fees' },
       ],
+      chat: [
+        { from: 'user' as const, text: 'بدي أحجز موعد' },
+        {
+          from: 'bot' as const,
+          text: 'أهلاً فيك 🙏 هاي خدماتنا:\n1) فحص وتنظيف — 25 دينار\n2) حشوة أسنان — 35 دينار',
+        },
+        { from: 'user' as const, text: '1' },
+        {
+          from: 'bot' as const,
+          text: 'تم حجز موعدك ✅\nالطبيب: د. وائل أبو نواس\nالاثنين · 09:00',
+        },
+      ],
+      chatCaption: 'An actual booking, start to finish, in Jordanian Arabic.',
     },
     terminal: {
-      tag: '[ REAL BOOKING CONVERSATION ]',
+      tag: 'محادثة حجز حقيقية',
       title: 'Watch an Appointment Book Itself',
       subtitle:
         'Every reply below is the exact text our clinic receptionist sends. Consent first, real availability, and nothing written to the calendar until the patient confirms.',
@@ -304,7 +317,7 @@ export const dictionary = {
       langLabel: 'EN',
     },
     hero: {
-      badge: '[ بنية الأنظمة وعمليات الذكاء الاصطناعي ]',
+      badge: 'أنظمة واتساب، مبنية في عمّان',
       headline: 'بنية تحتية للويب والأتمتة الذكية للشركات.',
       sub: 'نصمّم منصات ويب فائقة السرعة ونزيل العقبات اليدوية عبر سير عمل ذكي على واتساب يعمل ٢٤/٧.',
       primary: 'احجز استشارة مجانية',
@@ -314,9 +327,22 @@ export const dictionary = {
         { value: 'عربي + إنجليزي', label: 'بطلاقة باللغتين' },
         { value: '٠ دينار', label: 'رسوم شهرية لكل مستخدم' },
       ],
+      chat: [
+        { from: 'user' as const, text: 'بدي أحجز موعد' },
+        {
+          from: 'bot' as const,
+          text: 'أهلاً فيك 🙏 هاي خدماتنا:\n1) فحص وتنظيف — 25 دينار\n2) حشوة أسنان — 35 دينار',
+        },
+        { from: 'user' as const, text: '1' },
+        {
+          from: 'bot' as const,
+          text: 'تم حجز موعدك ✅\nالطبيب: د. وائل أبو نواس\nالاثنين · 09:00',
+        },
+      ],
+      chatCaption: 'حجز حقيقي من أوله لآخره، بالعربي الأردني.',
     },
     terminal: {
-      tag: '[ محادثة حجز حقيقية ]',
+      tag: 'محادثة حجز حقيقية',
       title: 'شاهد الموعد يحجز نفسه',
       subtitle:
         'كل رد بالأسفل هو النص الحرفي اللي بيبعته موظف الاستقبال. الموافقة أولاً، أوقات متاحة حقيقية، ولا شيء يُكتب في التقويم قبل أن يؤكّد المريض.',

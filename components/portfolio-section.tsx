@@ -39,7 +39,7 @@ export function PortfolioSection() {
               onClick={() => setFilter(tab.key)}
               aria-pressed={filter === tab.key}
               className={cn(
-                'border px-4 py-2 text-xs font-medium uppercase tracking-widest transition-colors',
+                'rounded-lg border px-4 py-2 text-sm font-medium transition-colors',
                 filter === tab.key
                   ? 'border-primary bg-primary text-primary-foreground'
                   : 'border-border bg-transparent text-muted-foreground hover:border-foreground hover:text-foreground',
@@ -66,13 +66,13 @@ export function PortfolioSection() {
               <article
                 key={item.id}
                 className={cn(
-                  'group flex flex-col overflow-hidden border bg-card transition-colors',
+                  'group flex flex-col overflow-hidden rounded-2xl border bg-card transition-colors',
                   isLive
                     ? 'border-foreground/40 hover:border-foreground'
                     : 'border-border hover:border-foreground/60',
                 )}
               >
-                <div className="relative aspect-[16/10] overflow-hidden border-b border-border grayscale transition-[filter] duration-500 group-hover:grayscale-0">
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-border">
                   <Image
                     src={item.image || '/placeholder.svg'}
                     alt={item.title}
@@ -80,14 +80,14 @@ export function PortfolioSection() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute start-4 top-4 border border-border bg-background/90 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-foreground backdrop-blur-md">
+                  <span className="absolute start-4 top-4 rounded-full border border-border bg-background/90 px-3 py-1 text-[11px] text-foreground backdrop-blur-md">
                     {item.categoryLabel}
                   </span>
 
                   {/* The one honest distinction on this page: shipped vs offered. */}
                   <span
                     className={cn(
-                      'absolute end-4 top-4 inline-flex items-center gap-1.5 border px-3 py-1 font-mono text-[10px] uppercase tracking-widest backdrop-blur-md',
+                      'absolute end-4 top-4 inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] backdrop-blur-md',
                       isLive
                         ? 'border-foreground bg-foreground text-background'
                         : 'border-border bg-background/90 text-muted-foreground',
@@ -104,12 +104,12 @@ export function PortfolioSection() {
 
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-lg font-semibold uppercase tracking-wide">
+                    <h3 className="text-lg font-semibold">
                       {item.title}
                     </h3>
                     <a
                       href={href}
-                      className="inline-flex shrink-0 items-center gap-1 text-xs font-medium uppercase tracking-widest text-foreground transition-colors hover:text-muted-foreground"
+                      className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-foreground transition-colors hover:text-muted-foreground"
                     >
                       {cta}
                       <ArrowUpRight className="h-4 w-4" />
@@ -121,7 +121,7 @@ export function PortfolioSection() {
                   </p>
 
                   <div className="mt-5 border-t border-border pt-4">
-                    <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70">
+                    <p className="text-[11px] text-muted-foreground/70">
                       {t.portfolio.includesLabel}
                     </p>
                     <ul className="mt-3 flex flex-col gap-2">
@@ -141,7 +141,7 @@ export function PortfolioSection() {
                     {item.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="border border-border bg-secondary px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
+                        className="rounded-md border border-border bg-secondary px-2.5 py-1 text-[11px] text-muted-foreground"
                       >
                         {tech}
                       </span>
@@ -168,10 +168,10 @@ export function SectionHeading({
 }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+      <span className="eyebrow-rule inline-flex items-center text-sm font-medium text-primary">
         {eyebrow}
       </span>
-      <h2 className="mt-3 text-balance text-3xl font-semibold uppercase tracking-tight sm:text-4xl">
+      <h2 className="mt-4 text-balance text-3xl font-bold sm:text-4xl">
         {title}
       </h2>
       {subtitle && (

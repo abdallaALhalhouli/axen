@@ -24,39 +24,44 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-sans: var(--font-grotesk), 'Space Grotesk Fallback', sans-serif;
+  /* Arabic leads. Kufi carries the headlines because its architecture reads
+     as Arabic before it reads as "a website"; Tajawal covers body text in
+     both scripts so English never switches voice mid-page. */
+  --font-display: var(--font-kufi), 'Noto Kufi Arabic', sans-serif;
+  --font-sans: var(--font-tajawal), 'Tajawal', system-ui, sans-serif;
+  --font-arabic: var(--font-tajawal), 'Tajawal', sans-serif;
+  /* Mono survives only inside the WhatsApp transcript, where a fixed advance
+     is information rather than decoration. */
   --font-mono: var(--font-mono-geist), ui-monospace, monospace;
-  --font-arabic: var(--font-arabic), sans-serif;
 }
 
 :root {
-  color-scheme: dark;
-  --radius: 0rem;
+  color-scheme: light;
+  --radius: 0.625rem;
 
-  /* Strict monochrome — pure black + graphite */
-  --background: oklch(0 0 0);
-  --foreground: oklch(0.98 0 0);
+  /* Amman limestone in daylight, with a single Levantine tile accent. */
+  --background: #efede7;
+  --foreground: #16211f;
 
-  --card: oklch(0.09 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.07 0 0);
-  --popover-foreground: oklch(0.98 0 0);
+  --card: #f8f7f4;
+  --card-foreground: #16211f;
+  --popover: #ffffff;
+  --popover-foreground: #16211f;
 
-  /* Pure white as the single accent */
-  --primary: oklch(1 0 0);
-  --primary-foreground: oklch(0 0 0);
+  --primary: #0e6e63;
+  --primary-foreground: #f8f7f4;
 
-  --secondary: oklch(0.14 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.14 0 0);
-  --muted-foreground: oklch(0.62 0 0);
-  --accent: oklch(0.16 0 0);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.63 0.22 25);
+  --secondary: #e4e2da;
+  --secondary-foreground: #16211f;
+  --muted: #e4e2da;
+  --muted-foreground: #5b6763;
+  --accent: #dceae6;
+  --accent-foreground: #0b4f47;
+  --destructive: #a8341f;
 
-  --border: oklch(0.24 0 0);
-  --input: oklch(0.22 0 0);
-  --ring: oklch(0.7 0 0);
+  --border: #d9d6cd;
+  --input: #cfccc2;
+  --ring: #0e6e63;
 }
 
 @layer base {
@@ -68,64 +73,60 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
   }
+  /* Arabic needs more leading than Latin at the same size; without this the
+     diacritics and descenders collide at display sizes. */
   [dir='rtl'] body,
   [dir='rtl'] .font-arabic-active {
     font-family: var(--font-arabic);
+    line-height: 1.85;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  [dir='rtl'] h1,
+  [dir='rtl'] h2,
+  [dir='rtl'] h3 {
+    letter-spacing: 0;
+    line-height: 1.4;
   }
 }
 
-/* Engineering blueprint grid */
-.blueprint-grid {
-  background-image:
-    linear-gradient(to right, oklch(0.16 0 0) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.16 0 0) 1px, transparent 1px);
-  background-size: 4rem 4rem;
+/* A quiet paper tint behind the hero — warm, not a tech grid. */
+.paper-wash {
+  background:
+    radial-gradient(
+      ellipse 60% 50% at 78% 0%,
+      color-mix(in srgb, var(--primary) 9%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 10% 15%,
+      color-mix(in srgb, var(--primary) 5%, transparent),
+      transparent 72%
+    );
 }
 
-.blueprint-grid-fade {
-  -webkit-mask-image: radial-gradient(
-    ellipse 75% 60% at 50% 30%,
-    black,
-    transparent 78%
-  );
-  mask-image: radial-gradient(
-    ellipse 75% 60% at 50% 30%,
-    black,
-    transparent 78%
-  );
-}
-
-/* Sharp 90-degree corner ticks for framed containers */
-.corner-frame {
-  position: relative;
-}
-.corner-frame::before,
-.corner-frame::after {
+/* Small teal rule used to open a section, in place of the old bracketed
+   monospace eyebrows. */
+.eyebrow-rule::before {
   content: '';
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-color: var(--foreground);
-  pointer-events: none;
-}
-.corner-frame::before {
-  top: -1px;
-  left: -1px;
-  border-top: 1px solid;
-  border-left: 1px solid;
-}
-.corner-frame::after {
-  bottom: -1px;
-  right: -1px;
-  border-bottom: 1px solid;
-  border-right: 1px solid;
+  display: inline-block;
+  inline-size: 1.75rem;
+  block-size: 2px;
+  background: var(--primary);
+  vertical-align: middle;
+  margin-inline-end: 0.6rem;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -134,14 +135,11 @@
 }
 
 .animate-fade-up {
-  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-@keyframes scan-line {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(100%);
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
   }
 }

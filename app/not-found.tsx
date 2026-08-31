@@ -15,11 +15,11 @@ export default function NotFound() {
     <main className="flex min-h-dvh flex-col items-center justify-center px-5 py-24 text-center">
       <AxenLogo className="h-12 w-12" />
 
-      <p className="mt-10 font-mono text-sm tracking-[0.35em] text-muted-foreground">
+      <p className="mt-10 font-mono text-sm tracking-[0.14em] text-muted-foreground">
         [ 404 ]
       </p>
 
-      <h1 className="mt-4 text-3xl font-semibold uppercase tracking-wide sm:text-4xl">
+      <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">
         This page doesn’t exist
       </h1>
       <p className="mt-3 text-muted-foreground" dir="rtl" lang="ar">
@@ -29,7 +29,7 @@ export default function NotFound() {
       <div className="mt-10 flex flex-col gap-3 sm:flex-row">
         <Link
           href="/"
-          className="inline-flex items-center justify-center bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-muted-foreground"
+          className="inline-flex items-center justify-center bg-primary px-6 py-3 text-xs font-semibold text-primary-foreground transition-colors hover:bg-muted-foreground"
         >
           Back to Home
         </Link>
@@ -37,7 +37,7 @@ export default function NotFound() {
           href={`https://wa.me/${WHATSAPP_NUMBER}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center border border-border px-6 py-3 text-xs font-semibold uppercase tracking-widest transition-colors hover:border-foreground"
+          className="inline-flex items-center justify-center border border-border px-6 py-3 text-xs font-semibold transition-colors hover:border-foreground"
         >
           Talk to Us
         </a>

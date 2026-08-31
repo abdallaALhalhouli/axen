@@ -19,9 +19,8 @@ export function AxenLogo({ className = 'h-9 w-9' }: { className?: string }) {
 }
 
 /**
- * The full AXEN lockup (mark + wordmark).
- * The source PNG is dark-on-white, so `invert` flips it to a clean
- * white lockup that sits seamlessly on the pure-black background.
+ * The full AXEN lockup (mark + wordmark). The source PNG is dark-on-white,
+ * which is already right for the limestone ground.
  */
 export function AxenLockup({ className = '' }: { className?: string }) {
   return (
@@ -31,7 +30,7 @@ export function AxenLockup({ className = '' }: { className?: string }) {
       width={800}
       height={800}
       priority
-      className={`select-none invert ${className}`}
+      className={`select-none ${className}`}
     />
   )
 }

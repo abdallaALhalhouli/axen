@@ -38,7 +38,7 @@ export function SiteFooter() {
           <div className="lg:col-span-2">
             <a href={home} className="flex items-center gap-2.5">
               <AxenLogo className="h-8 w-8 text-foreground" />
-              <span className="text-lg font-semibold tracking-[0.35em]">
+              <span className="text-lg font-semibold tracking-[0.14em]">
                 AXEN
               </span>
             </a>
@@ -48,7 +48,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/70">
+            <h4 className="text-sm font-semibold r text-foreground/70">
               {t.footer.linksTitle}
             </h4>
             <ul className="mt-4 flex flex-col gap-2.5">
@@ -66,7 +66,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/70">
+            <h4 className="text-sm font-semibold r text-foreground/70">
               {t.footer.socialTitle}
             </h4>
             <div className="mt-4 flex gap-3">
@@ -77,7 +77,7 @@ export function SiteFooter() {
                   aria-label={label}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card/50 text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-lg rounded-xl border border-border bg-card/50 text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
                 >
                   <Icon className="h-5 w-5" />
                 </a>

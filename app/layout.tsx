@@ -1,28 +1,28 @@
 import type { Metadata, Viewport } from 'next'
-import { Space_Grotesk, Geist_Mono, IBM_Plex_Sans_Arabic } from 'next/font/google'
+import { Noto_Kufi_Arabic, Tajawal, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { StructuredData } from '@/components/structured-data'
 import { SITE_URL } from '@/lib/i18n'
 
-const grotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-grotesk',
+const kufi = Noto_Kufi_Arabic({
+  subsets: ['arabic', 'latin'],
+  weight: ['600', '700'],
+  variable: '--font-kufi',
   display: 'swap',
 })
 
+const tajawal = Tajawal({
+  subsets: ['arabic', 'latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-tajawal',
+  display: 'swap',
+})
+
+// Only the WhatsApp transcript uses it, so it never blocks first paint.
 const geistMono = Geist_Mono({
   subsets: ['latin'],
   variable: '--font-mono-geist',
   display: 'swap',
-})
-
-const arabic = IBM_Plex_Sans_Arabic({
-  subsets: ['arabic'],
-  weight: ['400', '500', '600'],
-  variable: '--font-arabic',
-  display: 'swap',
-  // Only fetched once a visitor switches to Arabic.
   preload: false,
 })
 
@@ -88,8 +88,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#000000',
+  colorScheme: 'light',
+  themeColor: '#efede7',
 }
 
 export default function RootLayout({
@@ -100,7 +100,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${grotesk.variable} ${geistMono.variable} ${arabic.variable} bg-background`}
+      className={`${kufi.variable} ${tajawal.variable} ${geistMono.variable} bg-background`}
     >
       <body className="font-sans">
         <StructuredData />

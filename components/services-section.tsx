@@ -34,11 +34,11 @@ export function ServicesSection() {
                   <div className="inline-flex h-12 w-12 items-center justify-center border border-border text-foreground">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <span className="font-mono text-xs text-muted-foreground">
+                  <span className="text-xs text-muted-foreground">
                     {num}
                   </span>
                 </div>
-                <h3 className="mt-5 text-lg font-semibold uppercase tracking-wide">
+                <h3 className="mt-5 text-lg font-semibold">
                   {service.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

@@ -55,13 +55,13 @@ export function ContactSection() {
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-start gap-4 border border-border bg-card p-6 transition-colors hover:border-foreground"
+              className="group flex items-start gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-foreground"
             >
               <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center border border-border text-foreground">
                 <MessageCircle className="h-5 w-5" />
               </span>
               <div className="min-w-0">
-                <div className="flex items-center gap-1.5 font-semibold uppercase tracking-wide">
+                <div className="flex items-center gap-1.5 font-semibold">
                   {t.contact.whatsapp.title}
                   <ArrowUpRight className="h-4 w-4" />
                 </div>
@@ -76,13 +76,13 @@ export function ContactSection() {
 
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="group flex items-start gap-4 border border-border bg-card p-6 transition-colors hover:border-foreground"
+              className="group flex items-start gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-foreground"
             >
               <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center border border-border text-foreground">
                 <Mail className="h-5 w-5" />
               </span>
               <div className="min-w-0">
-                <div className="flex items-center gap-1.5 font-semibold uppercase tracking-wide">
+                <div className="flex items-center gap-1.5 font-semibold">
                   {t.contact.email.title}
                   <ArrowUpRight className="h-4 w-4" />
                 </div>
@@ -97,8 +97,8 @@ export function ContactSection() {
           </div>
 
           {/* Form */}
-          <div className="corner-frame border border-border bg-card p-6 sm:p-8 lg:col-span-3">
-            <h3 className="text-lg font-semibold uppercase tracking-wide">
+          <div className="rounded-xl border border-border bg-card p-6 sm:p-8 lg:col-span-3">
+            <h3 className="text-lg font-semibold">
               {t.contact.form.title}
             </h3>
 
@@ -156,7 +156,7 @@ export function ContactSection() {
                 </Field>
                 <button
                   type="submit"
-                  className="mt-2 inline-flex items-center justify-center gap-2 bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-muted-foreground"
+                  className="mt-2 inline-flex items-center justify-center gap-2 bg-primary px-6 py-3 text-xs font-semibold text-primary-foreground transition-colors hover:bg-muted-foreground"
                 >
                   <MessageCircle className="h-4 w-4" />
                   {t.contact.form.submit}

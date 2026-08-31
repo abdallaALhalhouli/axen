@@ -36,7 +36,7 @@ export function WhySection() {
             <div className="mt-4 font-mono text-5xl font-bold">
               {c.stat.value}
             </div>
-            <div className="mt-2 text-sm uppercase tracking-widest opacity-70">
+            <div className="mt-2 text-sm opacity-70">
               {c.stat.label}
             </div>
           </div>
@@ -89,7 +89,7 @@ function BentoCard({
       <div className="inline-flex h-11 w-11 items-center justify-center border border-border text-foreground">
         {icon}
       </div>
-      <h3 className="mt-4 text-lg font-semibold uppercase tracking-wide">
+      <h3 className="mt-4 text-lg font-semibold">
         {title}
       </h3>
       <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
