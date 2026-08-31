@@ -4,10 +4,10 @@ export const WHATSAPP_NUMBER = '962788701710'
 export const CONTACT_EMAIL = 'axencomp@gmail.com'
 
 /** Public site origin — used for canonical URLs and social preview images. */
-export const SITE_URL = 'https://axen.pages.dev'
+export const SITE_URL = 'https://axen-1cl.pages.dev'
 
 /** Social profiles. Leave a value empty ('') to hide that icon in the footer. */
-export const INSTAGRAM_URL = ''
+export const INSTAGRAM_URL = 'https://www.instagram.com/axen_comp/'
 export const LINKEDIN_URL = ''
 
 export const dictionary = {
