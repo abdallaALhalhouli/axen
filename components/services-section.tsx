@@ -24,19 +24,13 @@ export function ServicesSection() {
         <div className="mt-12 grid grid-cols-1 border border-border md:grid-cols-3">
           {t.services.items.map((service, i) => {
             const Icon = icons[i]
-            const num = String(i + 1).padStart(2, '0')
             return (
               <div
                 key={service.title}
                 className="group relative flex flex-col border-b border-border p-7 transition-colors last:border-b-0 hover:bg-card md:border-b-0 md:border-e md:last:border-e-0"
               >
-                <div className="flex items-center justify-between">
-                  <div className="inline-flex h-12 w-12 items-center justify-center border border-border text-foreground">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <span className="text-xs text-muted-foreground">
-                    {num}
-                  </span>
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-border text-primary">
+                  <Icon className="h-6 w-6" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold">
                   {service.title}
