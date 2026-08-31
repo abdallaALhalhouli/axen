@@ -23,6 +23,7 @@ export function ContactSection() {
       f.intro,
       '',
       `${f.name}: ${data.get('name')}`,
+      `${f.phone}: ${data.get('phone')}`,
       `${f.email}: ${data.get('email')}`,
       '',
       `${f.message}:`,
@@ -129,8 +130,18 @@ export function ContactSection() {
                   <input
                     type="email"
                     name="email"
-                    required
                     placeholder={t.contact.form.emailPlaceholder}
+                    className="w-full border border-input bg-background px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground"
+                  />
+                </Field>
+                <Field label={t.contact.form.phone}>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    inputMode="tel"
+                    dir="ltr"
+                    placeholder={t.contact.form.phonePlaceholder}
                     className="w-full border border-input bg-background px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground"
                   />
                 </Field>

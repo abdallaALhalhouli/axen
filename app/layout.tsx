@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Space_Grotesk, Geist_Mono, IBM_Plex_Sans_Arabic } from 'next/font/google'
 import './globals.css'
+import { StructuredData } from '@/components/structured-data'
 import { SITE_URL } from '@/lib/i18n'
 
 const grotesk = Space_Grotesk({
@@ -18,9 +19,11 @@ const geistMono = Geist_Mono({
 
 const arabic = IBM_Plex_Sans_Arabic({
   subsets: ['arabic'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600'],
   variable: '--font-arabic',
   display: 'swap',
+  // Only fetched once a visitor switches to Arabic.
+  preload: false,
 })
 
 const TITLE = 'AXEN — Elite Web Platforms & AI Automation'
@@ -92,6 +95,7 @@ export default function RootLayout({
       className={`${grotesk.variable} ${geistMono.variable} ${arabic.variable} bg-background`}
     >
       <body className="font-sans">
+        <StructuredData />
         {children}
       </body>
     </html>

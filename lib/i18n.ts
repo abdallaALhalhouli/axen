@@ -28,9 +28,9 @@ export const dictionary = {
       primary: 'Book Free Consultation',
       secondary: 'Test WhatsApp Demo',
       metrics: [
-        { value: '< 3s', label: 'Automated Response' },
-        { value: '100%', label: 'Custom Built' },
-        { value: 'Zero', label: 'Latency Workflows' },
+        { value: '24/7', label: 'Always Answering' },
+        { value: 'AR + EN', label: 'Native Both Ways' },
+        { value: 'JD 0', label: 'Per-Seat Fees' },
       ],
     },
     terminal: {
@@ -223,6 +223,8 @@ export const dictionary = {
         namePlaceholder: 'Your name',
         email: 'Email',
         emailPlaceholder: 'you@company.com',
+        phone: 'WhatsApp Number',
+        phonePlaceholder: '07 9999 9999',
         message: 'Project Details',
         messagePlaceholder: 'Tell us what you want to build…',
         submit: 'Send via WhatsApp',
@@ -257,9 +259,9 @@ export const dictionary = {
       primary: 'احجز استشارة مجانية',
       secondary: 'جرّب واتساب مباشرة',
       metrics: [
-        { value: '< ٣ث', label: 'زمن الرد الآلي' },
-        { value: '١٠٠٪', label: 'مبني بالكامل حسب الطلب' },
-        { value: 'صفر', label: 'تأخير في سير العمل' },
+        { value: '٢٤/٧', label: 'رد متواصل' },
+        { value: 'عربي + إنجليزي', label: 'بطلاقة باللغتين' },
+        { value: '٠ دينار', label: 'رسوم شهرية لكل مستخدم' },
       ],
     },
     terminal: {
@@ -450,6 +452,8 @@ export const dictionary = {
         namePlaceholder: 'اسمك',
         email: 'البريد الإلكتروني',
         emailPlaceholder: 'you@company.com',
+        phone: 'رقم الواتساب',
+        phonePlaceholder: '07 9999 9999',
         message: 'تفاصيل المشروع',
         messagePlaceholder: 'أخبرنا بما تريد بناءه…',
         submit: 'أرسل عبر واتساب',
