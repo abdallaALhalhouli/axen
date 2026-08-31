@@ -250,6 +250,8 @@ export const dictionary = {
         },
         stat: { value: '24/7', label: 'Autonomous operations' },
       },
+      costNote:
+        'Running costs stay with your providers — hosting, database and WhatsApp conversations — so they track your actual volume rather than your headcount. Every clinic books a different number of appointments, so we size the monthly cost with you before anything is signed.',
     },
     contact: {
       eyebrow: 'Get Started',
@@ -510,6 +512,8 @@ export const dictionary = {
         },
         stat: { value: '٢٤/٧', label: 'عمليات ذاتية' },
       },
+      costNote:
+        'تكاليف التشغيل بتضل عند المزوّدين — استضافة وقاعدة بيانات ومحادثات واتساب — يعني بتكبر مع حجم شغلك الحقيقي مش مع عدد موظفينك. كل عيادة إلها عدد حجوزات مختلف، فمنحسب الكلفة الشهرية معك قبل ما توقّع أي إشي.',
     },
     contact: {
       eyebrow: 'ابدأ الآن',

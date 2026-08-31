@@ -1,6 +1,6 @@
 'use client'
 
-import { Gauge, PiggyBank, Layers, MapPin, Zap } from 'lucide-react'
+import { Gauge, PiggyBank, Layers, MapPin, Zap, Info } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { SectionHeading } from '@/components/portfolio-section'
 
@@ -59,6 +59,13 @@ export function WhySection() {
             description={c.local.description}
           />
         </div>
+
+        {/* Costs vary with each client's volume, so this states the shape of
+            the bill rather than a number we would have to caveat anyway. */}
+        <p className="mx-auto mt-6 flex max-w-3xl items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+          <Info className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+          <span>{t.why.costNote}</span>
+        </p>
       </div>
     </section>
   )
