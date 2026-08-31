@@ -24,6 +24,7 @@ export function SiteNavbar() {
     { href: `${home}#services`, label: t.nav.services },
     { href: `${home}#portfolio`, label: t.nav.portfolio },
     { href: `${home}#why`, label: t.nav.why },
+    { href: `${home}#pricing`, label: t.nav.pricing },
     { href: `${home}#contact`, label: t.nav.contact },
   ]
 

@@ -36,6 +36,7 @@ export const dictionary = {
       services: 'Services',
       portfolio: 'Portfolio',
       why: 'Why AXEN',
+      pricing: 'Prices',
       contact: 'Contact',
       cta: 'Book Free Consultation',
       langLabel: 'عربي',
@@ -45,7 +46,7 @@ export const dictionary = {
       headline: 'Someone answers your WhatsApp all day — and books the appointments.',
       sub: 'Your customer messages you on WhatsApp and gets an answer straight away, in Arabic — your prices, your hours, their appointment booked. Nobody on your side picks up the phone. We build the website that brings them to you, too.',
       primary: 'Book Free Consultation',
-      secondary: 'Test WhatsApp Demo',
+      secondary: 'Message us on WhatsApp',
       metrics: [
         { value: '24/7', label: 'Answers while you sleep' },
         { value: 'AR + EN', label: 'Speaks both languages' },
@@ -265,6 +266,49 @@ export const dictionary = {
       costNote:
         'The monthly running cost is paid to the companies that host it — the website, the database, and WhatsApp messages. It goes up with how many bookings and messages you get, not with how many people you employ. Every clinic is a different size, so we work the number out with you before you sign anything.',
     },
+    founder: {
+      eyebrow: 'Who you would be working with',
+      name: 'Abdallah Alhalhouli',
+      role: 'Founder — AXEN, Amman',
+      lines: [
+        'I am Abdallah Alhalhouli, and I built ClinicFlow myself, line by line.',
+        'AXEN is new, and that means one thing for you: you deal with me directly — not a salesperson, and not a support queue that answers next week.',
+        'I started with clinics because the problem there is easy to measure. Every appointment that slips has a price, and every question your staff answers for the fortieth time costs someone an afternoon.',
+      ],
+      cta: 'Message me directly',
+    },
+    pricing: {
+      eyebrow: 'What it costs',
+      title: 'Prices, before you have to ask',
+      subtitle:
+        'Most studios here make you book a call to hear a number. These are the starting points, in the open.',
+      note: 'A first build covers setup, your content and training your staff. Monthly running costs go to the hosting and WhatsApp providers directly — see the note above.',
+      plans: [
+        {
+          name: 'A website',
+          from: 'From JD 350',
+          body: 'A fast site that works on a phone and shows up on Google. Yours to keep.',
+          points: ['Up to 5 pages', 'Arabic and English', 'Live in 2–3 weeks'],
+        },
+        {
+          name: 'WhatsApp that answers',
+          from: 'From JD 600',
+          body: 'Replies to your customers, quotes your prices and hours, and books the appointment.',
+          points: [
+            'Books, reschedules and cancels',
+            'Your services and your staff',
+            'Live in 3–4 weeks',
+          ],
+          featured: true,
+        },
+        {
+          name: 'Both together',
+          from: 'From JD 850',
+          body: 'The site brings them in, WhatsApp books them. One project, one price.',
+          points: ['Everything above', 'One dashboard', 'Live in 4–6 weeks'],
+        },
+      ],
+    },
     contact: {
       eyebrow: 'Get Started',
       title: 'Let’s Build Your System',
@@ -311,6 +355,7 @@ export const dictionary = {
       services: 'الخدمات',
       portfolio: 'أعمالنا',
       why: 'لماذا AXEN',
+      pricing: 'الأسعار',
       contact: 'تواصل',
       cta: 'احجز استشارة مجانية',
       langLabel: 'EN',
@@ -320,7 +365,7 @@ export const dictionary = {
       headline: 'موظف بيرد على واتساب طول اليوم، وبيحجز المواعيد لحاله.',
       sub: 'زبونك بيراسلك على واتساب وبيلاقي رد فوراً بالعربي: أسعارك، أوقات دوامك، وحجز موعده. بدون ما حدا من عندك يمسك التلفون. ومنعملّك كمان الموقع اللي بيوصّلهم إلك.',
       primary: 'احجز استشارة مجانية',
-      secondary: 'جرّب واتساب مباشرة',
+      secondary: 'راسلنا على واتساب',
       metrics: [
         { value: '٢٤/٧', label: 'بيرد حتى وإنت نايم' },
         { value: 'عربي + إنجليزي', label: 'بيحكي اللغتين' },
@@ -539,6 +584,49 @@ export const dictionary = {
       },
       costNote:
         'الكلفة الشهرية بتدفعها للشركات اللي بتشغّل النظام — الموقع، وقاعدة البيانات، ورسائل واتساب. وبتزيد حسب عدد الحجوزات والرسائل اللي بتوصلك، مش حسب عدد موظفينك. وكل عيادة حجمها مختلف، فمنحسب الرقم معك قبل ما توقّع أي إشي.',
+    },
+    founder: {
+      eyebrow: 'مع مين رح تشتغل',
+      name: 'عبدالله الحلحولي',
+      role: 'مؤسس AXEN — عمّان',
+      lines: [
+        'أنا عبدالله الحلحولي، وأنا اللي بنيت ClinicFlow من أول سطر لآخره.',
+        'AXEN شركة جديدة، وهاد بيعني إشي واحد إلك: بتحكي معي أنا مباشرة — مش مع موظف مبيعات، ولا مع فريق دعم بيرد بعد أسبوع.',
+        'بديت بالعيادات لأن المشكلة فيها واضحة وبتنقاس. كل موعد بيضيع إله سعر، وكل سؤال بترد عليه الموظفة للمرة الأربعين بياخد من يومها ساعة.',
+      ],
+      cta: 'راسلني أنا مباشرة',
+    },
+    pricing: {
+      eyebrow: 'الأسعار',
+      title: 'الأسعار مكتوبة، قبل ما تضطر تسأل',
+      subtitle:
+        'أغلب الشركات هون بتخليك تحجز مكالمة عشان تسمع رقم. هاي نقاط البداية، مكشوفة.',
+      note: 'سعر البناء بيشمل التجهيز، وإدخال محتواك، وتدريب موظفينك. أما الكلفة الشهرية فبتدفعها للاستضافة وواتساب مباشرة — مذكورة فوق.',
+      plans: [
+        {
+          name: 'موقع',
+          from: 'من ٣٥٠ دينار',
+          body: 'موقع سريع بيشتغل على الموبايل وبيطلع بجوجل. وبيصير ملكك.',
+          points: ['لحد ٥ صفحات', 'عربي وإنجليزي', 'جاهز خلال ٢–٣ أسابيع'],
+        },
+        {
+          name: 'واتساب بيرد',
+          from: 'من ٦٠٠ دينار',
+          body: 'بيرد على زبائنك، بيعطيهم أسعارك وأوقاتك، وبيحجزلهم الموعد.',
+          points: [
+            'بيحجز ويأجّل ويلغي',
+            'بخدماتك إنت وأطباءك إنت',
+            'جاهز خلال ٣–٤ أسابيع',
+          ],
+          featured: true,
+        },
+        {
+          name: 'الاثنين مع بعض',
+          from: 'من ٨٥٠ دينار',
+          body: 'الموقع بيجيبهم، وواتساب بيحجزلهم. مشروع واحد، وسعر واحد.',
+          points: ['كل اللي فوق', 'لوحة تحكم وحدة', 'جاهز خلال ٤–٦ أسابيع'],
+        },
+      ],
     },
     contact: {
       eyebrow: 'ابدأ الآن',

@@ -5,6 +5,8 @@ import { TerminalSection } from '@/components/terminal-section'
 import { PortfolioSection } from '@/components/portfolio-section'
 import { ServicesSection } from '@/components/services-section'
 import { WhySection } from '@/components/why-section'
+import { PricingSection } from '@/components/pricing-section'
+import { FounderSection } from '@/components/founder-section'
 import { ContactSection } from '@/components/contact-section'
 import { SiteFooter } from '@/components/site-footer'
 import type { Lang } from '@/lib/i18n'
@@ -20,6 +22,8 @@ export function HomePage({ lang }: { lang: Lang }) {
         <PortfolioSection />
         <ServicesSection />
         <WhySection />
+        <PricingSection />
+        <FounderSection />
         <ContactSection />
       </main>
       <SiteFooter />

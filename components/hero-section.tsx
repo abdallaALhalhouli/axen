@@ -15,7 +15,7 @@ export function HeroSection() {
   return (
     <section id="top" className="paper-wash relative overflow-hidden">
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-32 sm:px-8 sm:pt-36 lg:grid-cols-[1.05fr_.95fr] lg:gap-20 lg:pb-28">
-        <div>
+        <div className="contents lg:block">
           <span className="eyebrow-rule inline-flex items-center text-sm font-medium text-primary">
             {t.hero.badge}
           </span>
@@ -47,7 +47,7 @@ export function HeroSection() {
             </a>
           </div>
 
-          <dl className="mt-12 flex flex-wrap gap-x-10 gap-y-6">
+          <dl className="order-2 mt-12 flex flex-wrap gap-x-10 gap-y-6 lg:order-none">
             {t.hero.metrics.map((m) => (
               <div key={m.label}>
                 <dt className="font-display text-2xl font-bold text-foreground">
@@ -61,7 +61,7 @@ export function HeroSection() {
           </dl>
         </div>
 
-        <HeroTranscript />
+        <HeroTranscript className="order-1 lg:order-none" />
       </div>
     </section>
   )
@@ -71,11 +71,11 @@ export function HeroSection() {
  * A still of the booking conversation. The animated version further down the
  * page does the storytelling; this one only has to say "this is real".
  */
-function HeroTranscript() {
+function HeroTranscript({ className = '' }: { className?: string }) {
   const { t } = useLanguage()
 
   return (
-    <div className="relative mx-auto w-full max-w-md lg:mx-0">
+    <div className={`relative mx-auto w-full max-w-md lg:mx-0 ${className}`}>
       <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_1px_2px_rgba(22,33,31,.05),0_24px_50px_-28px_rgba(22,33,31,.35)]">
         <div className="flex items-center gap-3 border-b border-border bg-secondary px-4 py-3">
           <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground">
