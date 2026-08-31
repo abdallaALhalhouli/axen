@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Space_Grotesk, Geist_Mono, IBM_Plex_Sans_Arabic } from 'next/font/google'
 import './globals.css'
+import { SITE_URL } from '@/lib/i18n'
 
 const grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -22,11 +23,57 @@ const arabic = IBM_Plex_Sans_Arabic({
   display: 'swap',
 })
 
+const TITLE = 'AXEN — Elite Web Platforms & AI Automation'
+const DESCRIPTION =
+  'AXEN engineers custom web platforms and autonomous WhatsApp & customer workflows for growing businesses. Engineered in Jordan.'
+
 export const metadata: Metadata = {
-  title: 'AXEN — Elite Web Platforms & AI Automation',
-  description:
-    'AXEN engineers custom web platforms and autonomous WhatsApp & customer workflows for growing businesses. Engineered in Jordan.',
-  generator: 'v0.app',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITLE,
+    template: '%s — AXEN',
+  },
+  description: DESCRIPTION,
+  applicationName: 'AXEN',
+  keywords: [
+    'AXEN',
+    'web development Jordan',
+    'WhatsApp automation',
+    'AI chatbot',
+    'Next.js agency',
+    'أتمتة واتساب',
+    'تصميم مواقع الأردن',
+  ],
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'AXEN',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: '/',
+    locale: 'en_US',
+    alternateLocale: ['ar_JO'],
+    images: [
+      {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'AXEN — Web Platforms & AI Automation',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ['/og.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export const viewport: Viewport = {

@@ -3,6 +3,13 @@ export type Lang = 'en' | 'ar'
 export const WHATSAPP_NUMBER = '962788701710'
 export const CONTACT_EMAIL = 'axencomp@gmail.com'
 
+/** Public site origin — used for canonical URLs and social preview images. */
+export const SITE_URL = 'https://axen.pages.dev'
+
+/** Social profiles. Leave a value empty ('') to hide that icon in the footer. */
+export const INSTAGRAM_URL = ''
+export const LINKEDIN_URL = ''
+
 export const dictionary = {
   en: {
     dir: 'ltr' as 'ltr' | 'rtl',
@@ -218,8 +225,10 @@ export const dictionary = {
         emailPlaceholder: 'you@company.com',
         message: 'Project Details',
         messagePlaceholder: 'Tell us what you want to build…',
-        submit: 'Request Consultation',
-        success: 'Thanks! We’ll be in touch within 24 hours.',
+        submit: 'Send via WhatsApp',
+        intro: 'New consultation request from the AXEN website',
+        success: 'WhatsApp is opening with your message ready to send.',
+        fallback: 'Didn’t open? Tap here.',
       },
     },
     footer: {
@@ -443,8 +452,10 @@ export const dictionary = {
         emailPlaceholder: 'you@company.com',
         message: 'تفاصيل المشروع',
         messagePlaceholder: 'أخبرنا بما تريد بناءه…',
-        submit: 'اطلب استشارة',
-        success: 'شكرًا لك! سنتواصل معك خلال ٢٤ ساعة.',
+        submit: 'أرسل عبر واتساب',
+        intro: 'طلب استشارة جديد من موقع AXEN',
+        success: 'فتحنا واتساب ورسالتك جاهزة للإرسال.',
+        fallback: 'ما انفتح؟ اضغط هنا.',
       },
     },
     footer: {

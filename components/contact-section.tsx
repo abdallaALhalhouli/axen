@@ -9,10 +9,30 @@ import { WHATSAPP_NUMBER, CONTACT_EMAIL } from '@/lib/i18n'
 export function ContactSection() {
   const { t } = useLanguage()
   const [submitted, setSubmitted] = useState(false)
+  const [waLink, setWaLink] = useState('')
 
+  // The site is a static export with no backend, so the form hands the
+  // enquiry straight to WhatsApp with the message pre-filled rather than
+  // pretending to send it somewhere.
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    const data = new FormData(e.currentTarget)
+    const f = t.contact.form
+    const text = [
+      f.intro,
+      '',
+      `${f.name}: ${data.get('name')}`,
+      `${f.email}: ${data.get('email')}`,
+      '',
+      `${f.message}:`,
+      `${data.get('message')}`,
+    ].join('\n')
+
+    const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`
+    setWaLink(link)
     setSubmitted(true)
+    window.open(link, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -85,12 +105,21 @@ export function ContactSection() {
               <div className="mt-8 flex flex-col items-center justify-center gap-3 border border-border bg-secondary p-10 text-center">
                 <CheckCircle2 className="h-10 w-10 text-foreground" />
                 <p className="font-medium">{t.contact.form.success}</p>
+                <a
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-foreground underline underline-offset-4"
+                >
+                  {t.contact.form.fallback}
+                </a>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="mt-6 flex flex-col gap-4">
                 <Field label={t.contact.form.name}>
                   <input
                     type="text"
+                    name="name"
                     required
                     placeholder={t.contact.form.namePlaceholder}
                     className="w-full border border-input bg-background px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground"
@@ -99,6 +128,7 @@ export function ContactSection() {
                 <Field label={t.contact.form.email}>
                   <input
                     type="email"
+                    name="email"
                     required
                     placeholder={t.contact.form.emailPlaceholder}
                     className="w-full border border-input bg-background px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground"
@@ -106,6 +136,7 @@ export function ContactSection() {
                 </Field>
                 <Field label={t.contact.form.message}>
                   <textarea
+                    name="message"
                     required
                     rows={4}
                     placeholder={t.contact.form.messagePlaceholder}
@@ -116,6 +147,7 @@ export function ContactSection() {
                   type="submit"
                   className="mt-2 inline-flex items-center justify-center gap-2 bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-muted-foreground"
                 >
+                  <MessageCircle className="h-4 w-4" />
                   {t.contact.form.submit}
                 </button>
               </form>

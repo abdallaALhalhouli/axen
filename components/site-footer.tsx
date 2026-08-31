@@ -1,9 +1,15 @@
 'use client'
 
-import { MessageCircle, Mail, Send, Share2 } from 'lucide-react'
+import { MessageCircle, Mail } from 'lucide-react'
 import { AxenLogo } from '@/components/axen-logo'
+import { InstagramIcon, LinkedinIcon } from '@/components/brand-icons'
 import { useLanguage } from '@/components/language-provider'
-import { WHATSAPP_NUMBER, CONTACT_EMAIL } from '@/lib/i18n'
+import {
+  WHATSAPP_NUMBER,
+  CONTACT_EMAIL,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+} from '@/lib/i18n'
 
 export function SiteFooter() {
   const { t } = useLanguage()
@@ -15,12 +21,14 @@ export function SiteFooter() {
     { href: '/#contact', label: t.nav.contact },
   ]
 
+  // Profiles with no URL configured yet are dropped rather than rendered as
+  // dead '#' links.
   const socials = [
     { href: `https://wa.me/${WHATSAPP_NUMBER}`, label: 'WhatsApp', Icon: MessageCircle },
     { href: `mailto:${CONTACT_EMAIL}`, label: 'Email', Icon: Mail },
-    { href: '#', label: 'Instagram', Icon: Send },
-    { href: '#', label: 'LinkedIn', Icon: Share2 },
-  ]
+    { href: INSTAGRAM_URL, label: 'Instagram', Icon: InstagramIcon },
+    { href: LINKEDIN_URL, label: 'LinkedIn', Icon: LinkedinIcon },
+  ].filter((s) => s.href)
 
   return (
     <footer className="border-t border-border px-5 py-14 sm:px-8">
