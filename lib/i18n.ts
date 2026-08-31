@@ -286,13 +286,13 @@ export const dictionary = {
       plans: [
         {
           name: 'A website',
-          from: 'From JD 350',
+          from: 'From JD 250',
           body: 'A fast site that works on a phone and shows up on Google. Yours to keep.',
           points: ['Up to 5 pages', 'Arabic and English', 'Live in 2–3 weeks'],
         },
         {
           name: 'WhatsApp that answers',
-          from: 'From JD 600',
+          from: 'From JD 450',
           body: 'Replies to your customers, quotes your prices and hours, and books the appointment.',
           points: [
             'Books, reschedules and cancels',
@@ -303,7 +303,7 @@ export const dictionary = {
         },
         {
           name: 'Both together',
-          from: 'From JD 850',
+          from: 'From JD 600',
           body: 'The site brings them in, WhatsApp books them. One project, one price.',
           points: ['Everything above', 'One dashboard', 'Live in 4–6 weeks'],
         },
@@ -605,13 +605,13 @@ export const dictionary = {
       plans: [
         {
           name: 'موقع',
-          from: 'من ٣٥٠ دينار',
+          from: 'من ٢٥٠ دينار',
           body: 'موقع سريع بيشتغل على الموبايل وبيطلع بجوجل. وبيصير ملكك.',
           points: ['لحد ٥ صفحات', 'عربي وإنجليزي', 'جاهز خلال ٢–٣ أسابيع'],
         },
         {
           name: 'واتساب بيرد',
-          from: 'من ٦٠٠ دينار',
+          from: 'من ٤٥٠ دينار',
           body: 'بيرد على زبائنك، بيعطيهم أسعارك وأوقاتك، وبيحجزلهم الموعد.',
           points: [
             'بيحجز ويأجّل ويلغي',
@@ -622,7 +622,7 @@ export const dictionary = {
         },
         {
           name: 'الاثنين مع بعض',
-          from: 'من ٨٥٠ دينار',
+          from: 'من ٦٠٠ دينار',
           body: 'الموقع بيجيبهم، وواتساب بيحجزلهم. مشروع واحد، وسعر واحد.',
           points: ['كل اللي فوق', 'لوحة تحكم وحدة', 'جاهز خلال ٤–٦ أسابيع'],
         },
