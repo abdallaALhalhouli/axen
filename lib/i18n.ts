@@ -10,6 +10,25 @@ export const SITE_URL = 'https://axen-1cl.pages.dev'
 export const INSTAGRAM_URL = 'https://www.instagram.com/axen_comp/'
 export const LINKEDIN_URL = ''
 
+export const LOCALES = ['en', 'ar'] as const
+
+/** Path prefix for a locale. English is served at the root. */
+export function localeBase(lang: Lang) {
+  return lang === 'ar' ? '/ar' : ''
+}
+
+/** Turn a canonical (English) path into its localised equivalent. */
+export function localizePath(lang: Lang, path: string) {
+  const clean = path === '/' ? '' : path
+  return `${localeBase(lang)}${clean}` || '/'
+}
+
+/** Strip any locale prefix, giving the canonical path. */
+export function canonicalPath(path: string) {
+  const stripped = path.replace(/^\/ar(?=\/|$)/, '')
+  return stripped || '/'
+}
+
 export const dictionary = {
   en: {
     dir: 'ltr' as 'ltr' | 'rtl',
@@ -79,60 +98,90 @@ export const dictionary = {
       ],
     },
     portfolio: {
-      eyebrow: 'Selected Work',
-      title: 'Case Studies Engineered for Impact',
+      eyebrow: 'What We Build',
+      title: 'One System Live. Three Ready to Build.',
       subtitle:
-        'Real systems shipped for real businesses — from web platforms to autonomous chat operations.',
+        'AXEN is new, so here is the honest picture: one system running in production, and three we build on commission. No borrowed logos.',
       filters: {
-        all: 'All Works',
+        all: 'Everything',
         web: 'Web Development',
         automation: 'AI & WhatsApp Automations',
       },
-      liveDemo: 'Live Demo',
+      liveDemo: 'See It Running',
       caseStudy: 'Read Case Study',
+      discuss: 'Discuss a Build',
+      badges: {
+        live: 'Live in Production',
+        capability: 'Built on Commission',
+      },
+      includesLabel: 'What you get',
       items: [
         {
-          id: 'p1',
-          category: 'web' as const,
-          categoryLabel: 'Web Development',
-          title: 'Enterprise SaaS Dashboard',
-          description:
-            'A high-performance analytics platform with real-time data cards and role-based access.',
-          image: '/projects/web-platform.webp',
-          tech: ['Next.js', 'Tailwind', 'TypeScript'],
-          href: '#contact',
-        },
-        {
           id: 'p2',
+          kind: 'live' as const,
           category: 'automation' as const,
-          categoryLabel: 'AI & WhatsApp Automation',
+          categoryLabel: 'WhatsApp Automation',
           title: 'ClinicFlow — Clinic Receptionist',
           description:
             'Patients book on WhatsApp in Jordanian Arabic. Real availability, consent before any personal data, and nothing written to the calendar until they confirm.',
           image: '/projects/clinicflow-inbox.webp',
           tech: ['WhatsApp Cloud API', 'FastAPI', 'PostgreSQL', 'React'],
+          includes: [
+            'Books, reschedules and cancels without staff',
+            'Double bookings blocked at the database level',
+            'Consent captured before any personal data',
+          ],
           href: '/work/clinicflow',
         },
         {
-          id: 'p3',
+          id: 'p1',
+          kind: 'capability' as const,
           category: 'web' as const,
           categoryLabel: 'Web Development',
-          title: 'Premium E-Commerce Storefront',
+          title: 'Custom Web Platforms',
           description:
-            'A conversion-focused online store with a sub-second load time and clean checkout.',
+            'Next.js platforms engineered for speed and conversion. The site you are reading is one of them — same stack, same standards.',
+          image: '/projects/web-platform.webp',
+          tech: ['Next.js', 'TypeScript', 'Tailwind'],
+          includes: [
+            'Sub-second loads on Jordanian mobile networks',
+            'Arabic-first RTL, not a bolted-on translation',
+            'You own the repository outright',
+          ],
+          href: '#contact',
+        },
+        {
+          id: 'p3',
+          kind: 'capability' as const,
+          category: 'web' as const,
+          categoryLabel: 'Web Development',
+          title: 'E-Commerce Storefronts',
+          description:
+            'Conversion-focused stores with a checkout that does not lose people halfway through.',
           image: '/projects/ecommerce-site.webp',
-          tech: ['Next.js', 'Tailwind', 'Stripe'],
+          tech: ['Next.js', 'Stripe', 'Tailwind'],
+          includes: [
+            'Checkout tuned for local payment habits',
+            'Inventory and orders in one dashboard',
+            'No per-transaction platform tax',
+          ],
           href: '#contact',
         },
         {
           id: 'p4',
+          kind: 'capability' as const,
           category: 'automation' as const,
           categoryLabel: 'API Integration',
-          title: 'CRM & Sheets Sync Engine',
+          title: 'Business Logic & Integrations',
           description:
-            'Custom business logic connecting CRM, spreadsheets, and databases into one flow.',
+            'The plumbing between the tools you already pay for — CRM, spreadsheets, databases — so nobody retypes anything.',
           image: '/projects/api-integration.webp',
           tech: ['Python', 'REST API', 'PostgreSQL'],
+          includes: [
+            'CRM and database kept in sync',
+            'Spreadsheet work done automatically',
+            'Third-party APIs joined into one flow',
+          ],
           href: '#contact',
         },
       ],
@@ -310,31 +359,27 @@ export const dictionary = {
       ],
     },
     portfolio: {
-      eyebrow: 'أعمال مختارة',
-      title: 'دراسات حالة مصمّمة لإحداث الأثر',
+      eyebrow: 'ما نبنيه',
+      title: 'نظام واحد يعمل. وثلاثة جاهزة للتنفيذ.',
       subtitle:
-        'أنظمة حقيقية تم تسليمها لشركات حقيقية — من منصات الويب إلى عمليات المحادثة الذاتية.',
+        'AXEN شركة جديدة، وهاي الصورة بصراحة: نظام واحد شغّال فعلياً، وثلاثة نبنيهم عند الطلب. بدون شعارات مستعارة.',
       filters: {
-        all: 'كل الأعمال',
+        all: 'الكل',
         web: 'تطوير الويب',
         automation: 'الذكاء الاصطناعي وأتمتة واتساب',
       },
-      liveDemo: 'عرض مباشر',
+      liveDemo: 'شوفه شغّال',
       caseStudy: 'اقرأ دراسة الحالة',
+      discuss: 'ناقش المشروع',
+      badges: {
+        live: 'يعمل فعلياً',
+        capability: 'يُبنى عند الطلب',
+      },
+      includesLabel: 'شو بتوخذ',
       items: [
         {
-          id: 'p1',
-          category: 'web' as const,
-          categoryLabel: 'تطوير الويب',
-          title: 'لوحة تحكم SaaS للمؤسسات',
-          description:
-            'منصة تحليلات عالية الأداء ببطاقات بيانات لحظية وصلاحيات حسب الدور.',
-          image: '/projects/web-platform.webp',
-          tech: ['Next.js', 'Tailwind', 'TypeScript'],
-          href: '#contact',
-        },
-        {
           id: 'p2',
+          kind: 'live' as const,
           category: 'automation' as const,
           categoryLabel: 'أتمتة واتساب',
           title: 'ClinicFlow — موظف استقبال العيادة',
@@ -342,28 +387,62 @@ export const dictionary = {
             'المريض يحجز على واتساب بالعربية الأردنية. أوقات متاحة حقيقية، وموافقة قبل أي بيانات شخصية، ولا يُكتب موعد قبل أن يؤكّد.',
           image: '/projects/clinicflow-inbox.webp',
           tech: ['WhatsApp Cloud API', 'FastAPI', 'PostgreSQL', 'React'],
+          includes: [
+            'يحجز ويؤجّل ويلغي بدون موظف',
+            'الحجز المزدوج ممنوع على مستوى قاعدة البيانات',
+            'موافقة المريض قبل أي بيانات شخصية',
+          ],
           href: '/work/clinicflow',
         },
         {
-          id: 'p3',
+          id: 'p1',
+          kind: 'capability' as const,
           category: 'web' as const,
           categoryLabel: 'تطوير الويب',
-          title: 'متجر إلكتروني فاخر',
+          title: 'منصات ويب مخصّصة',
           description:
-            'متجر يركّز على التحويل بزمن تحميل أقل من ثانية وعملية دفع سلسة.',
+            'منصات Next.js مبنية للسرعة والتحويل. الموقع اللي بتقرأ فيه هلأ واحد منهم — نفس الأدوات ونفس المعايير.',
+          image: '/projects/web-platform.webp',
+          tech: ['Next.js', 'TypeScript', 'Tailwind'],
+          includes: [
+            'تحميل أقل من ثانية على شبكات الموبايل الأردنية',
+            'عربي أولاً باتجاه RTL حقيقي، مش ترجمة ملصوقة',
+            'الكود ملكك بالكامل',
+          ],
+          href: '#contact',
+        },
+        {
+          id: 'p3',
+          kind: 'capability' as const,
+          category: 'web' as const,
+          categoryLabel: 'تطوير الويب',
+          title: 'متاجر إلكترونية',
+          description:
+            'متاجر تركّز على التحويل، بعملية دفع ما بتضيّع الزبون بنص الطريق.',
           image: '/projects/ecommerce-site.webp',
-          tech: ['Next.js', 'Tailwind', 'Stripe'],
+          tech: ['Next.js', 'Stripe', 'Tailwind'],
+          includes: [
+            'دفع مضبوط على عادات السوق المحلي',
+            'المخزون والطلبات بلوحة واحدة',
+            'بدون عمولة منصة على كل عملية',
+          ],
           href: '#contact',
         },
         {
           id: 'p4',
+          kind: 'capability' as const,
           category: 'automation' as const,
           categoryLabel: 'تكامل الأنظمة',
-          title: 'محرّك مزامنة CRM والجداول',
+          title: 'منطق أعمال وربط أنظمة',
           description:
-            'منطق أعمال مخصّص يربط CRM والجداول وقواعد البيانات في سير واحد.',
+            'الربط بين الأدوات اللي أصلاً بتدفع عليها — CRM وجداول وقواعد بيانات — حتى ما حدا يعيد الإدخال.',
           image: '/projects/api-integration.webp',
           tech: ['Python', 'REST API', 'PostgreSQL'],
+          includes: [
+            'CRM وقاعدة البيانات متزامنين',
+            'شغل الجداول بيصير أوتوماتيكي',
+            'APIs خارجية مجموعة بسير واحد',
+          ],
           href: '#contact',
         },
       ],

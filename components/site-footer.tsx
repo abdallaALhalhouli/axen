@@ -12,13 +12,14 @@ import {
 } from '@/lib/i18n'
 
 export function SiteFooter() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
 
+  const home = localePath('/')
   const links = [
-    { href: '/#services', label: t.nav.services },
-    { href: '/#portfolio', label: t.nav.portfolio },
-    { href: '/#why', label: t.nav.why },
-    { href: '/#contact', label: t.nav.contact },
+    { href: `${home}#services`, label: t.nav.services },
+    { href: `${home}#portfolio`, label: t.nav.portfolio },
+    { href: `${home}#why`, label: t.nav.why },
+    { href: `${home}#contact`, label: t.nav.contact },
   ]
 
   // Profiles with no URL configured yet are dropped rather than rendered as
@@ -35,7 +36,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <a href="/" className="flex items-center gap-2.5">
+            <a href={home} className="flex items-center gap-2.5">
               <AxenLogo className="h-8 w-8 text-foreground" />
               <span className="text-lg font-semibold tracking-[0.35em]">
                 AXEN

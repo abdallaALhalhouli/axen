@@ -1,23 +1,14 @@
 import type { Metadata } from 'next'
-import { LanguageProvider } from '@/components/language-provider'
-import { SiteNavbar } from '@/components/site-navbar'
-import { SiteFooter } from '@/components/site-footer'
-import { ClinicFlowCaseStudy } from './case-study'
+import { ClinicFlowPageShell } from '@/components/case-page'
+import { alternatesFor } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'ClinicFlow — Clinic Receptionist on WhatsApp | AXEN',
+  title: 'ClinicFlow — Clinic Receptionist on WhatsApp',
   description:
     'How AXEN built a WhatsApp receptionist for Jordanian clinics: patients book in Arabic, availability is computed live, and double bookings are blocked in the database.',
+  alternates: alternatesFor('en', '/work/clinicflow'),
 }
 
 export default function ClinicFlowPage() {
-  return (
-    <LanguageProvider>
-      <SiteNavbar />
-      <main>
-        <ClinicFlowCaseStudy />
-      </main>
-      <SiteFooter />
-    </LanguageProvider>
-  )
+  return <ClinicFlowPageShell lang="en" />
 }

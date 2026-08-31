@@ -13,7 +13,7 @@ import { WHATSAPP_NUMBER } from '@/lib/i18n'
  * mono eyebrows, no fills.
  */
 export function ClinicFlowCaseStudy() {
-  const { lang, dir } = useLanguage()
+  const { lang, dir, localePath } = useLanguage()
   const c = caseClinicFlow[lang]
   // The back arrow has to point the way the reader reads.
   const Back = dir === 'rtl' ? ArrowRight : ArrowLeft
@@ -22,7 +22,7 @@ export function ClinicFlowCaseStudy() {
     <article className="px-5 pb-24 pt-28 sm:px-8">
       <div className="mx-auto max-w-4xl">
         <a
-          href="/#portfolio"
+          href={`${localePath('/')}#portfolio`}
           className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
         >
           <Back className="h-3.5 w-3.5" />

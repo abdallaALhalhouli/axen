@@ -1,13 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { AxenLogo } from '@/components/axen-logo'
 import { useLanguage } from '@/components/language-provider'
 import { cn } from '@/lib/utils'
 
 export function SiteNavbar() {
-  const { t, toggle, lang } = useLanguage()
+  const { t, lang, otherLang, otherHref, localePath } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -18,11 +19,12 @@ export function SiteNavbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const home = localePath('/')
   const links = [
-    { href: '/#services', label: t.nav.services },
-    { href: '/#portfolio', label: t.nav.portfolio },
-    { href: '/#why', label: t.nav.why },
-    { href: '/#contact', label: t.nav.contact },
+    { href: `${home}#services`, label: t.nav.services },
+    { href: `${home}#portfolio`, label: t.nav.portfolio },
+    { href: `${home}#why`, label: t.nav.why },
+    { href: `${home}#contact`, label: t.nav.contact },
   ]
 
   return (
@@ -35,10 +37,10 @@ export function SiteNavbar() {
       )}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a href="/" className="flex items-center gap-2.5">
+        <Link href={home} className="flex items-center gap-2.5">
           <AxenLogo className="h-7 w-7 text-foreground" />
           <span className="text-lg font-semibold tracking-[0.35em]">AXEN</span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
@@ -54,19 +56,19 @@ export function SiteNavbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={toggle}
+          <Link
+            href={otherHref}
+            hrefLang={otherLang}
             className="inline-flex items-center gap-1.5 border border-border px-3 py-2 text-xs font-medium uppercase tracking-widest text-foreground transition-colors hover:bg-secondary"
-            aria-label="Toggle language"
+            aria-label={otherLang === 'ar' ? 'التبديل إلى العربية' : 'Switch to English'}
           >
             <span className={lang === 'en' ? 'text-foreground' : 'text-muted-foreground'}>EN</span>
             <span className="text-border">/</span>
             <span className={lang === 'ar' ? 'text-foreground' : 'text-muted-foreground'}>AR</span>
-          </button>
+          </Link>
 
           <a
-            href="/#contact"
+            href={`${home}#contact`}
             className="hidden items-center gap-1.5 bg-primary px-4 py-2.5 text-xs font-semibold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-muted-foreground sm:inline-flex"
           >
             {t.nav.cta}
@@ -98,7 +100,7 @@ export function SiteNavbar() {
               </a>
             ))}
             <a
-              href="/#contact"
+              href={`${home}#contact`}
               onClick={() => setMenuOpen(false)}
               className="mt-2 inline-flex items-center justify-center bg-primary px-4 py-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground"
             >

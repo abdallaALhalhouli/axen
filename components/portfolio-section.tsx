@@ -2,14 +2,14 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Check, Radio } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { cn } from '@/lib/utils'
 
 type Filter = 'all' | 'web' | 'automation'
 
 export function PortfolioSection() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
   const [filter, setFilter] = useState<Filter>('all')
 
   const tabs: { key: Filter; label: string }[] = [
@@ -37,6 +37,7 @@ export function PortfolioSection() {
               key={tab.key}
               type="button"
               onClick={() => setFilter(tab.key)}
+              aria-pressed={filter === tab.key}
               className={cn(
                 'border px-4 py-2 text-xs font-medium uppercase tracking-widest transition-colors',
                 filter === tab.key
@@ -50,55 +51,106 @@ export function PortfolioSection() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {items.map((item) => (
-            <article
-              key={item.id}
-              className="group overflow-hidden border border-border bg-card transition-colors hover:border-foreground"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-border grayscale transition-[filter] duration-500 group-hover:grayscale-0">
-                <Image
-                  src={item.image || '/placeholder.svg'}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <span className="absolute start-4 top-4 border border-border bg-background/90 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-foreground backdrop-blur-md">
-                  {item.categoryLabel}
-                </span>
-              </div>
+          {items.map((item) => {
+            const isLive = item.kind === 'live'
+            // Case-study links are real routes and need the locale prefix;
+            // '#contact' and friends stay as-is.
+            const href = item.href.startsWith('/')
+              ? localePath(item.href)
+              : item.href
+            const cta = isLive
+              ? t.portfolio.caseStudy
+              : t.portfolio.discuss
 
-              <div className="p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold uppercase tracking-wide">
-                    {item.title}
-                  </h3>
-                  <a
-                    href={item.href}
-                    className="inline-flex shrink-0 items-center gap-1 text-xs font-medium uppercase tracking-widest text-foreground transition-colors hover:text-muted-foreground"
+            return (
+              <article
+                key={item.id}
+                className={cn(
+                  'group flex flex-col overflow-hidden border bg-card transition-colors',
+                  isLive
+                    ? 'border-foreground/40 hover:border-foreground'
+                    : 'border-border hover:border-foreground/60',
+                )}
+              >
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-border grayscale transition-[filter] duration-500 group-hover:grayscale-0">
+                  <Image
+                    src={item.image || '/placeholder.svg'}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute start-4 top-4 border border-border bg-background/90 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-foreground backdrop-blur-md">
+                    {item.categoryLabel}
+                  </span>
+
+                  {/* The one honest distinction on this page: shipped vs offered. */}
+                  <span
+                    className={cn(
+                      'absolute end-4 top-4 inline-flex items-center gap-1.5 border px-3 py-1 font-mono text-[10px] uppercase tracking-widest backdrop-blur-md',
+                      isLive
+                        ? 'border-foreground bg-foreground text-background'
+                        : 'border-border bg-background/90 text-muted-foreground',
+                    )}
                   >
-                    {item.href.startsWith('/')
-                      ? t.portfolio.caseStudy
-                      : t.portfolio.liveDemo}
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
+                    {isLive && (
+                      <Radio className="h-3 w-3 animate-pulse" aria-hidden="true" />
+                    )}
+                    {isLive
+                      ? t.portfolio.badges.live
+                      : t.portfolio.badges.capability}
+                  </span>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {item.description}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {item.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="border border-border bg-secondary px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
+
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-lg font-semibold uppercase tracking-wide">
+                      {item.title}
+                    </h3>
+                    <a
+                      href={href}
+                      className="inline-flex shrink-0 items-center gap-1 text-xs font-medium uppercase tracking-widest text-foreground transition-colors hover:text-muted-foreground"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      {cta}
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </div>
+
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-5 border-t border-border pt-4">
+                    <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70">
+                      {t.portfolio.includesLabel}
+                    </p>
+                    <ul className="mt-3 flex flex-col gap-2">
+                      {item.includes.map((line) => (
+                        <li key={line} className="flex items-start gap-2.5 text-sm">
+                          <Check
+                            className="mt-0.5 h-4 w-4 shrink-0 text-foreground"
+                            aria-hidden="true"
+                          />
+                          <span className="text-muted-foreground">{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-auto flex flex-wrap gap-2 pt-5">
+                    {item.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="border border-border bg-secondary px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>
