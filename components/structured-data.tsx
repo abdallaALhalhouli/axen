@@ -52,7 +52,12 @@ export function StructuredData() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      // Escaping '<' stops a value ever closing this script tag early. The
+      // values are ours today, but this block is one edit away from carrying
+      // something typed by a person.
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, '\u003c'),
+      }}
     />
   )
 }

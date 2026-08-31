@@ -44,7 +44,7 @@ export const dictionary = {
     hero: {
       badge: 'For clinics and shops in Jordan',
       headline: 'Someone answers your WhatsApp all day — and books the appointments.',
-      sub: 'Your customer messages you on WhatsApp and gets an answer straight away, in Arabic — your prices, your hours, their appointment booked. Nobody on your side picks up the phone. We build the website that brings them to you, too.',
+      sub: 'It is 9pm and someone is asking what a cleaning costs. If nobody answers, tomorrow they book somewhere else. We make sure you answer them while you sleep — in Arabic, at your prices, with the appointment actually in the book.',
       primary: 'Book Free Consultation',
       secondary: 'Message us on WhatsApp',
       metrics: [
@@ -68,9 +68,9 @@ export const dictionary = {
     },
     terminal: {
       tag: 'محادثة حجز حقيقية',
-      title: 'Watch an Appointment Book Itself',
+      title: 'Watch an appointment get booked',
       subtitle:
-        'Every message below is exactly what a patient sees. It asks permission first, offers only times the doctor is actually free, and nothing goes in the calendar until the patient says yes.',
+        'This is not a promo video. These are the exact messages your patient sees. It asks permission before storing anything about them, offers only the times your doctor is genuinely free, and books nothing until they say yes.',
       header: 'ClinicFlow · Clinic Receptionist',
       status: 'ONLINE',
       replay: 'Replay Conversation',
@@ -281,7 +281,7 @@ export const dictionary = {
       eyebrow: 'What it costs',
       title: 'Prices, before you have to ask',
       subtitle:
-        'Most studios here make you book a call to hear a number. These are the starting points, in the open.',
+        'You know the feeling: you ask what something costs and they say “book a call”. Not here. The numbers are written down, so you can read them in your own time and decide on your own.',
       note: 'A first build covers setup, your content and training your staff. Monthly running costs go to the hosting and WhatsApp providers directly — see the note above.',
       plans: [
         {
@@ -310,19 +310,19 @@ export const dictionary = {
       ],
     },
     contact: {
-      eyebrow: 'Get Started',
-      title: 'Let’s Build Your System',
+      eyebrow: 'Let’s talk',
+      title: 'Tell me about your clinic',
       subtitle:
-        'Reach us on your channel of choice or book a quick consultation.',
+        'I don’t need a technical brief or a big pitch from you. Tell me what eats your day, and I’ll tell you whether I can fix it — and if I can’t, I’ll tell you that too.',
       whatsapp: {
-        title: 'WhatsApp Instant Chat',
-        description: 'Fastest response. Talk to us right now.',
-        action: 'Open WhatsApp',
+        title: 'WhatsApp',
+        description: 'Quickest way. You get me, not a rep.',
+        action: 'Open the chat',
       },
       email: {
-        title: 'Email Inquiry',
-        description: 'Send us the details of your project.',
-        action: 'Send Email',
+        title: 'Email',
+        description: 'If you’d rather write it out in your own time.',
+        action: 'Send an email',
       },
       form: {
         title: 'Schedule a Consultation',
@@ -341,7 +341,7 @@ export const dictionary = {
       },
     },
     footer: {
-      tagline: 'Websites and WhatsApp systems that answer your customers, for businesses in Jordan.',
+      tagline: 'Websites and WhatsApp systems that answer your customers when you can’t. Made in Amman.',
       rights: 'All rights reserved.',
       madeIn: 'Engineered in Jordan 🇯🇴',
       linksTitle: 'Navigate',
@@ -363,7 +363,7 @@ export const dictionary = {
     hero: {
       badge: 'للعيادات والمحلات في الأردن',
       headline: 'موظف بيرد على واتساب طول اليوم، وبيحجز المواعيد لحاله.',
-      sub: 'زبونك بيراسلك على واتساب وبيلاقي رد فوراً بالعربي: أسعارك، أوقات دوامك، وحجز موعده. بدون ما حدا من عندك يمسك التلفون. ومنعملّك كمان الموقع اللي بيوصّلهم إلك.',
+      sub: 'الساعة ٩ بالليل، حدا بيسأل عن سعر التنظيف. إذا ما إجاه رد، بكرا بيحجز عند غيرك. منخليك تردّ عليه وإنت نايم — بالعربي، بسعرك إنت، وبموعد محجوز فعلاً.',
       primary: 'احجز استشارة مجانية',
       secondary: 'راسلنا على واتساب',
       metrics: [
@@ -387,9 +387,9 @@ export const dictionary = {
     },
     terminal: {
       tag: 'محادثة حجز حقيقية',
-      title: 'شاهد الموعد يحجز نفسه',
+      title: 'شوف الموعد بينحجز قدامك',
       subtitle:
-        'كل رسالة تحت هي بالضبط اللي بيشوفها المريض. بيسأل عن الموافقة أول إشي، وبيعطي بس الأوقات اللي الدكتور فاضي فيها فعلاً، وما بينحفظ موعد قبل ما المريض يوافق.',
+        'مش فيديو دعائي. هاي بالضبط الرسائل اللي بيشوفها مريضك. بيستأذن قبل ما يسجّل أي معلومة عنه، وبيعطي بس الأوقات اللي دكتورك فاضي فيها فعلاً، وما بيحجز إشي قبل ما المريض يقول موافق.',
       header: 'ClinicFlow · موظف استقبال العيادة',
       status: 'متصل',
       replay: 'إعادة المحادثة',
@@ -558,7 +558,7 @@ export const dictionary = {
     },
     why: {
       eyebrow: 'لماذا AXEN',
-      title: 'مبني إلك إنت، مش قالب جاهز',
+      title: 'مبني إلك إنت، مش قالب جاهز على ٢٠٠ عيادة',
       cards: {
         speed: {
           title: 'شغّال خلال أسابيع، مش شهور',
@@ -600,7 +600,7 @@ export const dictionary = {
       eyebrow: 'الأسعار',
       title: 'الأسعار مكتوبة، قبل ما تضطر تسأل',
       subtitle:
-        'أغلب الشركات هون بتخليك تحجز مكالمة عشان تسمع رقم. هاي نقاط البداية، مكشوفة.',
+        'بتعرف هالإحساس: بتسأل عن سعر، وبيقلّك «احجز مكالمة». إحنا مش هيك. هاي أرقامنا مكتوبة، تقرأها وإنت مرتاح وتقرر لحالك.',
       note: 'سعر البناء بيشمل التجهيز، وإدخال محتواك، وتدريب موظفينك. أما الكلفة الشهرية فبتدفعها للاستضافة وواتساب مباشرة — مذكورة فوق.',
       plans: [
         {
@@ -629,18 +629,18 @@ export const dictionary = {
       ],
     },
     contact: {
-      eyebrow: 'ابدأ الآن',
-      title: 'لنبنِ نظامك',
-      subtitle: 'تواصل معنا عبر القناة التي تفضّلها أو احجز استشارة سريعة.',
+      eyebrow: 'خلينا نحكي',
+      title: 'احكيلي عن عيادتك',
+      subtitle: 'ما بدي منك مواصفات تقنية ولا كلام كبير. احكيلي شو بيضيّع وقتك كل يوم، وأنا بقلّك إذا بقدر أحلّه — وإذا ما بقدر، بقلّك كمان.',
       whatsapp: {
-        title: 'محادثة واتساب فورية',
-        description: 'أسرع رد. تحدّث معنا الآن.',
-        action: 'افتح واتساب',
+        title: 'واتساب',
+        description: 'أسرع طريقة. بترد عليك أنا شخصياً، مش موظف.',
+        action: 'افتح المحادثة',
       },
       email: {
-        title: 'استفسار بالبريد',
-        description: 'أرسل لنا تفاصيل مشروعك.',
-        action: 'أرسل بريدًا',
+        title: 'إيميل',
+        description: 'إذا بتفضّل تكتب على راحتك.',
+        action: 'ابعت إيميل',
       },
       form: {
         title: 'احجز استشارة',
@@ -659,7 +659,7 @@ export const dictionary = {
       },
     },
     footer: {
-      tagline: 'مواقع وأنظمة واتساب بترد على زبائنك، للشركات في الأردن.',
+      tagline: 'منبني مواقع وأنظمة واتساب بترد على زبائنك لما ما بتقدر ترد إنت. من عمّان.',
       rights: 'جميع الحقوق محفوظة.',
       madeIn: 'صُمّم في الأردن 🇯🇴',
       linksTitle: 'تصفّح',
