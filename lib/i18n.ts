@@ -42,7 +42,7 @@ export const dictionary = {
       langLabel: 'عربي',
     },
     hero: {
-      badge: 'For clinics and shops in Jordan',
+      badge: 'For business owners in Jordan',
       headline: 'Someone answers your WhatsApp all day — and books the appointments.',
       sub: 'It is 9pm and someone is asking what a cleaning costs. If nobody answers, tomorrow they book somewhere else. We make sure you answer them while you sleep — in Arabic, at your prices, with the appointment actually in the book.',
       primary: 'Book Free Consultation',
@@ -110,6 +110,22 @@ export const dictionary = {
           text: 'DB WRITE → appointments[#1] status=confirmed · visible to staff instantly',
         },
       ],
+    },
+    audience: {
+      title: 'Built for clinics first. It works anywhere someone asks a question.',
+      body:
+        'ClinicFlow was the first, because a missed appointment has a price you can count. The same system answers a customer asking for a table, a price, an opening time, or whether you deliver.',
+      items: [
+        'Dental and cosmetic clinics',
+        'Salons and barbers',
+        'Restaurants and cafés',
+        'Shops and boutiques',
+        'Gyms and training centres',
+        'Real estate offices',
+        'Home services and repairs',
+        'Vet clinics',
+      ],
+      other: 'Your line of work not on the list? Tell me anyway. It is one idea: someone asks, and an answer arrives.',
     },
     portfolio: {
       eyebrow: 'What We Build',
@@ -264,7 +280,7 @@ export const dictionary = {
         stat: { value: '24/7', label: 'Working without a break' },
       },
       costNote:
-        'The monthly running cost is paid to the companies that host it — the website, the database, and WhatsApp messages. It goes up with how many bookings and messages you get, not with how many people you employ. Every clinic is a different size, so we work the number out with you before you sign anything.',
+        'The monthly running cost is paid to the companies that host it — the website, the database, and WhatsApp messages. It goes up with how many bookings and messages you get, not with how many people you employ. Every business is a different size, so we work the number out with you before you sign anything.',
     },
     founder: {
       eyebrow: 'Who you would be working with',
@@ -273,7 +289,7 @@ export const dictionary = {
       lines: [
         'I am Abdallah Alhalhouli, and I built ClinicFlow myself, line by line.',
         'AXEN is new, and that means one thing for you: you deal with me directly — not a salesperson, and not a support queue that answers next week.',
-        'I started with clinics because the problem there is easy to measure. Every appointment that slips has a price, and every question your staff answers for the fortieth time costs someone an afternoon.',
+        'I started with clinics because the problem there is easy to measure — a missed appointment has a price. But the work is the same for a restaurant, a salon or a shop: someone asks, and an answer has to arrive.',
       ],
       cta: 'Message me directly',
     },
@@ -311,7 +327,7 @@ export const dictionary = {
     },
     contact: {
       eyebrow: 'Let’s talk',
-      title: 'Tell me about your clinic',
+      title: 'Tell me about your business',
       subtitle:
         'I don’t need a technical brief or a big pitch from you. Tell me what eats your day, and I’ll tell you whether I can fix it — and if I can’t, I’ll tell you that too.',
       whatsapp: {
@@ -362,7 +378,7 @@ export const dictionary = {
       langLabel: 'EN',
     },
     hero: {
-      badge: 'للعيادات والمحلات في الأردن',
+      badge: 'لأصحاب الأعمال في الأردن',
       headline: 'موظف بيرد على واتساب طول اليوم، وبيحجز المواعيد لحاله.',
       sub: 'الساعة ٩ بالليل، حدا بيسأل عن سعر التنظيف. إذا ما إجاه رد، بكرا بيحجز عند غيرك. منخليك تردّ عليه وإنت نايم — بالعربي، بسعرك إنت، وبموعد محجوز فعلاً.',
       primary: 'احجز استشارة مجانية',
@@ -430,6 +446,22 @@ export const dictionary = {
           text: 'DB WRITE → appointments[#1] status=confirmed · تظهر للموظفة فوراً',
         },
       ],
+    },
+    audience: {
+      title: 'بلّشنا بالعيادات. بس بيشتغل بأي شغل حدا بيسأل فيه سؤال.',
+      body:
+        'ClinicFlow كان الأول لأن الموعد الضايع إله سعر بتقدر تعدّه. ونفس النظام بيرد على زبون بيسأل عن طاولة، أو سعر، أو وقت دوام، أو إذا بتوصّلوا للبيت.',
+      items: [
+        'عيادات أسنان وتجميل',
+        'صالونات وباربر',
+        'مطاعم وكافيهات',
+        'متاجر وبوتيكات',
+        'نوادي ومراكز تدريب',
+        'مكاتب عقارات',
+        'خدمات وصيانة منزلية',
+        'عيادات بيطرية',
+      ],
+      other: 'شغلك مش من هدول؟ احكيلي برضو. الفكرة وحدة: حدا بيسأل، ولازم يوصله رد.',
     },
     portfolio: {
       eyebrow: 'ما نبنيه',
@@ -559,7 +591,7 @@ export const dictionary = {
     },
     why: {
       eyebrow: 'لماذا AXEN',
-      title: 'مبني إلك إنت، مش قالب جاهز على ٢٠٠ عيادة',
+      title: 'مبني إلك إنت، مش قالب جاهز على ٢٠٠ شركة',
       cards: {
         speed: {
           title: 'شغّال خلال أسابيع، مش شهور',
@@ -584,7 +616,7 @@ export const dictionary = {
         stat: { value: '٢٤/٧', label: 'شغّال بدون توقف' },
       },
       costNote:
-        'الكلفة الشهرية بتدفعها للشركات اللي بتشغّل النظام — الموقع، وقاعدة البيانات، ورسائل واتساب. وبتزيد حسب عدد الحجوزات والرسائل اللي بتوصلك، مش حسب عدد موظفينك. وكل عيادة حجمها مختلف، فمنحسب الرقم معك قبل ما توقّع أي إشي.',
+        'الكلفة الشهرية بتدفعها للشركات اللي بتشغّل النظام — الموقع، وقاعدة البيانات، ورسائل واتساب. وبتزيد حسب عدد الحجوزات والرسائل اللي بتوصلك، مش حسب عدد موظفينك. وكل شغل حجمه مختلف، فمنحسب الرقم معك قبل ما توقّع أي إشي.',
     },
     founder: {
       eyebrow: 'مع مين رح تشتغل',
@@ -593,7 +625,7 @@ export const dictionary = {
       lines: [
         'أنا عبدالله الحلحولي، وأنا اللي بنيت ClinicFlow من أول سطر لآخره.',
         'AXEN شركة جديدة، وهاد بيعني إشي واحد إلك: بتحكي معي أنا مباشرة — مش مع موظف مبيعات، ولا مع فريق دعم بيرد بعد أسبوع.',
-        'بديت بالعيادات لأن المشكلة فيها واضحة وبتنقاس. كل موعد بيضيع إله سعر، وكل سؤال بترد عليه الموظفة للمرة الأربعين بياخد من يومها ساعة.',
+        'بديت بالعيادات لأن المشكلة فيها واضحة وبتنقاس — الموعد الضايع إله سعر. بس نفس الشغل بينطبق على مطعم أو صالون أو محل: حدا بيسأل، ولازم يوصله رد.',
       ],
       cta: 'راسلني أنا مباشرة',
     },
@@ -631,7 +663,7 @@ export const dictionary = {
     },
     contact: {
       eyebrow: 'خلينا نحكي',
-      title: 'احكيلي عن عيادتك',
+      title: 'احكيلي عن شغلك',
       subtitle: 'ما بدي منك مواصفات تقنية ولا كلام كبير. احكيلي شو بيضيّع وقتك كل يوم، وأنا بقلّك إذا بقدر أحلّه — وإذا ما بقدر، بقلّك كمان.',
       whatsapp: {
         title: 'واتساب',

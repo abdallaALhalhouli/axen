@@ -2,6 +2,7 @@ import { LanguageProvider } from '@/components/language-provider'
 import { SiteNavbar } from '@/components/site-navbar'
 import { HeroSection } from '@/components/hero-section'
 import { TerminalSection } from '@/components/terminal-section'
+import { AudienceSection } from '@/components/audience-section'
 import { PortfolioSection } from '@/components/portfolio-section'
 import { ServicesSection } from '@/components/services-section'
 import { WhySection } from '@/components/why-section'
@@ -19,6 +20,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       <main>
         <HeroSection />
         <TerminalSection />
+        <AudienceSection />
         <PortfolioSection />
         <ServicesSection />
         <WhySection />
