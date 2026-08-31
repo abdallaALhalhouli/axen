@@ -2,6 +2,7 @@
 
 import { Gauge, PiggyBank, Layers, MapPin, Zap, Info } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
+import { Reveal } from '@/components/motion'
 import { SectionHeading } from '@/components/portfolio-section'
 
 export function WhySection() {
@@ -11,7 +12,9 @@ export function WhySection() {
   return (
     <section id="why" className="scroll-mt-20 px-5 py-24 sm:px-8">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading eyebrow={t.why.eyebrow} title={t.why.title} />
+        <Reveal>
+          <SectionHeading eyebrow={t.why.eyebrow} title={t.why.title} />
+        </Reveal>
 
         <div className="mt-12 grid grid-cols-1 gap-px border border-border bg-border md:grid-cols-3 md:grid-rows-2">
           {/* Speed - large */}

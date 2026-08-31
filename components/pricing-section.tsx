@@ -3,6 +3,7 @@
 import { Check } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { SectionHeading } from '@/components/portfolio-section'
+import { Reveal } from '@/components/motion'
 import { cn } from '@/lib/utils'
 
 /**
@@ -17,11 +18,13 @@ export function PricingSection() {
   return (
     <section id="pricing" className="scroll-mt-20 border-t border-border px-5 py-24 sm:px-8">
       <div className="mx-auto max-w-6xl">
+        <Reveal>
         <SectionHeading
           eyebrow={p.eyebrow}
           title={p.title}
           subtitle={p.subtitle}
         />
+        </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {p.plans.map((plan) => {
@@ -31,7 +34,7 @@ export function PricingSection() {
               <div
                 key={plan.name}
                 className={cn(
-                  'flex flex-col rounded-2xl border p-7 transition-colors',
+                  'lift flex flex-col rounded-2xl border p-7',
                   featured
                     ? 'border-primary bg-card shadow-[0_1px_2px_rgba(22,33,31,.05),0_20px_44px_-26px_rgba(14,110,99,.5)]'
                     : 'border-border bg-card hover:border-primary/50',

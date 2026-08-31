@@ -2,6 +2,7 @@
 
 import { MessageCircle } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
+import { Reveal } from '@/components/motion'
 import { WHATSAPP_NUMBER } from '@/lib/i18n'
 
 /**
@@ -15,7 +16,7 @@ export function FounderSection() {
 
   return (
     <section id="founder" className="scroll-mt-20 border-t border-border px-5 py-24 sm:px-8">
-      <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[auto_1fr] md:gap-14">
+      <Reveal className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[auto_1fr] md:gap-14">
         <div className="flex flex-col items-center gap-3 md:items-start">
           <span
             aria-hidden="true"
@@ -58,7 +59,7 @@ export function FounderSection() {
             </a>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

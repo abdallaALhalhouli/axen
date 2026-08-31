@@ -103,6 +103,13 @@ export default function RootLayout({
       className={`${kufi.variable} ${tajawal.variable} ${geistMono.variable} bg-background`}
     >
       <body className="font-sans">
+        {/* Marks JS as alive before paint, so scroll reveals may hide their
+            content. Without JS the .reveal rule stays visible. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <StructuredData />
         {children}
       </body>

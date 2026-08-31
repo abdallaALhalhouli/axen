@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ArrowUpRight, Check, Radio } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
+import { Reveal } from '@/components/motion'
 import { cn } from '@/lib/utils'
 
 type Filter = 'all' | 'web' | 'automation'
@@ -25,11 +26,13 @@ export function PortfolioSection() {
   return (
     <section id="portfolio" className="scroll-mt-20 px-5 py-24 sm:px-8">
       <div className="mx-auto max-w-7xl">
+        <Reveal>
         <SectionHeading
           eyebrow={t.portfolio.eyebrow}
           title={t.portfolio.title}
           subtitle={t.portfolio.subtitle}
         />
+        </Reveal>
 
         <div className="mt-10 flex flex-wrap justify-center gap-2">
           {tabs.map((tab) => (
@@ -66,7 +69,7 @@ export function PortfolioSection() {
               <article
                 key={item.id}
                 className={cn(
-                  'group flex flex-col overflow-hidden rounded-2xl border bg-card transition-colors',
+                  'lift group flex flex-col overflow-hidden rounded-2xl border bg-card',
                   isLive
                     ? 'border-foreground/40 hover:border-foreground'
                     : 'border-border hover:border-foreground/60',
