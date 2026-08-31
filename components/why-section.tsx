@@ -1,103 +1,66 @@
 'use client'
 
-import { Gauge, PiggyBank, Layers, MapPin, Zap, Info } from 'lucide-react'
+import { Gauge, PiggyBank, Layers, MapPin, Info } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { Reveal } from '@/components/motion'
 import { SectionHeading } from '@/components/portfolio-section'
 
+/**
+ * This was a bento grid — the mixed-span tile layout that ships with every
+ * generated landing page in 2024. Replaced with a ledger: four claims as
+ * hairline-divided rows, each answering the same question in the same shape.
+ * The comparison reads faster and the section stops looking assembled.
+ */
 export function WhySection() {
   const { t } = useLanguage()
   const c = t.why.cards
 
+  const rows = [
+    { icon: Gauge, ...c.speed },
+    { icon: PiggyBank, ...c.bloat },
+    { icon: Layers, ...c.scalable },
+    { icon: MapPin, ...c.local },
+  ]
+
   return (
-    <section id="why" className="scroll-mt-20 px-5 py-24 sm:px-8">
-      <div className="mx-auto max-w-7xl">
+    <section id="why" className="scroll-mt-20 px-5 py-28 sm:px-8">
+      <div className="mx-auto max-w-6xl">
         <Reveal>
-          <SectionHeading eyebrow={t.why.eyebrow} title={t.why.title} />
+          <SectionHeading
+            eyebrow={t.why.eyebrow}
+            title={t.why.title}
+            align="split"
+          />
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-px border border-border bg-border md:grid-cols-3 md:grid-rows-2">
-          {/* Speed - large */}
-          <BentoCard
-            className="md:col-span-2 md:row-span-1"
-            icon={<Gauge className="h-6 w-6" />}
-            title={c.speed.title}
-            description={c.speed.description}
-          />
-          {/* Stat */}
-          <div className="relative flex flex-col justify-center overflow-hidden border border-foreground bg-primary p-7 text-primary-foreground md:row-span-2">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 opacity-[0.08]"
-              style={{
-                backgroundImage:
-                  'linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)',
-                backgroundSize: '1.5rem 1.5rem',
-              }}
-            />
-            <Zap className="h-7 w-7" />
-            <div className="mt-4 font-mono text-5xl font-bold">
-              {c.stat.value}
-            </div>
-            <div className="mt-2 text-sm opacity-70">
-              {c.stat.label}
-            </div>
-          </div>
-
-          <BentoCard
-            icon={<PiggyBank className="h-6 w-6" />}
-            title={c.bloat.title}
-            description={c.bloat.description}
-          />
-          <BentoCard
-            icon={<Layers className="h-6 w-6" />}
-            title={c.scalable.title}
-            description={c.scalable.description}
-          />
-
-          <BentoCard
-            className="md:col-span-3"
-            icon={<MapPin className="h-6 w-6" />}
-            title={c.local.title}
-            description={c.local.description}
-          />
+        <div className="mt-2">
+          {rows.map((row, i) => {
+            const Icon = row.icon
+            return (
+              <Reveal key={row.title} delay={i * 80}>
+                <article className="group grid gap-3 border-b border-border py-8 md:grid-cols-[auto_1fr_1.4fr] md:items-baseline md:gap-10">
+                  <span className="text-primary md:pt-1">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <h3 className="text-balance text-xl font-bold leading-snug">
+                    {row.title}
+                  </h3>
+                  <p className="text-pretty leading-relaxed text-muted-foreground">
+                    {row.description}
+                  </p>
+                </article>
+              </Reveal>
+            )
+          })}
         </div>
 
-        {/* Costs vary with each client's volume, so this states the shape of
-            the bill rather than a number we would have to caveat anyway. */}
-        <p className="mx-auto mt-6 flex max-w-3xl items-start gap-3 text-sm leading-relaxed text-muted-foreground">
-          <Info className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-          <span>{t.why.costNote}</span>
-        </p>
+        <Reveal delay={120}>
+          <p className="mt-10 flex max-w-3xl items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+            <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+            <span>{t.why.costNote}</span>
+          </p>
+        </Reveal>
       </div>
     </section>
-  )
-}
-
-function BentoCard({
-  icon,
-  title,
-  description,
-  className = '',
-}: {
-  icon: React.ReactNode
-  title: string
-  description: string
-  className?: string
-}) {
-  return (
-    <div
-      className={`group bg-background p-7 transition-colors hover:bg-card ${className}`}
-    >
-      <div className="inline-flex h-11 w-11 items-center justify-center border border-border text-foreground">
-        {icon}
-      </div>
-      <h3 className="mt-4 text-lg font-semibold">
-        {title}
-      </h3>
-      <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
-        {description}
-      </p>
-    </div>
   )
 }

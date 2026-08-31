@@ -54,7 +54,7 @@ export function PortfolioSection() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {items.map((item) => {
+          {items.map((item, i) => {
             const isLive = item.kind === 'live'
             // Case-study links are real routes and need the locale prefix;
             // '#contact' and friends stay as-is.
@@ -66,9 +66,10 @@ export function PortfolioSection() {
               : t.portfolio.discuss
 
             return (
+              <Reveal key={item.id} delay={i * 70}>
               <article
-                key={item.id}
                 className={cn(
+                  'h-full',
                   'lift group flex flex-col overflow-hidden rounded-2xl border bg-card',
                   isLive
                     ? 'border-foreground/40 hover:border-foreground'
@@ -152,6 +153,7 @@ export function PortfolioSection() {
                   </div>
                 </div>
               </article>
+              </Reveal>
             )
           })}
         </div>
@@ -160,15 +162,43 @@ export function PortfolioSection() {
   )
 }
 
+/**
+ * Two openings, not one. Centred suits a grid that follows; `split` sets the
+ * title against its subtitle across the measure and is used where the section
+ * below is a list. Alternating them is what stops seven sections in a row
+ * from reading as one repeated template.
+ */
 export function SectionHeading({
   eyebrow,
   title,
   subtitle,
+  align = 'center',
 }: {
   eyebrow: string
   title: string
   subtitle?: string
+  align?: 'center' | 'split'
 }) {
+  if (align === 'split') {
+    return (
+      <div className="grid gap-6 border-b border-border pb-10 md:grid-cols-[1.1fr_1fr] md:items-end md:gap-16">
+        <div>
+          <span className="eyebrow-rule inline-flex items-center text-sm font-medium text-primary">
+            {eyebrow}
+          </span>
+          <h2 className="mt-4 text-balance text-3xl font-bold sm:text-4xl lg:text-[2.75rem] lg:leading-[1.2]">
+            {title}
+          </h2>
+        </div>
+        {subtitle && (
+          <p className="text-pretty leading-relaxed text-muted-foreground md:pb-2">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    )
+  }
+
   return (
     <div className="mx-auto max-w-2xl text-center">
       <span className="eyebrow-rule inline-flex items-center text-sm font-medium text-primary">

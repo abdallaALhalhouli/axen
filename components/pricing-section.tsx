@@ -27,14 +27,14 @@ export function PricingSection() {
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {p.plans.map((plan) => {
+          {p.plans.map((plan, i) => {
             const featured = 'featured' in plan && plan.featured
 
             return (
+              <Reveal key={plan.name} delay={i * 80} className="h-full">
               <div
-                key={plan.name}
                 className={cn(
-                  'lift flex flex-col rounded-2xl border p-7',
+                  'lift flex h-full flex-col rounded-2xl border p-7',
                   featured
                     ? 'border-primary bg-card shadow-[0_1px_2px_rgba(22,33,31,.05),0_20px_44px_-26px_rgba(14,110,99,.5)]'
                     : 'border-border bg-card hover:border-primary/50',
@@ -80,6 +80,7 @@ export function PricingSection() {
                   {t.nav.cta}
                 </a>
               </div>
+              </Reveal>
             )
           })}
         </div>

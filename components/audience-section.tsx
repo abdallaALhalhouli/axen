@@ -13,7 +13,7 @@ export function AudienceSection() {
   const a = t.audience
 
   return (
-    <section className="border-t border-border px-5 py-20 sm:px-8">
+    <section className="border-t border-border px-5 py-24 sm:px-8">
       <Reveal className="mx-auto max-w-5xl">
         <div className="max-w-2xl">
           <h2 className="text-balance text-2xl font-bold leading-snug sm:text-3xl">
