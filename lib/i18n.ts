@@ -163,7 +163,7 @@ export const dictionary = {
           includes: [
             'Checkout tuned for local payment habits',
             'Inventory and orders in one dashboard',
-            'No per-transaction platform tax',
+            'No platform commission on top of your payment processor',
           ],
           href: '#contact',
         },
@@ -234,9 +234,9 @@ export const dictionary = {
             'Rapid sprints get your system live in weeks, not quarters — without cutting corners.',
         },
         bloat: {
-          title: 'Zero Recurring Software Bloat',
+          title: 'Infrastructure at Cost, No Licence Fees',
           description:
-            'You own the code. No endless per-seat subscriptions eating your margins.',
+            'Your system still needs hosting, a database and the WhatsApp API — you pay those providers directly at their published rates. What you never pay is a licence fee to us or a charge per user, and the code is yours to move anywhere.',
         },
         scalable: {
           title: 'Scalable Codebases',
@@ -424,7 +424,7 @@ export const dictionary = {
           includes: [
             'دفع مضبوط على عادات السوق المحلي',
             'المخزون والطلبات بلوحة واحدة',
-            'بدون عمولة منصة على كل عملية',
+            'بدون عمولة منصة فوق رسوم بوابة الدفع',
           ],
           href: '#contact',
         },
@@ -494,9 +494,9 @@ export const dictionary = {
             'مراحل عمل سريعة تُطلق نظامك خلال أسابيع، لا أرباع سنوات، دون تنازلات.',
         },
         bloat: {
-          title: 'بلا اشتراكات برمجية متراكمة',
+          title: 'تكلفة تشغيل مباشرة، بلا رسوم ترخيص',
           description:
-            'الكود ملكك. لا اشتراكات شهرية لا تنتهي تلتهم أرباحك.',
+            'نظامك بدّه استضافة وقاعدة بيانات وواتساب API — وهاي بتدفعها للمزوّد مباشرة بسعره المعلن. اللي ما بتدفعه أبداً: رسوم ترخيص إلنا أو رسوم على كل مستخدم. والكود ملكك، تنقله وين ما بدك.',
         },
         scalable: {
           title: 'قواعد كود قابلة للتوسّع',
