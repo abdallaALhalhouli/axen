@@ -126,7 +126,10 @@ export function ContactSection() {
                     className="w-full border border-input bg-background px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground"
                   />
                 </Field>
-                <Field label={t.contact.form.email}>
+                <Field
+                  label={t.contact.form.email}
+                  optional={t.contact.form.optional}
+                >
                   <input
                     type="email"
                     name="email"
@@ -172,14 +175,23 @@ export function ContactSection() {
 
 function Field({
   label,
+  optional,
   children,
 }: {
   label: string
+  optional?: string
   children: React.ReactNode
 }) {
   return (
     <label className="flex flex-col gap-1.5">
-      <span className="text-sm font-medium text-foreground/90">{label}</span>
+      <span className="flex items-baseline gap-2 text-sm font-medium text-foreground/90">
+        {label}
+        {optional && (
+          <span className="text-xs font-normal text-muted-foreground">
+            {optional}
+          </span>
+        )}
+      </span>
       {children}
     </label>
   )

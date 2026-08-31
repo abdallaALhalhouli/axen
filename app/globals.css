@@ -76,7 +76,29 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+  }
+
+  /* Tailwind's reset gives buttons `cursor: default`, so nothing on the page
+     looked clickable except links. */
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  summary {
+    cursor: pointer;
+  }
+
+  /* The previous rule set an outline colour and width but left the style at
+     `none`, so keyboard focus rendered nothing at all. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* A sticky header must not sit on top of whatever the keyboard just
+     focused, and anchor jumps should clear it too. */
+  html {
+    scroll-padding-top: 5.5rem;
   }
   html {
     @apply bg-background;
