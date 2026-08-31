@@ -16,3 +16,8 @@ out/
 .DS_Store
 # TypeScript incremental build cache
 tsconfig.tsbuildinfo
+
+# The mysql/postgres skills read DB credentials from a connections.json in
+# their own folder. Never let one reach the repository.
+.claude/skills/*/connections.json
+**/connections.json
