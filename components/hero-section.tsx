@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { CalendarCheck, MessageCircle, Check } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { prefersReducedMotion } from '@/components/motion'
-import { WHATSAPP_NUMBER } from '@/lib/i18n'
+import { getWhatsAppUrl } from '@/lib/i18n'
 
 /**
  * The hero argues; the conversation proves. AXEN's whole pitch is that
@@ -13,7 +13,7 @@ import { WHATSAPP_NUMBER } from '@/lib/i18n'
  * stays still on purpose.
  */
 export function HeroSection() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
 
   return (
     <section id="top" className="paper-wash relative overflow-hidden">
@@ -40,7 +40,7 @@ export function HeroSection() {
               {t.hero.primary}
             </a>
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              href={getWhatsAppUrl('hero', lang)}
               target="_blank"
               rel="noopener noreferrer"
               className="lift inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-3.5 font-medium text-foreground transition-all hover:border-primary hover:text-primary"
@@ -75,9 +75,28 @@ export function HeroSection() {
  */
 function LiveConversation({ className = '' }: { className?: string }) {
   const { t } = useLanguage()
-  const lines = t.hero.chat
+  const scenarios = t.hero.scenarios || [
+    {
+      id: 'clinic',
+      tab: 'ClinicFlow',
+      header: t.terminal.header,
+      status: t.terminal.status,
+      caption: t.hero.chatCaption,
+      chat: t.hero.chat,
+    },
+  ]
+  const [activeTab, setActiveTab] = useState(0)
+  const current = scenarios[activeTab] || scenarios[0]
+  const lines = current.chat
+
   const [shown, setShown] = useState(0)
   const [typing, setTyping] = useState(false)
+
+  // Reset animation when tab changes
+  useEffect(() => {
+    setShown(0)
+    setTyping(false)
+  }, [activeTab])
 
   useEffect(() => {
     if (prefersReducedMotion()) {
@@ -88,8 +107,8 @@ function LiveConversation({ className = '' }: { className?: string }) {
     if (shown >= lines.length) return
 
     const next = lines[shown]
-    // A patient taps a reply quickly; the clinic "thinks" before it answers.
-    const pause = shown === 0 ? 700 : next.from === 'user' ? 900 : 1500
+    // A customer taps quickly; the automated agent calculates before replying.
+    const pause = shown === 0 ? 600 : next.from === 'user' ? 800 : 1300
 
     let typingTimer: ReturnType<typeof setTimeout>
     const showTimer = setTimeout(() => {
@@ -98,38 +117,58 @@ function LiveConversation({ className = '' }: { className?: string }) {
     }, pause)
 
     if (next.from === 'bot') {
-      typingTimer = setTimeout(() => setTyping(true), Math.max(pause - 900, 250))
+      typingTimer = setTimeout(() => setTyping(true), Math.max(pause - 700, 200))
     }
 
     return () => {
       clearTimeout(showTimer)
       clearTimeout(typingTimer)
     }
-  }, [shown, lines])
+  }, [shown, lines, activeTab])
 
   const done = shown >= lines.length
 
   return (
     <div className={`relative mx-auto w-full max-w-md lg:mx-0 ${className}`}>
       <div className="overflow-hidden rounded-[1.4rem] border border-ink-line bg-ink-surface shadow-[0_1px_2px_rgba(22,33,31,.06),0_30px_60px_-32px_rgba(22,33,31,.55)]">
-        <div className="flex items-center gap-3 border-b border-ink-line px-4 py-3.5">
+        {/* Industry Switcher Tabs */}
+        <div className="flex border-b border-ink-line bg-ink-surface/90 p-1.5 gap-1">
+          {scenarios.map((s, idx) => (
+            <button
+              key={s.id}
+              type="button"
+              onClick={() => setActiveTab(idx)}
+              className={`flex-1 py-1.5 text-xs font-medium transition-all rounded-lg ${
+                activeTab === idx
+                  ? 'bg-primary text-primary-foreground shadow-sm'
+                  : 'text-ink-on/60 hover:text-ink-on hover:bg-ink-raise/60'
+              }`}
+            >
+              {s.tab}
+            </button>
+          ))}
+        </div>
+
+        {/* Header */}
+        <div className="flex items-center gap-3 border-b border-ink-line px-4 py-3">
           <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground">
             <MessageCircle className="h-4 w-4" />
           </span>
           <div className="min-w-0">
             <p className="truncate text-sm font-medium text-ink-on">
-              {t.terminal.header}
+              {current.header}
             </p>
             <p className="flex items-center gap-1.5 text-xs text-ink-on/55">
               <span className="relative inline-flex h-1.5 w-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
               </span>
-              {t.terminal.status}
+              {current.status}
             </p>
           </div>
         </div>
 
+        {/* Chat Feed */}
         <div
           className="flex min-h-[19rem] flex-col justify-end gap-2.5 px-4 py-5"
           dir="rtl"
@@ -137,7 +176,7 @@ function LiveConversation({ className = '' }: { className?: string }) {
         >
           {lines.slice(0, shown).map((line, i) => (
             <p
-              key={i}
+              key={`${activeTab}-${i}`}
               className={
                 line.from === 'user'
                   ? 'bubble max-w-[85%] self-end rounded-2xl rounded-br-md bg-primary px-3.5 py-2.5 text-sm leading-relaxed text-primary-foreground'
@@ -160,14 +199,14 @@ function LiveConversation({ className = '' }: { className?: string }) {
           )}
         </div>
 
-        {/* The point of the whole thing: an appointment now exists. */}
+        {/* Caption */}
         <div
           className={`flex items-center gap-2.5 border-t border-ink-line px-4 py-3 text-sm transition-opacity duration-500 ${
             done ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <Check className="h-4 w-4 shrink-0 text-primary" />
-          <span className="text-ink-on/70">{t.hero.chatCaption}</span>
+          <span className="text-xs sm:text-sm text-ink-on/70">{current.caption}</span>
         </div>
       </div>
     </div>

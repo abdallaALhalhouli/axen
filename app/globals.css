@@ -31,47 +31,50 @@
   /* Arabic leads. Kufi carries the headlines because its architecture reads
      as Arabic before it reads as "a website"; Tajawal covers body text in
      both scripts so English never switches voice mid-page. */
-  --font-display: var(--font-kufi), 'Noto Kufi Arabic', sans-serif;
-  --font-sans: var(--font-tajawal), 'Tajawal', system-ui, sans-serif;
-  --font-arabic: var(--font-tajawal), 'Tajawal', sans-serif;
-  /* Mono survives only inside the WhatsApp transcript, where a fixed advance
-     is information rather than decoration. */
+  --font-display: var(--font-archivo), 'Archivo', system-ui, sans-serif;
+  --font-sans: var(--font-archivo), 'Archivo', system-ui, sans-serif;
+  --font-arabic: var(--font-ibm-plex), 'IBM Plex Sans Arabic', system-ui, sans-serif;
   --font-mono: var(--font-mono-geist), ui-monospace, monospace;
 }
 
 :root {
   color-scheme: light;
-  --radius: 0.625rem;
+  --radius: 0px;
 
-  /* Amman limestone in daylight, with a single Levantine tile accent. */
-  --background: #efede7;
-  --foreground: #16211f;
+  /* Modernist Design System Tokens */
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201e1d;
+  --color-accent: #ec3013;
+  --color-accent-2: #e15b47;
+  --color-accent-600: #dd2b0f;
+  --color-accent-700: #ae1800;
+  --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
 
-  --card: #f8f7f4;
-  --card-foreground: #16211f;
-  --popover: #ffffff;
-  --popover-foreground: #16211f;
+  --color-neutral-100: #f8f4f4;
+  --color-neutral-200: #eae7e7;
+  --color-neutral-300: #d7d3d3;
+  --color-neutral-400: #bab6b6;
+  --color-neutral-500: #9b9797;
+  --color-neutral-600: #7d7979;
+  --color-neutral-700: #605d5d;
+  --color-neutral-800: #444141;
+  --color-neutral-900: #2d2b2b;
 
-  --primary: #0e6e63;
-  --primary-foreground: #f8f7f4;
+  --font-heading: var(--font-archivo), "Archivo", system-ui, sans-serif;
+  --font-heading-weight: 800;
+  --font-body: var(--font-archivo), "Archivo", system-ui, sans-serif;
+  --font-arabic: var(--font-ibm-plex), "IBM Plex Sans Arabic", system-ui, sans-serif;
 
-  --secondary: #e4e2da;
-  --secondary-foreground: #16211f;
-  --muted: #e4e2da;
-  --muted-foreground: #5b6763;
-  --accent: #dceae6;
-  --accent-foreground: #0b4f47;
-  --destructive: #a8341f;
-
-  /* The real ClinicFlow interface is dark, so the conversation card is too. */
-  --ink-surface: #141d1b;
-  --ink-raise: #1e2a27;
-  --ink-line: #2a3835;
-  --ink-on: #eef1ee;
-
-  --border: #d9d6cd;
-  --input: #cfccc2;
-  --ring: #0e6e63;
+  --background: #f3f2f2;
+  --foreground: #201e1d;
+  --card: #eae9e9;
+  --card-foreground: #201e1d;
+  --border: #d7d3d3;
+  --input: #d7d3d3;
+  --primary: #ec3013;
+  --primary-foreground: #f3f2f2;
+  --ring: #ec3013;
 }
 
 @layer base {
@@ -235,10 +238,65 @@
 .lift { transition: transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s, border-color .22s, background-color .22s, color .22s; }
 .lift:hover { transform: translateY(-2px); }
 
+/* ---------------------------------------------------------------------------
+   Modernist Design Tokens & Editorial Hierarchy
+--------------------------------------------------------------------------- */
+:root {
+  --color-signal: #EC3013;
+  --color-signal-dark: #AE1800;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #128C7E;
+}
+
+/* Button hierarchy */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  user-select: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid transparent;
+}
+.btn-primary:hover {
+  background-color: #0b4f47;
+  color: #ffffff;
+}
+
+.btn-whatsapp {
+  background-color: #0e6e63;
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+.btn-whatsapp:hover {
+  background-color: #0b4f47;
+}
+
+.btn-secondary {
+  background-color: var(--card);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover {
+  border-color: var(--foreground);
+  color: var(--foreground);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .stage,
   .bubble,
   .dot { animation: none !important; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .lift:hover { transform: none; }
+  .btn:active { transform: none; }
 }

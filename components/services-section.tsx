@@ -14,7 +14,8 @@ const icons = [Code2, MessageSquareShare, Workflow]
  * that does not match the two card grids either side of it.
  */
 export function ServicesSection() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
+  const numerals = lang === 'ar' ? ['٠١', '٠٢', '٠٣'] : ['01', '02', '03']
 
   return (
     <section
@@ -38,6 +39,9 @@ export function ServicesSection() {
               <Reveal key={service.title} delay={i * 90}>
                 <article className="grid gap-6 border-b border-border py-10 md:grid-cols-[1fr_1.25fr] md:gap-16 lg:py-12">
                   <div className="flex items-start gap-4">
+                    <span className="font-mono text-sm font-bold text-[#EC3013] shrink-0 mt-2.5">
+                      {numerals[i] || `0${i + 1}`}
+                    </span>
                     <span className="mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-background text-primary">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>

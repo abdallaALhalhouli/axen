@@ -5,12 +5,13 @@ import Image from 'next/image'
 import { ArrowUpRight, Check, Radio } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { Reveal } from '@/components/motion'
+import { getWhatsAppUrl } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
 type Filter = 'all' | 'web' | 'automation'
 
 export function PortfolioSection() {
-  const { t, localePath } = useLanguage()
+  const { t, lang, localePath } = useLanguage()
   const [filter, setFilter] = useState<Filter>('all')
 
   const tabs: { key: Filter; label: string }[] = [
@@ -57,10 +58,10 @@ export function PortfolioSection() {
           {items.map((item, i) => {
             const isLive = item.kind === 'live'
             // Case-study links are real routes and need the locale prefix;
-            // '#contact' and friends stay as-is.
+            // '#contact' and general capabilities open WhatsApp with custom build intent.
             const href = item.href.startsWith('/')
               ? localePath(item.href)
-              : item.href
+              : getWhatsAppUrl('custom_build', lang)
             const cta = isLive
               ? t.portfolio.caseStudy
               : t.portfolio.discuss
@@ -82,7 +83,7 @@ export function PortfolioSection() {
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover grayscale contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
                   />
                   <span className="absolute start-4 top-4 rounded-full border border-border bg-background/90 px-3 py-1 text-[11px] text-foreground backdrop-blur-md">
                     {item.categoryLabel}

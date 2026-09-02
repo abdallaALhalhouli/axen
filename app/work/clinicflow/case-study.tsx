@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, X } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { caseClinicFlow } from '@/lib/case-clinicflow'
-import { WHATSAPP_NUMBER } from '@/lib/i18n'
+import { getWhatsAppUrl } from '@/lib/i18n'
 
 /**
  * The rules and scope lists are the reason this page exists, so they get the
@@ -175,7 +175,7 @@ export function ClinicFlowCaseStudy() {
             {c.ctaBody}
           </p>
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}`}
+            href={getWhatsAppUrl('clinicflow', lang)}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-xs font-semibold text-primary-foreground transition-colors hover:bg-muted-foreground"

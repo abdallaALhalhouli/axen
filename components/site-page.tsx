@@ -1,34 +1,8 @@
-import { LanguageProvider } from '@/components/language-provider'
-import { SiteNavbar } from '@/components/site-navbar'
-import { HeroSection } from '@/components/hero-section'
-import { TerminalSection } from '@/components/terminal-section'
-import { AudienceSection } from '@/components/audience-section'
-import { PortfolioSection } from '@/components/portfolio-section'
-import { ServicesSection } from '@/components/services-section'
-import { WhySection } from '@/components/why-section'
-import { PricingSection } from '@/components/pricing-section'
-import { FounderSection } from '@/components/founder-section'
-import { ContactSection } from '@/components/contact-section'
-import { SiteFooter } from '@/components/site-footer'
+import { ModernistPage } from '@/components/modernist-page'
 import type { Lang } from '@/lib/i18n'
 
 /** The home page. Rendered once per locale at /(en) and /ar. */
 export function HomePage({ lang }: { lang: Lang }) {
-  return (
-    <LanguageProvider lang={lang}>
-      <SiteNavbar />
-      <main>
-        <HeroSection />
-        <TerminalSection />
-        <AudienceSection />
-        <PortfolioSection />
-        <ServicesSection />
-        <WhySection />
-        <PricingSection />
-        <FounderSection />
-        <ContactSection />
-      </main>
-      <SiteFooter />
-    </LanguageProvider>
-  )
+  return <ModernistPage lang={lang} />
 }
+

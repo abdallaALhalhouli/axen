@@ -9,10 +9,11 @@ import {
   CONTACT_EMAIL,
   INSTAGRAM_URL,
   LINKEDIN_URL,
+  getWhatsAppUrl,
 } from '@/lib/i18n'
 
 export function SiteFooter() {
-  const { t, localePath } = useLanguage()
+  const { t, lang, localePath } = useLanguage()
 
   const home = localePath('/')
   const links = [
@@ -26,7 +27,7 @@ export function SiteFooter() {
   // Profiles with no URL configured yet are dropped rather than rendered as
   // dead '#' links.
   const socials = [
-    { href: `https://wa.me/${WHATSAPP_NUMBER}`, label: 'WhatsApp', Icon: MessageCircle },
+    { href: getWhatsAppUrl('footer', lang), label: 'WhatsApp', Icon: MessageCircle },
     { href: `mailto:${CONTACT_EMAIL}`, label: 'Email', Icon: Mail },
     { href: INSTAGRAM_URL, label: 'Instagram', Icon: InstagramIcon },
     { href: LINKEDIN_URL, label: 'LinkedIn', Icon: LinkedinIcon },

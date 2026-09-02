@@ -21,3 +21,6 @@ tsconfig.tsbuildinfo
 # their own folder. Never let one reach the repository.
 .claude/skills/*/connections.json
 **/connections.json
+
+*.zip
+

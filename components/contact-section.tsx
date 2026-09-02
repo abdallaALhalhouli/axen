@@ -4,10 +4,10 @@ import { useState } from 'react'
 import { MessageCircle, Mail, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { SectionHeading } from '@/components/portfolio-section'
-import { WHATSAPP_NUMBER, CONTACT_EMAIL } from '@/lib/i18n'
+import { WHATSAPP_NUMBER, CONTACT_EMAIL, getWhatsAppUrl } from '@/lib/i18n'
 
 export function ContactSection() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const [submitted, setSubmitted] = useState(false)
   const [waLink, setWaLink] = useState('')
 
@@ -52,7 +52,7 @@ export function ContactSection() {
           {/* Channels */}
           <div className="flex flex-col gap-4 lg:col-span-2">
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              href={getWhatsAppUrl('contact', lang)}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-start gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-foreground"

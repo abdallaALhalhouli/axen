@@ -4,6 +4,7 @@ import { Check } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { SectionHeading } from '@/components/portfolio-section'
 import { Reveal } from '@/components/motion'
+import { getWhatsAppUrl } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
 /**
@@ -12,7 +13,7 @@ import { cn } from '@/lib/utils'
  * the differentiator; the "from" framing keeps room for scope.
  */
 export function PricingSection() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const p = t.pricing
 
   return (
@@ -68,7 +69,9 @@ export function PricingSection() {
                 </ul>
 
                 <a
-                  href="#contact"
+                  href={getWhatsAppUrl(featured ? 'hero' : 'custom_build', lang)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     'mt-auto inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium transition-colors',
                     featured

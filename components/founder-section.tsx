@@ -3,7 +3,7 @@
 import { MessageCircle } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { Reveal } from '@/components/motion'
-import { WHATSAPP_NUMBER } from '@/lib/i18n'
+import { getWhatsAppUrl } from '@/lib/i18n'
 
 /**
  * A new studio with no client list sells on the person, not the portfolio.
@@ -11,7 +11,7 @@ import { WHATSAPP_NUMBER } from '@/lib/i18n'
  * team page — a monogram and a signature carry it instead of a face.
  */
 export function FounderSection() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const f = t.founder
 
   return (
@@ -49,7 +49,7 @@ export function FounderSection() {
             </div>
 
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              href={getWhatsAppUrl('founder', lang)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 py-3 font-medium transition-colors hover:border-primary hover:text-primary"

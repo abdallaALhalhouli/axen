@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 /** True once the element has been scrolled into view. Never flips back. */
-export function useInView<T extends HTMLElement>(rootMargin = '-12% 0px') {
+export function useInView<T extends HTMLElement>(rootMargin = '0px 0px -20px 0px') {
   const ref = useRef<T>(null)
   const [seen, setSeen] = useState(false)
 
@@ -19,8 +19,9 @@ export function useInView<T extends HTMLElement>(rootMargin = '-12% 0px') {
       return
     }
 
-    // Already on screen at mount — no need to wait for a callback.
-    if (el.getBoundingClientRect().top < window.innerHeight) {
+    // Already on screen or near viewport at mount — reveal immediately.
+    const rect = el.getBoundingClientRect()
+    if (rect.top < window.innerHeight + 150) {
       setSeen(true)
       return
     }
@@ -37,7 +38,7 @@ export function useInView<T extends HTMLElement>(rootMargin = '-12% 0px') {
     io.observe(el)
 
     // Last resort: reveal regardless rather than leave a blank section.
-    const failsafe = setTimeout(() => setSeen(true), 2500)
+    const failsafe = setTimeout(() => setSeen(true), 1200)
 
     return () => {
       io.disconnect()

@@ -29,6 +29,42 @@ export function canonicalPath(path: string) {
   return stripped || '/'
 }
 
+export type WhatsAppContext =
+  | 'hero'
+  | 'founder'
+  | 'clinicflow'
+  | 'custom_build'
+  | 'managed'
+  | 'contact'
+  | 'footer'
+
+/** Generates a contextual WhatsApp link with a tailored, pre-filled message. */
+export function getWhatsAppUrl(context: WhatsAppContext = 'hero', lang: Lang = 'ar'): string {
+  const messages: Record<Lang, Record<WhatsAppContext, string>> = {
+    ar: {
+      hero: 'مرحبا عبدالله، شفت موقع AXEN وبدي أسألك عن فكرة مشروع وأتمتة لعملي.',
+      founder: 'مرحبا عبدالله، حابب أتواصل معك مباشرة بخصوص مشروع جديد.',
+      clinicflow: 'مرحبا، مهتم بنظام ClinicFlow لعيادتي وبدي أعرف تفاصيل الاشتراك وطريقة التشغيل.',
+      custom_build: 'مرحبا، بدي أستفسر عن بناء موقع / نظام مخصص لعملي والمدة المقدرة.',
+      managed: 'مرحبا، حابب أعرف تفاصيل خدمة الإدارة والاستضافة الشهرية لأنظمتنا.',
+      contact: 'مرحبا، بتواصل معك للاستفسار عن خدمات AXEN في برمجة الويب وأتمتة واتساب.',
+      footer: 'مرحبا، بتواصل معك من موقع AXEN وبدي استشارة سريعة.',
+    },
+    en: {
+      hero: 'Hi Abdalla, I saw the AXEN website and would like to discuss a project for my business.',
+      founder: 'Hi Abdalla, I would like to talk to you directly about a custom software build.',
+      clinicflow: 'Hi, I am interested in ClinicFlow for my clinic and would like details on setup and pricing.',
+      custom_build: 'Hi, I would like to enquire about a custom website or software build.',
+      managed: 'Hi, I would like to enquire about your managed hosting and support service.',
+      contact: 'Hi, reaching out from AXEN website for an inquiry regarding web development and WhatsApp automation.',
+      footer: 'Hi, reaching out from the AXEN website for an inquiry.',
+    },
+  }
+
+  const text = messages[lang]?.[context] || messages.ar.hero
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`
+}
+
 export const dictionary = {
   en: {
     dir: 'ltr' as 'ltr' | 'rtl',
@@ -65,6 +101,65 @@ export const dictionary = {
         },
       ],
       chatCaption: 'An actual booking, start to finish, in Jordanian Arabic.',
+      scenarios: [
+        {
+          id: 'clinic',
+          tab: 'Dental Clinic',
+          header: 'ClinicFlow · Clinic Receptionist',
+          status: 'ONLINE',
+          caption: 'Real appointment booked, in Jordanian Arabic, synced to calendar.',
+          chat: [
+            { from: 'user' as const, text: 'بدي أحجز موعد فحص وتنظيف' },
+            {
+              from: 'bot' as const,
+              text: 'أهلاً وسهلاً 🙏 المواعيد المتاحة عند د. وائل أبو نواس:\n1) الاثنين · 10:00 صباحاً\n2) الثلاثاء · 04:30 عصراً',
+            },
+            { from: 'user' as const, text: 'الاثنين 10 مناسب' },
+            {
+              from: 'bot' as const,
+              text: 'تم تأكيد حجزك ✅\nالموعد: الاثنين · 10:00 ص\nتمت إضافته لتقويم العيادة وإرسال تذكير.',
+            },
+          ],
+        },
+        {
+          id: 'restaurant',
+          tab: 'Food & Dining',
+          header: 'AXEN Agent · Order Automation',
+          status: 'ONLINE',
+          caption: 'Order closed in seconds, priced in JOD, address confirmed.',
+          chat: [
+            { from: 'user' as const, text: 'مرحبا، بدي اطلب 2 شاورما سوبر و كولا' },
+            {
+              from: 'bot' as const,
+              text: 'أهلاً وسهلاً 🌯\n٢× شاورما سوبر دجاج + ١× كولا = 6.50 دينار.\nالتوصيل إلى عبدون؟',
+            },
+            { from: 'user' as const, text: 'نعم مزبوط' },
+            {
+              from: 'bot' as const,
+              text: 'تم تأكيد طلبك #2481 ✅\nالوقت المتوقع: 25 دقيقة.\nقيد التجهيز في المطبخ ومسجل بالقاعدة.',
+            },
+          ],
+        },
+        {
+          id: 'ecommerce',
+          tab: 'E-Commerce',
+          header: 'AXEN Commerce · Store Assistant',
+          status: 'ONLINE',
+          caption: 'Stock checked, size confirmed, instant checkout ready.',
+          chat: [
+            { from: 'user' as const, text: 'مرحبا، الفستان الأسود متوفر منه سمول؟' },
+            {
+              from: 'bot' as const,
+              text: 'أهلاً فيكِ ✨ متوفر آخر قطعتين مقاس Small بسعر 45 دينار.\nبتحبي نحجزلك إياها بتوصيل سريع؟',
+            },
+            { from: 'user' as const, text: 'اه لو سمحت احجزلي' },
+            {
+              from: 'bot' as const,
+              text: 'تم الحجز بنجاح 🛍️\nرابط الدفع المباشر أو الدفع عند الاستلام جاهز.',
+            },
+          ],
+        },
+      ],
     },
     terminal: {
       tag: 'محادثة حجز حقيقية',
@@ -401,6 +496,65 @@ export const dictionary = {
         },
       ],
       chatCaption: 'حجز حقيقي من أوله لآخره، بالعربي الأردني.',
+      scenarios: [
+        {
+          id: 'clinic',
+          tab: 'عيادة أسنان',
+          header: 'ClinicFlow · استقبال العيادة',
+          status: 'متصل',
+          caption: 'حجز حقيقي من أوله لآخره بالعامية الأردنية ومزامنة بالتقويم.',
+          chat: [
+            { from: 'user' as const, text: 'بدي أحجز موعد فحص وتنظيف' },
+            {
+              from: 'bot' as const,
+              text: 'أهلاً وسهلاً 🙏 المواعيد المتاحة عند د. وائل أبو نواس:\n1) الاثنين · 10:00 صباحاً\n2) الثلاثاء · 04:30 عصراً',
+            },
+            { from: 'user' as const, text: 'الاثنين 10 مناسب' },
+            {
+              from: 'bot' as const,
+              text: 'تم تأكيد حجزك ✅\nالموعد: الاثنين · 10:00 ص\nتمت إضافته لتقويم العيادة وإرسال تذكير.',
+            },
+          ],
+        },
+        {
+          id: 'restaurant',
+          tab: 'مطعم وطلبات',
+          header: 'وكيل AXEN · طلبات المطاعم',
+          status: 'متصل',
+          caption: 'طلب دليفري يغلق نفسه مع حساب التوتال وتأكيد العنوان.',
+          chat: [
+            { from: 'user' as const, text: 'مرحبا، بدي اطلب 2 شاورما سوبر و كولا' },
+            {
+              from: 'bot' as const,
+              text: 'أهلاً وسهلاً 🌯\n٢× شاورما سوبر دجاج + ١× كولا = 6.50 دينار.\nالتوصيل إلى عبدون؟',
+            },
+            { from: 'user' as const, text: 'نعم مزبوط' },
+            {
+              from: 'bot' as const,
+              text: 'تم تأكيد طلبك #2481 ✅\nالوقت المتوقع: 25 دقيقة.\nقيد التجهيز في المطبخ ومسجل بالقاعدة.',
+            },
+          ],
+        },
+        {
+          id: 'ecommerce',
+          tab: 'متجر إلكتروني',
+          header: 'وكيل AXEN · خدمة العملاء',
+          status: 'متصل',
+          caption: 'فحص المقاس والتوفر وإتمام الشراء بدون موظف سهران.',
+          chat: [
+            { from: 'user' as const, text: 'مرحبا، الفستان الأسود متوفر منه سمول؟' },
+            {
+              from: 'bot' as const,
+              text: 'أهلاً فيكِ ✨ متوفر آخر قطعتين مقاس Small بسعر 45 دينار.\nبتحبي نحجزلك إياها بتوصيل سريع؟',
+            },
+            { from: 'user' as const, text: 'اه لو سمحت احجزلي' },
+            {
+              from: 'bot' as const,
+              text: 'تم الحجز بنجاح 🛍️\nرابط الدفع المباشر أو الدفع عند الاستلام جاهز.',
+            },
+          ],
+        },
+      ],
     },
     terminal: {
       tag: 'محادثة حجز حقيقية',

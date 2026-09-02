@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/modernist-78a2f08b-cf36-454e-baab-02f43f36a464/styles.css">
+  <script src="_ds/modernist-78a2f08b-cf36-454e-baab-02f43f36a464/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    html, body { margin: 0; }
+    a { color: var(--color-text); text-decoration: none; }
+    a:hover { color: var(--color-accent); }
+    @keyframes axen-caret { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
+    @keyframes axen-pulse { 0%, 100% { opacity: 1 } 50% { opacity: 0.25 } }
+  </style>
+</helmet>
+
+<div style="--color-accent: {{ accent }}; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh;">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--color-bg); border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px; height: 72px; display: flex; align-items: center; gap: 40px;">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; margin-inline-end: auto;">
+        <svg viewBox="0 0 100 100" fill="none" style="height: 26px; width: 26px; color: var(--color-text);" aria-hidden="true">
+          <path d="M50 6 L96 92 L79 92 L50 33 L21 92 L4 92 Z" fill="currentColor"></path>
+          <path d="M50 41 L73 92 L60 92 L50 63 L40 92 L27 92 Z" fill="currentColor"></path>
+        </svg>
+        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; letter-spacing: 0.34em;">AXEN</span>
+      </a>
+      <nav style="display: flex; align-items: center; gap: 28px;">
+        <a href="#services" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em;">Services</a>
+        <a href="#work" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em;">Work</a>
+        <a href="#pricing" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em;">Pricing</a>
+        <a href="#process" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em;">Process</a>
+        <a href="#faq" style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em;">FAQ</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="AXEN Web (AR).dc.html" style="border: 1px solid var(--color-divider); padding: 7px 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em;" style-hover="background: var(--color-surface); color: var(--color-text);">العربية</a>
+        <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 11px 18px; font-size: 13px; letter-spacing: 0.06em; color: var(--color-bg);" style-hover="color: var(--color-bg);">WhatsApp us</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="top" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 7fr 5fr;">
+      <div style="padding: 88px 56px 72px 0;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);">Amman, Jordan — software built to order</div>
+        <h1 style="margin: 24px 0 0; font-size: 66px; line-height: 0.98; letter-spacing: -0.03em; max-width: 15ch;">We build the software your business runs on.</h1>
+        <p style="margin: 28px 0 0; max-width: 52ch; font-size: 18px; line-height: 1.55; color: var(--color-neutral-800);">Websites, online stores, and WhatsApp automation — written from scratch for one business at a time. You talk to the engineer who writes the code, from the first call to handover.</p>
+        <div style="margin-top: 36px; display: flex; align-items: center; gap: 12px;">
+          <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 15px 22px; font-size: 14px; letter-spacing: 0.06em; color: var(--color-bg);" style-hover="color: var(--color-bg);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 17px; width: 17px;"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
+            Message us on WhatsApp
+          </a>
+          <a href="#terminal" class="btn btn-secondary" style="padding: 15px 22px; font-size: 14px; letter-spacing: 0.06em;">See a real order close itself</a>
+        </div>
+      </div>
+      <div style="border-inline-start: 2px solid var(--color-divider); background: var(--color-surface); display: grid; place-items: center; padding: 56px;">
+        <img src="assets/axen-lockup.png" alt="AXEN" style="width: 100%; max-width: 300px; mix-blend-mode: multiply;">
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(4, 1fr);">
+      <div style="padding: 28px 24px 28px 0;">
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 30px; letter-spacing: -0.02em;">2–4 weeks</div>
+        <div style="margin-top: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-neutral-700);">From brief to live</div>
+      </div>
+      <div style="padding: 28px 24px; border-inline-start: 1px solid var(--color-divider);">
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 30px; letter-spacing: -0.02em;">One engineer</div>
+        <div style="margin-top: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-neutral-700);">Abdalla — planning to delivery</div>
+      </div>
+      <div style="padding: 28px 24px; border-inline-start: 1px solid var(--color-divider);">
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 30px; letter-spacing: -0.02em;">ClinicFlow</div>
+        <div style="margin-top: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-neutral-700);">Our own system, running today</div>
+      </div>
+      <div style="padding: 28px 0 28px 24px; border-inline-start: 1px solid var(--color-divider);">
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 30px; letter-spacing: -0.02em;">You own it</div>
+        <div style="margin-top: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-neutral-700);">Source code handed over</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="terminal" style="background: var(--color-text); color: var(--color-bg); border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: 5fr 7fr; gap: 56px;">
+      <div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-500);">01 — Live workflow</div>
+        <h2 style="margin: 20px 0 0; font-size: 42px; line-height: 1.04; letter-spacing: -0.025em; color: var(--color-bg);">A real order, closed without you.</h2>
+        <p style="margin: 20px 0 0; font-size: 16px; line-height: 1.6; color: var(--color-neutral-400);">A customer writes in Arabic. The system reads it, prices it, confirms the address, and writes the order to the database. No menu trees, no “press 1”, no staff typing replies at midnight.</p>
+        <ul style="margin: 24px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0;">
+          <li style="border-top: 1px solid var(--color-neutral-800); padding: 12px 0; font-size: 14px; display: flex; justify-content: space-between; gap: 16px;"><span style="color: var(--color-neutral-400);">Reads Arabic, dialect and Arabizi</span><span style="color: var(--color-bg);">Yes</span></li>
+          <li style="border-top: 1px solid var(--color-neutral-800); padding: 12px 0; font-size: 14px; display: flex; justify-content: space-between; gap: 16px;"><span style="color: var(--color-neutral-400);">Writes to your database or sheet</span><span style="color: var(--color-bg);">Yes</span></li>
+          <li style="border-top: 1px solid var(--color-neutral-800); border-bottom: 1px solid var(--color-neutral-800); padding: 12px 0; font-size: 14px; display: flex; justify-content: space-between; gap: 16px;"><span style="color: var(--color-neutral-400);">Hands over to a human on request</span><span style="color: var(--color-bg);">Yes</span></li>
+        </ul>
+        <button type="button" onClick="{{ replay }}" class="btn btn-primary" style="margin-top: 28px; padding: 13px 20px; font-size: 13px; letter-spacing: 0.06em; color: var(--color-bg); border: none;">{{ replayLabel }}</button>
+      </div>
+
+      <div style="border: 1px solid var(--color-neutral-800); background: #17161500; display: flex; flex-direction: column; min-height: 460px;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--color-neutral-800);">
+          <span style="width: 8px; height: 8px; background: var(--color-accent); animation: axen-pulse 1.6s ease-in-out infinite;"></span>
+          <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-bg);">AXEN · automated agent</span>
+          <span style="margin-inline-start: auto; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-500);">WhatsApp Cloud API</span>
+        </div>
+        <div style="flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+          <sc-for list="{{ lines }}" as="line" hint-placeholder-count="5">
+            <div style="display: flex; justify-content: {{ line.justify }};">
+              <div style="max-width: 78%; border: 1px solid {{ line.border }}; background: {{ line.bg }}; color: {{ line.color }}; padding: 12px 14px; font-size: 14px; line-height: 1.5; direction: {{ line.dir }}; text-align: start;">
+                <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.55; margin-bottom: 6px; direction: ltr; text-align: start;">{{ line.label }}</div>
+                {{ line.text }}
+              </div>
+            </div>
+          </sc-for>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-neutral-500);">
+            <span style="display: inline-block; width: 8px; height: 15px; background: var(--color-accent); animation: axen-caret 1s step-end infinite;"></span>
+            {{ statusLabel }}
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--color-neutral-800);">
+          <div style="padding: 14px 18px;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 18px; color: var(--color-bg);">1.4s</div>
+            <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-500);">Avg response</div>
+          </div>
+          <div style="padding: 14px 18px; border-inline-start: 1px solid var(--color-neutral-800);">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 18px; color: var(--color-bg);">OK</div>
+            <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-500);">DB sync</div>
+          </div>
+          <div style="padding: 14px 18px; border-inline-start: 1px solid var(--color-neutral-800);">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 18px; color: var(--color-bg);">0</div>
+            <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-500);">Human input</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 0;">
+      <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);">02 — Services</div>
+      <h2 style="margin: 20px 0 0; font-size: 42px; line-height: 1.04; letter-spacing: -0.025em; max-width: 22ch;">Three things. Take one or all three.</h2>
+      <p style="margin: 16px 0 40px; max-width: 60ch; font-size: 17px; color: var(--color-neutral-800);">Every job is quoted after a short call, so you know the scope and the price before anything starts.</p>
+    </div>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px 80px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--color-divider);">
+      <div style="padding: 32px 32px 32px 0;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 26px; width: 26px;"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+          <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; letter-spacing: 0.1em; color: var(--color-neutral-500);">01</span>
+        </div>
+        <h3 style="margin: 22px 0 0; font-size: 23px; line-height: 1.1;">Websites &amp; online stores</h3>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">A site that loads fast, reads well in Arabic and English, and sells. Built page by page, not dragged out of a template.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; list-style: none; border-top: 1px solid var(--color-divider); display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 4px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>Product pages, checkout, payments</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 4px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>Arabic and English, both first-class</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 4px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>You get the code and the repo</li>
+        </ul>
+      </div>
+      <div style="padding: 32px; border-inline-start: 1px solid var(--color-divider);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 26px; width: 26px;"><path d="M12 3H4a2 2 0 0 0-2 2v16.286a.71.71 0 0 0 1.212.502l2.202-2.202A2 2 0 0 1 6.828 19H20a2 2 0 0 0 2-2v-4"></path><path d="M16 3h6v6"></path><path d="m16 9 6-6"></path></svg>
+          <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; letter-spacing: 0.1em; color: var(--color-neutral-500);">02</span>
+        </div>
+        <h3 style="margin: 22px 0 0; font-size: 23px; line-height: 1.1;">WhatsApp &amp; Instagram replies</h3>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Orders, bookings and questions answered in seconds, in the customer's own dialect. It hands the chat to you whenever a human is needed.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; list-style: none; border-top: 1px solid var(--color-divider); display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 4px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>Takes orders and bookings end to end</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 4px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>Sends reminders and follow-ups</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 4px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>Official WhatsApp Cloud API</li>
+        </ul>
+      </div>
+      <div style="padding: 32px 0 32px 32px; border-inline-start: 1px solid var(--color-divider);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 26px; width: 26px;"><rect width="8" height="8" x="3" y="3" rx="2"></rect><path d="M7 11v4a2 2 0 0 0 2 2h4"></path><rect width="8" height="8" x="13" y="13" rx="2"></rect></svg>
+          <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; letter-spacing: 0.1em; color: var(--color-neutral-500);">03</span>
+        </div>
+        <h3 style="margin: 22px 0 0; font-size: 23px; line-height: 1.1;">Systems that connect your tools</h3>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Bookings, stock, invoices and sheets in one place instead of four. If it has an API, it can be joined up.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; list-style: none; border-top: 1px solid var(--color-divider); display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 4px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>Dashboards your staff can read</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 4px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>Sheets, CRM and database sync</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 4px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>Roles, so people see only their part</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px;">
+      <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);">03 — Work</div>
+      <h2 style="margin: 20px 0 0; font-size: 42px; line-height: 1.04; letter-spacing: -0.025em; max-width: 24ch;">What we've built so far.</h2>
+      <p style="margin: 16px 0 40px; max-width: 60ch; font-size: 17px; color: var(--color-neutral-800);">ClinicFlow is our own product, live and in use. The rest are systems and builds from the same stack — ask on WhatsApp and we'll walk you through any of them.</p>
+
+      <div style="display: grid; grid-template-columns: 7fr 5fr; border: 2px solid var(--color-divider);">
+        <figure class="grayscale" style="margin: 0; aspect-ratio: 16 / 10; overflow: hidden;">
+          <img src="public/projects/web-platform.png" alt="ClinicFlow appointment dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+        </figure>
+        <div style="padding: 36px; border-inline-start: 2px solid var(--color-divider); display: flex; flex-direction: column;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="tag tag-outline" style="border-color: var(--color-accent); color: var(--color-accent-700);">Our own product</span>
+            <span class="tag tag-neutral">Live today</span>
+          </div>
+          <h3 style="margin: 20px 0 0; font-size: 30px; line-height: 1.06;">ClinicFlow</h3>
+          <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Appointment management and WhatsApp automation for clinics — written from scratch, running as a ready-made service. Patients book and get reminders on WhatsApp; the clinic sees one calendar.</p>
+          <div style="margin-top: auto; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="tag tag-neutral">Appointments</span>
+            <span class="tag tag-neutral">WhatsApp reminders</span>
+            <span class="tag tag-neutral">Staff roles</span>
+            <span class="tag tag-neutral">Arabic-first</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <article style="border: 2px solid var(--color-divider); display: flex; flex-direction: column;">
+          <figure class="grayscale" style="margin: 0; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 2px solid var(--color-divider);">
+            <img src="public/projects/whatsapp-automation.png" alt="WhatsApp ordering assistant" style="width: 100%; height: 100%; object-fit: cover;">
+          </figure>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h4 style="margin: 0; font-size: 19px; line-height: 1.15;">WhatsApp ordering assistant</h4>
+            <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: var(--color-neutral-800);">Takes the order, prices it, confirms the address, writes it to the database.</p>
+            <div style="margin-top: auto; padding-top: 18px; display: flex; flex-wrap: wrap; gap: 6px;">
+              <span class="tag tag-neutral">WhatsApp API</span>
+              <span class="tag tag-neutral">Python</span>
+            </div>
+          </div>
+        </article>
+        <article style="border: 2px solid var(--color-divider); display: flex; flex-direction: column;">
+          <figure class="grayscale" style="margin: 0; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 2px solid var(--color-divider);">
+            <img src="public/projects/ecommerce-site.png" alt="E-commerce storefront" style="width: 100%; height: 100%; object-fit: cover;">
+          </figure>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h4 style="margin: 0; font-size: 19px; line-height: 1.15;">Online storefront</h4>
+            <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: var(--color-neutral-800);">Product pages, cart and checkout with a sub-second load and no plugin sprawl.</p>
+            <div style="margin-top: auto; padding-top: 18px; display: flex; flex-wrap: wrap; gap: 6px;">
+              <span class="tag tag-neutral">Next.js</span>
+              <span class="tag tag-neutral">Stripe</span>
+            </div>
+          </div>
+        </article>
+        <article style="border: 2px solid var(--color-divider); display: flex; flex-direction: column;">
+          <figure class="grayscale" style="margin: 0; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 2px solid var(--color-divider);">
+            <img src="public/projects/api-integration.png" alt="CRM and sheets sync engine" style="width: 100%; height: 100%; object-fit: cover;">
+          </figure>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h4 style="margin: 0; font-size: 19px; line-height: 1.15;">Sheets &amp; CRM sync</h4>
+            <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.6; color: var(--color-neutral-800);">One flow joining spreadsheets, a CRM and a database, so nobody retypes anything.</p>
+            <div style="margin-top: auto; padding-top: 18px; display: flex; flex-wrap: wrap; gap: 6px;">
+              <span class="tag tag-neutral">REST API</span>
+              <span class="tag tag-neutral">PostgreSQL</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 0;">
+      <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);">04 — Pricing</div>
+      <h2 style="margin: 20px 0 0; font-size: 42px; line-height: 1.04; letter-spacing: -0.025em; max-width: 24ch;">Three ways to pay. Pick what suits you.</h2>
+      <p style="margin: 16px 0 40px; max-width: 60ch; font-size: 17px; color: var(--color-neutral-800);">The exact figure depends on scope, and you get it in writing after one 15-minute call — before any work starts.</p>
+    </div>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px 80px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--color-divider);">
+      <div style="padding: 32px 32px 32px 0; display: flex; flex-direction: column;">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);">Ready to use</div>
+        <h3 style="margin: 14px 0 0; font-size: 26px;">ClinicFlow</h3>
+        <div style="margin-top: 12px; font-family: var(--font-heading); font-weight: 800; font-size: 20px;">Monthly subscription</div>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">For clinics that want the system we already built. Set up in days, not weeks.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; border-top: 1px solid var(--color-divider); list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+          <li>Appointments and patient records</li>
+          <li>WhatsApp booking and reminders</li>
+          <li>Hosting, updates and support included</li>
+        </ul>
+        <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block" style="margin-top: 28px; padding: 13px 16px;">Ask about ClinicFlow</a>
+      </div>
+      <div style="padding: 32px; border-inline-start: 1px solid var(--color-divider); background: var(--color-surface); display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent);">Most asked for</div>
+        </div>
+        <h3 style="margin: 14px 0 0; font-size: 26px;">Custom build</h3>
+        <div style="margin-top: 12px; font-family: var(--font-heading); font-weight: 800; font-size: 20px;">One-time price</div>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">We scope it, build it, hand over the code. No monthly fee, no per-seat licence, nothing to renew.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; border-top: 1px solid var(--color-divider); list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+          <li>Fixed written scope and price</li>
+          <li>Live in 2–4 weeks</li>
+          <li>Source code, repo and a walkthrough</li>
+        </ul>
+        <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="margin-top: 28px; padding: 13px 16px; color: var(--color-bg);" style-hover="color: var(--color-bg);">Get a written quote</a>
+      </div>
+      <div style="padding: 32px 0 32px 32px; border-inline-start: 1px solid var(--color-divider); display: flex; flex-direction: column;">
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);">Hands off</div>
+        <h3 style="margin: 14px 0 0; font-size: 26px;">Managed service</h3>
+        <div style="margin-top: 12px; font-family: var(--font-heading); font-weight: 800; font-size: 20px;">Build + monthly</div>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">We build it and keep it running — hosting, monitoring and changes handled for a flat monthly fee.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; border-top: 1px solid var(--color-divider); list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+          <li>Hosting and monitoring</li>
+          <li>Small changes each month</li>
+          <li>Cancel and take the code with you</li>
+        </ul>
+        <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block" style="margin-top: 28px; padding: 13px 16px;">Talk it through</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px;">
+      <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 56px;">
+        <div>
+          <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);">05 — Process</div>
+          <h2 style="margin: 20px 0 0; font-size: 42px; line-height: 1.04; letter-spacing: -0.025em;">Five steps, four weeks, one person to call.</h2>
+          <p style="margin: 20px 0 0; font-size: 16px; line-height: 1.6; color: var(--color-neutral-800);">You never get passed to an account manager. The person who plans it is the person who writes it.</p>
+        </div>
+        <div>
+          <div style="display: grid; grid-template-columns: 88px 1fr; border-top: 2px solid var(--color-divider); padding: 22px 0;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; letter-spacing: 0.1em; color: var(--color-accent);">01</div>
+            <div>
+              <h4 style="margin: 0; font-size: 19px;">Call — 15 minutes</h4>
+              <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">On WhatsApp or a call. What the business does, what's slow, what you want gone.</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 88px 1fr; border-top: 1px solid var(--color-divider); padding: 22px 0;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; letter-spacing: 0.1em; color: var(--color-accent);">02</div>
+            <div>
+              <h4 style="margin: 0; font-size: 19px;">Written scope and price</h4>
+              <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">One page: what gets built, what it costs, when it's done. Nothing starts before you agree.</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 88px 1fr; border-top: 1px solid var(--color-divider); padding: 22px 0;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; letter-spacing: 0.1em; color: var(--color-accent);">03</div>
+            <div>
+              <h4 style="margin: 0; font-size: 19px;">Build — 2 to 4 weeks</h4>
+              <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">You see a working link every week and say what to change while it's cheap to change.</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 88px 1fr; border-top: 1px solid var(--color-divider); padding: 22px 0;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; letter-spacing: 0.1em; color: var(--color-accent);">04</div>
+            <div>
+              <h4 style="margin: 0; font-size: 19px;">Handover</h4>
+              <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Live on your domain and your accounts. Code, repo and a walkthrough for your staff.</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 88px 1fr; border-top: 1px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); padding: 22px 0;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px; letter-spacing: 0.1em; color: var(--color-accent);">05</div>
+            <div>
+              <h4 style="margin: 0; font-size: 19px;">Support — only if you want it</h4>
+              <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Monthly upkeep and changes, or nothing at all. The system is yours either way.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px;">
+      <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);">06 — Why AXEN</div>
+      <h2 style="margin: 20px 0 40px; font-size: 42px; line-height: 1.04; letter-spacing: -0.025em; max-width: 24ch;">Built for you, not exported from a template.</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); border-top: 2px solid var(--color-divider);">
+        <div style="padding: 28px 40px 28px 0; border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-size: 20px;">You own the code</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Repo, database, accounts — in your name. Nothing is locked to us, so nothing holds you hostage.</p>
+        </div>
+        <div style="padding: 28px 0 28px 40px; border-inline-start: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-size: 20px;">No per-seat subscriptions</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">One build, one price. You don't pay again every time you hire someone.</p>
+        </div>
+        <div style="padding: 28px 40px 28px 0; border-bottom: 2px solid var(--color-divider);">
+          <h4 style="margin: 0; font-size: 20px;">Arabic is not an afterthought</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Right-to-left layouts, real Arabic type, and automation that understands how customers actually write.</p>
+        </div>
+        <div style="padding: 28px 0 28px 40px; border-inline-start: 1px solid var(--color-divider); border-bottom: 2px solid var(--color-divider);">
+          <h4 style="margin: 0; font-size: 20px;">Made to be added to</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Clean, documented code. The next feature is a day's work, not a rebuild.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start;">
+      <figure class="grayscale" style="margin: 0; border: 2px solid var(--color-divider); aspect-ratio: 4 / 5;">
+        <image-slot id="axen-founder" shape="rect" fit="cover" placeholder="Drop a photo of Abdalla — plain background, natural light" style="width: 100%; height: 100%;"></image-slot>
+      </figure>
+      <div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);">07 — Who you're hiring</div>
+        <h2 style="margin: 20px 0 0; font-size: 42px; line-height: 1.04; letter-spacing: -0.025em;">Abdalla ALhalhouli</h2>
+        <div style="margin-top: 10px; font-size: 16px; color: var(--color-neutral-700);">Software engineer · Founder of AXEN · Amman, Jordan</div>
+        <p style="margin: 24px 0 0; max-width: 58ch; font-size: 17px; line-height: 1.6;">AXEN is one engineer, on purpose. You describe the problem to the person who will write the code, and that same person is still the one answering when it's live.</p>
+        <p style="margin: 14px 0 0; max-width: 58ch; font-size: 17px; line-height: 1.6; color: var(--color-neutral-800);">ClinicFlow — an appointment and WhatsApp system for clinics — was built here from scratch and runs as a service today. The same stack is behind every job below.</p>
+        <div style="margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--color-divider);">
+          <div style="padding: 20px 20px 0 0;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px;">Amman</div>
+            <div style="margin-top: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-neutral-600);">Based &amp; working here</div>
+          </div>
+          <div style="padding: 20px; border-inline-start: 1px solid var(--color-divider);">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px;">Direct</div>
+            <div style="margin-top: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-neutral-600);">No account managers</div>
+          </div>
+          <div style="padding: 20px 0 0 20px; border-inline-start: 1px solid var(--color-divider);">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 15px;">AR / EN</div>
+            <div style="margin-top: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-neutral-600);">Work in both</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px;">
+      <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);">08 — Questions</div>
+      <h2 style="margin: 20px 0 40px; font-size: 42px; line-height: 1.04; letter-spacing: -0.025em;">The things people ask first.</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 56px; border-top: 2px solid var(--color-divider);">
+        <div style="padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-size: 18px;">What does it cost?</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">It depends on scope, so you get a written price after a 15-minute call. That price doesn't move unless you change the scope.</p>
+        </div>
+        <div style="padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-size: 18px;">How long until it's live?</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Two to four weeks for most builds. ClinicFlow can be set up in days because it already exists.</p>
+        </div>
+        <div style="padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-size: 18px;">Is this a chatbot with buttons?</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">No. No menu trees. It reads what the customer actually typed — Arabic, dialect or Arabizi — and answers, or hands the chat to you.</p>
+        </div>
+        <div style="padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-size: 18px;">Who owns the work?</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">You do — code, repo, domain and hosting accounts in your name, handed over at the end.</p>
+        </div>
+        <div style="padding: 26px 0; border-bottom: 2px solid var(--color-divider);">
+          <h4 style="margin: 0; font-size: 18px;">Can you work with what I already have?</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Usually yes. Existing site, sheets, POS or CRM — if it has an API or an export, it can be connected.</p>
+        </div>
+        <div style="padding: 26px 0; border-bottom: 2px solid var(--color-divider);">
+          <h4 style="margin: 0; font-size: 18px;">What if something breaks later?</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-800);">Message on WhatsApp. Monthly support is optional; you're not charged a retainer to be answered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: 5fr 7fr; gap: 56px;">
+      <div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent);">09 — Contact</div>
+        <h2 style="margin: 20px 0 0; font-size: 42px; line-height: 1.04; letter-spacing: -0.025em;">Send a message. You'll get a person.</h2>
+        <p style="margin: 20px 0 0; font-size: 16px; line-height: 1.6; color: var(--color-neutral-800);">WhatsApp is fastest — that's where most work starts. Say what your business does and what's slowing it down.</p>
+        <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" style="margin-top: 28px; display: flex; align-items: center; gap: 16px; border: 2px solid var(--color-text); padding: 20px; color: var(--color-text);" style-hover="background: var(--color-text); color: var(--color-bg);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 24px; width: 24px; flex: none;"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
+          <span>
+            <span style="display: block; font-family: var(--font-heading); font-weight: 800; font-size: 17px;">WhatsApp</span>
+            <span style="display: block; margin-top: 2px; font-size: 14px; opacity: 0.75;">{{ whatsappDisplay }}</span>
+          </span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 18px; width: 18px; margin-inline-start: auto; flex: none;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+        </a>
+        <a href="{{ mailHref }}" style="margin-top: 12px; display: flex; align-items: center; gap: 16px; border: 1px solid var(--color-divider); padding: 20px; color: var(--color-text);" style-hover="border-color: var(--color-text); color: var(--color-text);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 24px; width: 24px; flex: none;"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+          <span>
+            <span style="display: block; font-family: var(--font-heading); font-weight: 800; font-size: 17px;">Email</span>
+            <span style="display: block; margin-top: 2px; font-size: 14px; opacity: 0.75;">{{ contactEmail }}</span>
+          </span>
+        </a>
+      </div>
+
+      <div style="border: 2px solid var(--color-divider); padding: 36px;">
+        <h3 style="margin: 0; font-size: 24px;">Or write it here</h3>
+        <p style="margin: 10px 0 0; font-size: 15px; color: var(--color-neutral-700);">Three fields. A reply the same working day.</p>
+
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="margin-top: 28px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+            <div class="field">
+              <label for="axen-name">Your name</label>
+              <input id="axen-name" class="input" type="text" required placeholder="Name">
+            </div>
+            <div class="field">
+              <label for="axen-biz">Business &amp; city</label>
+              <input id="axen-biz" class="input" type="text" required placeholder="e.g. dental clinic, Amman">
+            </div>
+            <div class="field" style="grid-column: span 2;">
+              <label for="axen-msg">What do you need?</label>
+              <textarea id="axen-msg" class="input" required rows="4" placeholder="What's slow right now, and what should it do instead"></textarea>
+            </div>
+            <div style="grid-column: span 2; display: flex; align-items: center; gap: 16px;">
+              <button type="submit" class="btn btn-primary" style="padding: 14px 22px; font-size: 14px; letter-spacing: 0.06em; color: var(--color-bg); border: none;">Send it</button>
+              <span style="font-size: 13px; color: var(--color-neutral-600);">No newsletter. No follow-up sequence.</span>
+            </div>
+          </form>
+        </sc-if>
+
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 28px; border: 2px solid var(--color-accent); padding: 32px; display: flex; gap: 16px; align-items: flex-start;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 26px; width: 26px; flex: none;"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>
+            <div>
+              <div style="font-family: var(--font-heading); font-weight: 800; font-size: 19px;">Got it — thank you.</div>
+              <p style="margin: 8px 0 0; font-size: 15px; color: var(--color-neutral-800);">You'll hear back the same working day. If it's urgent, WhatsApp is faster.</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--color-accent); color: var(--color-bg);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 72px 40px; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px;">
+      <div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.85;">Amman, Jordan</div>
+        <div style="margin-top: 18px; font-family: var(--font-heading); font-weight: 800; font-size: 58px; line-height: 0.95; letter-spacing: -0.03em; max-width: 20ch;">Stop typing the same reply forty times a day.</div>
+      </div>
+      <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" style="flex: none; display: inline-flex; align-items: center; gap: 12px; background: var(--color-bg); color: var(--color-text); padding: 20px 26px; font-family: var(--font-heading); font-weight: 800; font-size: 16px; letter-spacing: 0.04em;" style-hover="background: var(--color-text); color: var(--color-bg);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 20px; width: 20px;"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
+        Message us on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer style="border-top: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 48px 40px; display: grid; grid-template-columns: 5fr 3fr 4fr; gap: 40px;">
+      <div>
+        <a href="#top" style="display: flex; align-items: center; gap: 12px;">
+          <svg viewBox="0 0 100 100" fill="none" style="height: 24px; width: 24px; color: var(--color-text);" aria-hidden="true">
+            <path d="M50 6 L96 92 L79 92 L50 33 L21 92 L4 92 Z" fill="currentColor"></path>
+            <path d="M50 41 L73 92 L60 92 L50 63 L40 92 L27 92 Z" fill="currentColor"></path>
+          </svg>
+          <span style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; letter-spacing: 0.34em;">AXEN</span>
+        </a>
+        <p style="margin: 16px 0 0; max-width: 34ch; font-size: 14px; line-height: 1.6; color: var(--color-neutral-700);">Websites, online stores and WhatsApp automation, built to order in Amman.</p>
+      </div>
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);">Pages</div>
+        <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);">Reach us</div>
+        <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
+          <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer">WhatsApp — {{ whatsappDisplay }}</a>
+          <a href="{{ mailHref }}">{{ contactEmail }}</a>
+          <a href="AXEN Web (AR).dc.html">النسخة العربية</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px 40px;">
+      <div style="border-top: 1px solid var(--color-divider); padding-top: 20px; display: flex; justify-content: space-between; gap: 24px; font-size: 13px; color: var(--color-neutral-700);">
+        <span>© 2026 AXEN — Abdalla ALhalhouli</span>
+        <span>Amman, Jordan</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#ec3013&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#ec3013&quot;, &quot;#201e1d&quot;, &quot;#ae1800&quot;], &quot;section&quot;: &quot;Brand&quot;}, &quot;whatsappNumber&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;962790000000&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot;}, &quot;contactEmail&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;hello@axen.agency&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot;}}">
+const SCRIPT = [
+  { from: 'user', label: 'Customer · WhatsApp', text: 'مرحبا، بدي اطلب 2 شاورما دجاج و كولا', dir: 'rtl' },
+  { from: 'bot', label: 'AXEN agent', text: 'Order received: 2× Chicken Shawarma + 1× Cola. Total 6.50 JOD. Confirm delivery to Abdoun? (Y/N)', dir: 'ltr' },
+  { from: 'user', label: 'Customer · WhatsApp', text: 'نعم اكيد', dir: 'rtl' },
+  { from: 'bot', label: 'AXEN agent', text: 'Confirmed. Order #A-2481 dispatched. ETA 25 min. Syncing to database…', dir: 'ltr' },
+  { from: 'system', label: 'System', text: 'DB WRITE → orders[A-2481] status=confirmed · synced in 240ms', dir: 'ltr' },
+];
+
+const ROLE = {
+  user: { justify: 'flex-start', bg: 'transparent', border: 'var(--color-neutral-700)', color: 'var(--color-neutral-200)' },
+  bot: { justify: 'flex-end', bg: 'var(--color-bg)', border: 'var(--color-bg)', color: 'var(--color-text)' },
+  system: { justify: 'flex-start', bg: 'transparent', border: 'var(--color-accent)', color: 'var(--color-accent-400)' },
+};
+
+class Component extends DCLogic {
+  state = { shown: 0, submitted: false };
+
+  componentDidMount() { this.run(); }
+  componentWillUnmount() { this.stop(); }
+
+  stop() { if (this.timer) { clearInterval(this.timer); this.timer = null; } }
+
+  run() {
+    this.stop();
+    this.setState({ shown: 0 });
+    this.timer = setInterval(() => {
+      this.setState((s) => {
+        const shown = s.shown + 1;
+        if (shown >= SCRIPT.length) this.stop();
+        return { shown };
+      });
+    }, 1100);
+  }
+
+  renderVals() {
+    const { shown, submitted } = this.state;
+    const number = (this.props.whatsappNumber ?? '962790000000').replace(/[^0-9]/g, '');
+    const email = this.props.contactEmail ?? 'hello@axen.agency';
+    const done = shown >= SCRIPT.length;
+    return {
+      accent: this.props.accent ?? '#ec3013',
+      whatsappHref: 'https://wa.me/' + number,
+      whatsappDisplay: '+' + number,
+      contactEmail: email,
+      mailHref: 'mailto:' + email,
+      lines: SCRIPT.slice(0, shown).map((l) => ({ ...l, ...ROLE[l.from] })),
+      statusLabel: done ? 'Order closed · no human input' : 'Agent listening…',
+      replay: () => this.run(),
+      replayLabel: done ? 'Replay the workflow' : 'Running…',
+      submitted,
+      notSubmitted: !submitted,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

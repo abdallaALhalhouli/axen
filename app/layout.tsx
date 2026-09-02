@@ -1,20 +1,20 @@
 import type { Metadata, Viewport } from 'next'
-import { Noto_Kufi_Arabic, Tajawal, Geist_Mono } from 'next/font/google'
+import { IBM_Plex_Sans_Arabic, Archivo, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { StructuredData } from '@/components/structured-data'
 import { SITE_URL } from '@/lib/i18n'
 
-const kufi = Noto_Kufi_Arabic({
-  subsets: ['arabic', 'latin'],
-  weight: ['600', '700'],
-  variable: '--font-kufi',
+const ibmPlexArabic = IBM_Plex_Sans_Arabic({
+  subsets: ['arabic'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-ibm-plex',
   display: 'swap',
 })
 
-const tajawal = Tajawal({
-  subsets: ['arabic', 'latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-tajawal',
+const archivo = Archivo({
+  subsets: ['latin'],
+  weight: ['400', '600', '800'],
+  variable: '--font-archivo',
   display: 'swap',
 })
 
@@ -100,9 +100,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${kufi.variable} ${tajawal.variable} ${geistMono.variable} bg-background`}
+      suppressHydrationWarning
+      className={`${ibmPlexArabic.variable} ${archivo.variable} ${geistMono.variable}`}
     >
-      <body className="font-sans">
+      <body className="antialiased selection:bg-[#ec3013]/25 selection:text-[#201e1d]">
         {/* Marks JS as alive before paint, so scroll reveals may hide their
             content. Without JS the .reveal rule stays visible. */}
         <script

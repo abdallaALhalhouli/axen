@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { AxenLogo } from '@/components/axen-logo'
-import { WHATSAPP_NUMBER } from '@/lib/i18n'
+import { getWhatsAppUrl } from '@/lib/i18n'
 
 export const metadata = {
   title: 'Page Not Found',
@@ -34,7 +34,7 @@ export default function NotFound() {
           Back to Home
         </Link>
         <a
-          href={`https://wa.me/${WHATSAPP_NUMBER}`}
+          href={getWhatsAppUrl('contact', 'en')}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center border border-border px-6 py-3 text-xs font-semibold transition-colors hover:border-foreground"

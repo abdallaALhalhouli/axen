@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/modernist-78a2f08b-cf36-454e-baab-02f43f36a464/styles.css">
+  <script src="_ds/modernist-78a2f08b-cf36-454e-baab-02f43f36a464/_ds_bundle.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    html, body { margin: 0; }
+    a { color: var(--color-text); text-decoration: none; }
+    a:hover { color: var(--color-accent); }
+    @keyframes axen-caret { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
+    @keyframes axen-pulse { 0%, 100% { opacity: 1 } 50% { opacity: 0.25 } }
+  </style>
+</helmet>
+
+<div dir="rtl" style="--color-accent: {{ accent }}; direction: rtl; background: var(--color-bg); color: var(--color-text); font-family: 'IBM Plex Sans Arabic', var(--font-body); min-height: 100vh;">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--color-bg); border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px; height: 76px; display: flex; align-items: center; gap: 36px;">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; margin-inline-end: auto;">
+        <svg viewBox="0 0 100 100" fill="none" style="height: 26px; width: 26px; color: var(--color-text);" aria-hidden="true">
+          <path d="M50 6 L96 92 L79 92 L50 33 L21 92 L4 92 Z" fill="currentColor"></path>
+          <path d="M50 41 L73 92 L60 92 L50 63 L40 92 L27 92 Z" fill="currentColor"></path>
+        </svg>
+        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 19px; letter-spacing: 0.34em;">AXEN</span>
+      </a>
+      <nav style="display: flex; align-items: center; gap: 26px; font-size: 15px; font-weight: 500;">
+        <a href="#services">الخدمات</a>
+        <a href="#work">أعمالنا</a>
+        <a href="#pricing">الأسعار</a>
+        <a href="#process">كيف نعمل</a>
+        <a href="#faq">أسئلة</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="AXEN Web.dc.html" style="border: 1px solid var(--color-divider); padding: 8px 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em;" style-hover="background: var(--color-surface); color: var(--color-text);">English</a>
+        <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" style="background: var(--color-accent); color: var(--color-bg); padding: 12px 18px; font-size: 15px; font-weight: 600;" style-hover="background: var(--color-accent-600); color: var(--color-bg);">راسلنا على واتساب</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="top" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 7fr 5fr;">
+      <div style="padding: 88px 0 72px; padding-inline-end: 56px;">
+        <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: var(--color-accent);">عمّان، الأردن — برمجيات تُبنى على الطلب</div>
+        <h1 style="margin: 24px 0 0; font-family: 'IBM Plex Sans Arabic', var(--font-heading); font-weight: 700; font-size: 58px; line-height: 1.14; letter-spacing: 0; max-width: 18ch;">نبني النظام الذي يشتغل عليه عملك.</h1>
+        <p style="margin: 28px 0 0; max-width: 50ch; font-size: 19px; line-height: 1.85; color: var(--color-neutral-800);">مواقع، متاجر إلكترونية، وأتمتة واتساب — مكتوبة من الصفر لعمل واحد في كل مرة. تتكلم مباشرة مع المهندس الذي يكتب الكود، من أول مكالمة حتى التسليم.</p>
+        <div style="margin-top: 36px; display: flex; align-items: center; gap: 12px;">
+          <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; background: var(--color-accent); color: var(--color-bg); padding: 16px 22px; font-size: 16px; font-weight: 600;" style-hover="background: var(--color-accent-600); color: var(--color-bg);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 18px; width: 18px;"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
+            راسلنا على واتساب
+          </a>
+          <a href="#terminal" style="display: inline-flex; align-items: center; border: 1px solid var(--color-divider); padding: 16px 22px; font-size: 16px; font-weight: 500; color: var(--color-text);" style-hover="background: var(--color-surface); color: var(--color-text);">شاهد طلبًا يُغلق نفسه</a>
+        </div>
+      </div>
+      <div style="border-inline-start: 2px solid var(--color-divider); background: var(--color-surface); display: grid; place-items: center; padding: 56px;">
+        <img src="assets/axen-lockup.png" alt="AXEN" style="width: 100%; max-width: 300px; mix-blend-mode: multiply;">
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(4, 1fr);">
+      <div style="padding: 28px 0; padding-inline-end: 24px;">
+        <div style="font-weight: 700; font-size: 28px;">٢–٤ أسابيع</div>
+        <div style="margin-top: 8px; font-size: 14px; color: var(--color-neutral-700);">من الفكرة إلى الإطلاق</div>
+      </div>
+      <div style="padding: 28px 24px; border-inline-start: 1px solid var(--color-divider);">
+        <div style="font-weight: 700; font-size: 28px;">مهندس واحد</div>
+        <div style="margin-top: 8px; font-size: 14px; color: var(--color-neutral-700);">عبدالله — من التخطيط للتسليم</div>
+      </div>
+      <div style="padding: 28px 24px; border-inline-start: 1px solid var(--color-divider);">
+        <div style="font-weight: 700; font-size: 28px;">ClinicFlow</div>
+        <div style="margin-top: 8px; font-size: 14px; color: var(--color-neutral-700);">نظامنا الخاص، يعمل اليوم</div>
+      </div>
+      <div style="padding: 28px 0; padding-inline-start: 24px; border-inline-start: 1px solid var(--color-divider);">
+        <div style="font-weight: 700; font-size: 28px;">الكود ملكك</div>
+        <div style="margin-top: 8px; font-size: 14px; color: var(--color-neutral-700);">يُسلَّم لك بالكامل</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="terminal" style="background: var(--color-text); color: var(--color-bg); border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: 5fr 7fr; gap: 56px;">
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--color-accent-500);">٠١ — سير عمل حقيقي</div>
+        <h2 style="margin: 20px 0 0; font-weight: 700; font-size: 40px; line-height: 1.25; color: var(--color-bg);">طلب حقيقي، يُغلق بدونك.</h2>
+        <p style="margin: 20px 0 0; font-size: 17px; line-height: 1.9; color: var(--color-neutral-400);">العميل يكتب بالعربي. النظام يفهم، يحسب السعر، يؤكّد العنوان، ويكتب الطلب في قاعدة البيانات. بلا قوائم خيارات، بلا «اضغط ١»، وبلا موظف يردّ عند منتصف الليل.</p>
+        <ul style="margin: 24px 0 0; padding: 0; list-style: none;">
+          <li style="border-top: 1px solid var(--color-neutral-800); padding: 14px 0; font-size: 15px; display: flex; justify-content: space-between; gap: 16px;"><span style="color: var(--color-neutral-400);">يفهم العربية والعامية والعربيزي</span><span style="color: var(--color-bg);">نعم</span></li>
+          <li style="border-top: 1px solid var(--color-neutral-800); padding: 14px 0; font-size: 15px; display: flex; justify-content: space-between; gap: 16px;"><span style="color: var(--color-neutral-400);">يكتب في قاعدة بياناتك أو جدولك</span><span style="color: var(--color-bg);">نعم</span></li>
+          <li style="border-top: 1px solid var(--color-neutral-800); border-bottom: 1px solid var(--color-neutral-800); padding: 14px 0; font-size: 15px; display: flex; justify-content: space-between; gap: 16px;"><span style="color: var(--color-neutral-400);">يحوّل المحادثة لك عند الطلب</span><span style="color: var(--color-bg);">نعم</span></li>
+        </ul>
+        <button type="button" onClick="{{ replay }}" style="margin-top: 28px; background: var(--color-accent); color: var(--color-bg); border: none; padding: 14px 20px; font-family: 'IBM Plex Sans Arabic', var(--font-body); font-size: 15px; font-weight: 600; cursor: pointer;" style-hover="background: var(--color-accent-600);">{{ replayLabel }}</button>
+      </div>
+
+      <div style="border: 1px solid var(--color-neutral-800); display: flex; flex-direction: column; min-height: 460px;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--color-neutral-800);">
+          <span style="width: 8px; height: 8px; background: var(--color-accent); animation: axen-pulse 1.6s ease-in-out infinite;"></span>
+          <span style="font-size: 13px; color: var(--color-bg);">AXEN · وكيل آلي</span>
+          <span style="margin-inline-start: auto; font-size: 12px; color: var(--color-neutral-500);">WhatsApp Cloud API</span>
+        </div>
+        <div style="flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+          <sc-for list="{{ lines }}" as="line" hint-placeholder-count="5">
+            <div style="display: flex; justify-content: {{ line.justify }};">
+              <div style="max-width: 78%; border: 1px solid {{ line.border }}; background: {{ line.bg }}; color: {{ line.color }}; padding: 12px 14px; font-size: 15px; line-height: 1.7; direction: {{ line.dir }}; text-align: start;">
+                <div style="font-size: 11px; opacity: 0.6; margin-bottom: 6px; direction: rtl; text-align: start;">{{ line.label }}</div>
+                {{ line.text }}
+              </div>
+            </div>
+          </sc-for>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-neutral-500);">
+            <span style="display: inline-block; width: 8px; height: 15px; background: var(--color-accent); animation: axen-caret 1s step-end infinite;"></span>
+            {{ statusLabel }}
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--color-neutral-800);">
+          <div style="padding: 14px 18px;">
+            <div style="font-weight: 700; font-size: 18px; color: var(--color-bg);">1.4s</div>
+            <div style="font-size: 12px; color: var(--color-neutral-500);">متوسط الرد</div>
+          </div>
+          <div style="padding: 14px 18px; border-inline-start: 1px solid var(--color-neutral-800);">
+            <div style="font-weight: 700; font-size: 18px; color: var(--color-bg);">OK</div>
+            <div style="font-size: 12px; color: var(--color-neutral-500);">مزامنة القاعدة</div>
+          </div>
+          <div style="padding: 14px 18px; border-inline-start: 1px solid var(--color-neutral-800);">
+            <div style="font-weight: 700; font-size: 18px; color: var(--color-bg);">٠</div>
+            <div style="font-size: 12px; color: var(--color-neutral-500);">تدخّل بشري</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 0;">
+      <div style="font-size: 13px; font-weight: 600; color: var(--color-accent);">٠٢ — الخدمات</div>
+      <h2 style="margin: 20px 0 0; font-weight: 700; font-size: 40px; line-height: 1.25; max-width: 24ch;">ثلاث خدمات. خُذ واحدة أو الثلاث.</h2>
+      <p style="margin: 16px 0 40px; max-width: 56ch; font-size: 17px; line-height: 1.85; color: var(--color-neutral-800);">كل عمل يُسعَّر بعد مكالمة قصيرة، فتعرف النطاق والسعر قبل أن يبدأ أي شيء.</p>
+    </div>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px 80px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--color-divider);">
+      <div style="padding: 32px 0; padding-inline-end: 32px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 26px; width: 26px;"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+          <span style="font-weight: 700; font-size: 14px; color: var(--color-neutral-500);">٠١</span>
+        </div>
+        <h3 style="margin: 22px 0 0; font-weight: 700; font-size: 23px; line-height: 1.35;">مواقع ومتاجر إلكترونية</h3>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">موقع يفتح بسرعة، يُقرأ جيدًا بالعربي والإنجليزي، ويبيع. مبني صفحة صفحة، لا مسحوب من قالب.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; list-style: none; border-top: 1px solid var(--color-divider); display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 6px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>صفحات المنتجات والسلة والدفع</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 6px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>عربي وإنجليزي، الاثنان بنفس الجودة</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 6px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>تستلم الكود والمستودع</li>
+        </ul>
+      </div>
+      <div style="padding: 32px; border-inline-start: 1px solid var(--color-divider);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 26px; width: 26px;"><path d="M12 3H4a2 2 0 0 0-2 2v16.286a.71.71 0 0 0 1.212.502l2.202-2.202A2 2 0 0 1 6.828 19H20a2 2 0 0 0 2-2v-4"></path><path d="M16 3h6v6"></path><path d="m16 9 6-6"></path></svg>
+          <span style="font-weight: 700; font-size: 14px; color: var(--color-neutral-500);">٠٢</span>
+        </div>
+        <h3 style="margin: 22px 0 0; font-weight: 700; font-size: 23px; line-height: 1.35;">ردود واتساب وإنستغرام</h3>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">طلبات ومواعيد وأسئلة تُجاب في ثوانٍ، بلهجة العميل نفسها. ويحوّل المحادثة لك في أي لحظة تحتاج إنسانًا.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; list-style: none; border-top: 1px solid var(--color-divider); display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 6px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>يأخذ الطلب أو الموعد من أوله لآخره</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 6px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>يرسل التذكيرات والمتابعات</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 6px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>واجهة واتساب الرسمية (Cloud API)</li>
+        </ul>
+      </div>
+      <div style="padding: 32px 0; padding-inline-start: 32px; border-inline-start: 1px solid var(--color-divider);">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 26px; width: 26px;"><rect width="8" height="8" x="3" y="3" rx="2"></rect><path d="M7 11v4a2 2 0 0 0 2 2h4"></path><rect width="8" height="8" x="13" y="13" rx="2"></rect></svg>
+          <span style="font-weight: 700; font-size: 14px; color: var(--color-neutral-500);">٠٣</span>
+        </div>
+        <h3 style="margin: 22px 0 0; font-weight: 700; font-size: 23px; line-height: 1.35;">أنظمة تربط أدواتك</h3>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">المواعيد والمخزون والفواتير والجداول في مكان واحد بدل أربعة. إن كان له واجهة برمجية، يمكن ربطه.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; list-style: none; border-top: 1px solid var(--color-divider); display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 6px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>لوحات يقرأها موظفوك بلا تدريب</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 6px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>مزامنة الجداول وقواعد البيانات</li>
+          <li style="display: flex; gap: 10px; align-items: flex-start;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="height: 15px; width: 15px; margin-top: 6px; flex: none;"><path d="M20 6 9 17l-5-5"></path></svg>صلاحيات، فكل شخص يرى ما يخصّه</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px;">
+      <div style="font-size: 13px; font-weight: 600; color: var(--color-accent);">٠٣ — أعمالنا</div>
+      <h2 style="margin: 20px 0 0; font-weight: 700; font-size: 40px; line-height: 1.25;">ما بنيناه حتى الآن.</h2>
+      <p style="margin: 16px 0 40px; max-width: 56ch; font-size: 17px; line-height: 1.85; color: var(--color-neutral-800);">ClinicFlow نظامنا الخاص، يعمل ويُستخدم اليوم. والباقي أنظمة من نفس البنية — اسألنا على واتساب ونشرح لك أيًّا منها.</p>
+
+      <div style="display: grid; grid-template-columns: 7fr 5fr; border: 2px solid var(--color-divider);">
+        <figure class="grayscale" style="margin: 0; aspect-ratio: 16 / 10; overflow: hidden;">
+          <img src="public/projects/web-platform.png" alt="ClinicFlow" style="width: 100%; height: 100%; object-fit: cover;">
+        </figure>
+        <div style="padding: 36px; border-inline-start: 2px solid var(--color-divider); display: flex; flex-direction: column;">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <span class="tag tag-outline" style="border-color: var(--color-accent); color: var(--color-accent-700);">نظامنا الخاص</span>
+            <span class="tag tag-neutral">يعمل اليوم</span>
+          </div>
+          <h3 style="margin: 20px 0 0; font-weight: 700; font-size: 30px;">ClinicFlow</h3>
+          <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">إدارة مواعيد العيادات وأتمتة واتساب — مكتوب من الصفر ويعمل كخدمة جاهزة. المريض يحجز ويستلم التذكير على واتساب، والعيادة ترى تقويمًا واحدًا.</p>
+          <div style="margin-top: auto; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="tag tag-neutral">المواعيد</span>
+            <span class="tag tag-neutral">تذكيرات واتساب</span>
+            <span class="tag tag-neutral">صلاحيات الموظفين</span>
+            <span class="tag tag-neutral">عربي أولًا</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <article style="border: 2px solid var(--color-divider); display: flex; flex-direction: column;">
+          <figure class="grayscale" style="margin: 0; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 2px solid var(--color-divider);">
+            <img src="public/projects/whatsapp-automation.png" alt="مساعد الطلبات" style="width: 100%; height: 100%; object-fit: cover;">
+          </figure>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h4 style="margin: 0; font-weight: 700; font-size: 19px; line-height: 1.4;">مساعد الطلبات على واتساب</h4>
+            <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.85; color: var(--color-neutral-800);">يأخذ الطلب، يحسب السعر، يؤكّد العنوان، ويكتبه في قاعدة البيانات.</p>
+            <div style="margin-top: auto; padding-top: 18px; display: flex; flex-wrap: wrap; gap: 6px;">
+              <span class="tag tag-neutral">WhatsApp API</span>
+              <span class="tag tag-neutral">Python</span>
+            </div>
+          </div>
+        </article>
+        <article style="border: 2px solid var(--color-divider); display: flex; flex-direction: column;">
+          <figure class="grayscale" style="margin: 0; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 2px solid var(--color-divider);">
+            <img src="public/projects/ecommerce-site.png" alt="متجر إلكتروني" style="width: 100%; height: 100%; object-fit: cover;">
+          </figure>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h4 style="margin: 0; font-weight: 700; font-size: 19px; line-height: 1.4;">متجر إلكتروني</h4>
+            <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.85; color: var(--color-neutral-800);">صفحات منتجات وسلة ودفع، بزمن تحميل أقل من ثانية وبلا إضافات متراكمة.</p>
+            <div style="margin-top: auto; padding-top: 18px; display: flex; flex-wrap: wrap; gap: 6px;">
+              <span class="tag tag-neutral">Next.js</span>
+              <span class="tag tag-neutral">Stripe</span>
+            </div>
+          </div>
+        </article>
+        <article style="border: 2px solid var(--color-divider); display: flex; flex-direction: column;">
+          <figure class="grayscale" style="margin: 0; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 2px solid var(--color-divider);">
+            <img src="public/projects/api-integration.png" alt="ربط الأنظمة" style="width: 100%; height: 100%; object-fit: cover;">
+          </figure>
+          <div style="padding: 24px; display: flex; flex-direction: column; flex: 1;">
+            <h4 style="margin: 0; font-weight: 700; font-size: 19px; line-height: 1.4;">ربط الجداول وأنظمة العملاء</h4>
+            <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.85; color: var(--color-neutral-800);">سير واحد يربط الجداول ونظام العملاء وقاعدة البيانات، فلا يُعيد أحد الكتابة.</p>
+            <div style="margin-top: auto; padding-top: 18px; display: flex; flex-wrap: wrap; gap: 6px;">
+              <span class="tag tag-neutral">REST API</span>
+              <span class="tag tag-neutral">PostgreSQL</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 0;">
+      <div style="font-size: 13px; font-weight: 600; color: var(--color-accent);">٠٤ — الأسعار</div>
+      <h2 style="margin: 20px 0 0; font-weight: 700; font-size: 40px; line-height: 1.25; max-width: 24ch;">ثلاث طرق للدفع. اختر ما يناسبك.</h2>
+      <p style="margin: 16px 0 40px; max-width: 56ch; font-size: 17px; line-height: 1.85; color: var(--color-neutral-800);">الرقم النهائي يعتمد على النطاق، وتستلمه مكتوبًا بعد مكالمة ١٥ دقيقة — قبل أن يبدأ العمل.</p>
+    </div>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px 80px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--color-divider);">
+      <div style="padding: 32px 0; padding-inline-end: 32px; display: flex; flex-direction: column;">
+        <div style="font-size: 13px; font-weight: 600; color: var(--color-neutral-600);">جاهز للاستخدام</div>
+        <h3 style="margin: 14px 0 0; font-weight: 700; font-size: 26px;">ClinicFlow</h3>
+        <div style="margin-top: 12px; font-weight: 700; font-size: 20px;">اشتراك شهري</div>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">للعيادات التي تريد النظام الجاهز. يُشغَّل خلال أيام، لا أسابيع.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; border-top: 1px solid var(--color-divider); list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+          <li>المواعيد وملفات المرضى</li>
+          <li>الحجز والتذكير على واتساب</li>
+          <li>الاستضافة والتحديثات والدعم</li>
+        </ul>
+        <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" style="margin-top: 28px; display: block; border: 1px solid var(--color-divider); padding: 14px 18px; font-size: 15px; font-weight: 600; color: var(--color-text);" style-hover="background: var(--color-surface); color: var(--color-text);">اسأل عن ClinicFlow</a>
+      </div>
+      <div style="padding: 32px; border-inline-start: 1px solid var(--color-divider); background: var(--color-surface); display: flex; flex-direction: column;">
+        <div style="font-size: 13px; font-weight: 600; color: var(--color-accent);">الأكثر طلبًا</div>
+        <h3 style="margin: 14px 0 0; font-weight: 700; font-size: 26px;">بناء مخصّص</h3>
+        <div style="margin-top: 12px; font-weight: 700; font-size: 20px;">سعر لمرة واحدة</div>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">نحدّد النطاق، نبني، ونسلّمك الكود. بلا رسوم شهرية، وبلا رخصة لكل مستخدم.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; border-top: 1px solid var(--color-divider); list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+          <li>نطاق وسعر مكتوبان وثابتان</li>
+          <li>يعمل خلال ٢–٤ أسابيع</li>
+          <li>الكود والمستودع وجلسة شرح</li>
+        </ul>
+        <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" style="margin-top: 28px; display: block; background: var(--color-accent); color: var(--color-bg); padding: 14px 18px; font-size: 15px; font-weight: 600;" style-hover="background: var(--color-accent-600); color: var(--color-bg);">اطلب عرض سعر مكتوب</a>
+      </div>
+      <div style="padding: 32px 0; padding-inline-start: 32px; border-inline-start: 1px solid var(--color-divider); display: flex; flex-direction: column;">
+        <div style="font-size: 13px; font-weight: 600; color: var(--color-neutral-600);">بلا متابعة منك</div>
+        <h3 style="margin: 14px 0 0; font-weight: 700; font-size: 26px;">خدمة مُدارة</h3>
+        <div style="margin-top: 12px; font-weight: 700; font-size: 20px;">بناء + شهري</div>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">نبنيه ونشغّله — استضافة ومراقبة وتعديلات مقابل مبلغ شهري ثابت.</p>
+        <ul style="margin: 20px 0 0; padding: 20px 0 0; border-top: 1px solid var(--color-divider); list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+          <li>استضافة ومراقبة</li>
+          <li>تعديلات صغيرة كل شهر</li>
+          <li>توقف متى شئت وتأخذ الكود</li>
+        </ul>
+        <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" style="margin-top: 28px; display: block; border: 1px solid var(--color-divider); padding: 14px 18px; font-size: 15px; font-weight: 600; color: var(--color-text);" style-hover="background: var(--color-surface); color: var(--color-text);">لنتكلم بالتفاصيل</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: 5fr 7fr; gap: 56px;">
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--color-accent);">٠٥ — كيف نعمل</div>
+        <h2 style="margin: 20px 0 0; font-weight: 700; font-size: 40px; line-height: 1.25;">خمس خطوات، أربعة أسابيع، شخص واحد تتصل به.</h2>
+        <p style="margin: 20px 0 0; font-size: 17px; line-height: 1.9; color: var(--color-neutral-800);">لا يحوّلك أحد إلى «مدير حساب». من يخطّط هو من يكتب الكود.</p>
+      </div>
+      <div>
+        <div style="display: grid; grid-template-columns: 76px 1fr; border-top: 2px solid var(--color-divider); padding: 22px 0;">
+          <div style="font-weight: 700; font-size: 16px; color: var(--color-accent);">٠١</div>
+          <div>
+            <h4 style="margin: 0; font-weight: 700; font-size: 19px;">مكالمة — ١٥ دقيقة</h4>
+            <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">على واتساب أو هاتفيًا. ماذا يعمل مشروعك، ما البطيء فيه، وما تريد التخلّص منه.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 76px 1fr; border-top: 1px solid var(--color-divider); padding: 22px 0;">
+          <div style="font-weight: 700; font-size: 16px; color: var(--color-accent);">٠٢</div>
+          <div>
+            <h4 style="margin: 0; font-weight: 700; font-size: 19px;">نطاق وسعر مكتوبان</h4>
+            <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">صفحة واحدة: ما سيُبنى، بكم، ومتى يُسلَّم. لا يبدأ شيء قبل موافقتك.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 76px 1fr; border-top: 1px solid var(--color-divider); padding: 22px 0;">
+          <div style="font-weight: 700; font-size: 16px; color: var(--color-accent);">٠٣</div>
+          <div>
+            <h4 style="margin: 0; font-weight: 700; font-size: 19px;">البناء — ٢ إلى ٤ أسابيع</h4>
+            <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">ترى رابطًا يعمل كل أسبوع وتطلب التعديل وهو ما زال سهلًا ورخيصًا.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 76px 1fr; border-top: 1px solid var(--color-divider); padding: 22px 0;">
+          <div style="font-weight: 700; font-size: 16px; color: var(--color-accent);">٠٤</div>
+          <div>
+            <h4 style="margin: 0; font-weight: 700; font-size: 19px;">التسليم</h4>
+            <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">يعمل على نطاقك وحساباتك. الكود والمستودع وجلسة شرح لفريقك.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 76px 1fr; border-top: 1px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); padding: 22px 0;">
+          <div style="font-weight: 700; font-size: 16px; color: var(--color-accent);">٠٥</div>
+          <div>
+            <h4 style="margin: 0; font-weight: 700; font-size: 19px;">الدعم — إن أردته فقط</h4>
+            <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">صيانة وتعديلات شهرية، أو لا شيء. النظام لك في الحالتين.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px;">
+      <div style="font-size: 13px; font-weight: 600; color: var(--color-accent);">٠٦ — لماذا AXEN</div>
+      <h2 style="margin: 20px 0 40px; font-weight: 700; font-size: 40px; line-height: 1.25; max-width: 26ch;">مبني لك، لا مُصدَّر من قالب.</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); border-top: 2px solid var(--color-divider);">
+        <div style="padding: 28px 0; padding-inline-end: 40px; border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-weight: 700; font-size: 20px;">الكود ملكك</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">المستودع وقاعدة البيانات والحسابات باسمك. لا شيء مربوط بنا، فلا شيء يحتجزك.</p>
+        </div>
+        <div style="padding: 28px 0; padding-inline-start: 40px; border-inline-start: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-weight: 700; font-size: 20px;">بلا اشتراك لكل مستخدم</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">بناء واحد، سعر واحد. لا تدفع من جديد كلما وظّفت شخصًا.</p>
+        </div>
+        <div style="padding: 28px 0; padding-inline-end: 40px; border-bottom: 2px solid var(--color-divider);">
+          <h4 style="margin: 0; font-weight: 700; font-size: 20px;">العربية ليست إضافة أخيرة</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">تصميم من اليمين لليسار، خط عربي حقيقي، وأتمتة تفهم كيف يكتب الناس فعلًا.</p>
+        </div>
+        <div style="padding: 28px 0; padding-inline-start: 40px; border-inline-start: 1px solid var(--color-divider); border-bottom: 2px solid var(--color-divider);">
+          <h4 style="margin: 0; font-weight: 700; font-size: 20px;">قابل للإضافة عليه</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">كود نظيف وموثّق. الميزة القادمة عمل يوم، لا إعادة بناء.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start;">
+      <figure class="grayscale" style="margin: 0; border: 2px solid var(--color-divider); aspect-ratio: 4 / 5;">
+        <image-slot id="axen-founder-ar" shape="rect" fit="cover" placeholder="ضع صورة عبدالله هنا" style="width: 100%; height: 100%;"></image-slot>
+      </figure>
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--color-accent);">٠٧ — من ستتعامل معه</div>
+        <h2 style="margin: 20px 0 0; font-weight: 700; font-size: 40px; line-height: 1.25;">عبدالله الحلحولي</h2>
+        <div style="margin-top: 10px; font-size: 17px; color: var(--color-neutral-700);">مهندس برمجيات · مؤسس AXEN · عمّان، الأردن</div>
+        <p style="margin: 24px 0 0; max-width: 54ch; font-size: 18px; line-height: 1.9;">AXEN مهندس واحد، وهذا مقصود. تشرح المشكلة للشخص الذي سيكتب الكود، وهو نفسه من يجيبك بعد أن يصبح النظام في الخدمة.</p>
+        <p style="margin: 14px 0 0; max-width: 54ch; font-size: 18px; line-height: 1.9; color: var(--color-neutral-800);">ClinicFlow — نظام مواعيد وواتساب للعيادات — بُني هنا من الصفر ويعمل كخدمة اليوم، وبنفس البنية تُبنى بقية الأعمال.</p>
+        <div style="margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--color-divider);">
+          <div style="padding: 20px 0; padding-inline-end: 20px;">
+            <div style="font-weight: 700; font-size: 16px;">عمّان</div>
+            <div style="margin-top: 6px; font-size: 13px; color: var(--color-neutral-600);">المقر ومكان العمل</div>
+          </div>
+          <div style="padding: 20px; border-inline-start: 1px solid var(--color-divider);">
+            <div style="font-weight: 700; font-size: 16px;">تواصل مباشر</div>
+            <div style="margin-top: 6px; font-size: 13px; color: var(--color-neutral-600);">بلا وسطاء</div>
+          </div>
+          <div style="padding: 20px 0; padding-inline-start: 20px; border-inline-start: 1px solid var(--color-divider);">
+            <div style="font-weight: 700; font-size: 16px;">عربي / إنجليزي</div>
+            <div style="margin-top: 6px; font-size: 13px; color: var(--color-neutral-600);">العمل باللغتين</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="border-bottom: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px;">
+      <div style="font-size: 13px; font-weight: 600; color: var(--color-accent);">٠٨ — أسئلة</div>
+      <h2 style="margin: 20px 0 40px; font-weight: 700; font-size: 40px; line-height: 1.25;">ما يسأله الناس أولًا.</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 56px; border-top: 2px solid var(--color-divider);">
+        <div style="padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-weight: 700; font-size: 18px;">كم التكلفة؟</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">تعتمد على النطاق، فتستلم سعرًا مكتوبًا بعد مكالمة ١٥ دقيقة. ولا يتغيّر هذا السعر إلا إن غيّرت أنت النطاق.</p>
+        </div>
+        <div style="padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-weight: 700; font-size: 18px;">كم يستغرق حتى يعمل؟</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">من أسبوعين إلى أربعة لمعظم الأعمال. أما ClinicFlow فيُشغَّل خلال أيام لأنه موجود أصلًا.</p>
+        </div>
+        <div style="padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-weight: 700; font-size: 18px;">هل هذا «بوت» بقوائم خيارات؟</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">لا. بلا شجرة خيارات. يقرأ ما كتبه العميل فعلًا — فصحى أو عامية أو عربيزي — ويجيب، أو يحوّل المحادثة لك.</p>
+        </div>
+        <div style="padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+          <h4 style="margin: 0; font-weight: 700; font-size: 18px;">لمن تكون ملكية العمل؟</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">لك — الكود والمستودع والنطاق وحسابات الاستضافة باسمك، وتُسلَّم في النهاية.</p>
+        </div>
+        <div style="padding: 26px 0; border-bottom: 2px solid var(--color-divider);">
+          <h4 style="margin: 0; font-weight: 700; font-size: 18px;">هل يمكن العمل على ما لديّ حاليًا؟</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">عادةً نعم. موقع قائم أو جداول أو نظام كاشير أو نظام عملاء — إن كان له واجهة برمجية أو تصدير، يمكن ربطه.</p>
+        </div>
+        <div style="padding: 26px 0; border-bottom: 2px solid var(--color-divider);">
+          <h4 style="margin: 0; font-weight: 700; font-size: 18px;">وإن تعطّل شيء بعد التسليم؟</h4>
+          <p style="margin: 10px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">راسلنا على واتساب. الدعم الشهري اختياري، ولا نطلب اشتراكًا مقابل أن نجيبك.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: 5fr 7fr; gap: 56px;">
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--color-accent);">٠٩ — تواصل</div>
+        <h2 style="margin: 20px 0 0; font-weight: 700; font-size: 40px; line-height: 1.25;">أرسل رسالة. سيردّ عليك شخص.</h2>
+        <p style="margin: 20px 0 0; font-size: 17px; line-height: 1.9; color: var(--color-neutral-800);">واتساب أسرع، ومن هناك يبدأ معظم العمل. اكتب ماذا يعمل مشروعك وما الذي يبطئه.</p>
+        <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" style="margin-top: 28px; display: flex; align-items: center; gap: 16px; border: 2px solid var(--color-text); padding: 20px; color: var(--color-text);" style-hover="background: var(--color-text); color: var(--color-bg);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 24px; width: 24px; flex: none;"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
+          <span>
+            <span style="display: block; font-weight: 700; font-size: 18px;">واتساب</span>
+            <span style="display: block; margin-top: 2px; font-size: 14px; direction: ltr; text-align: start; opacity: 0.75;">{{ whatsappDisplay }}</span>
+          </span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 18px; width: 18px; margin-inline-start: auto; flex: none; transform: scaleX(-1);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+        </a>
+        <a href="{{ mailHref }}" style="margin-top: 12px; display: flex; align-items: center; gap: 16px; border: 1px solid var(--color-divider); padding: 20px; color: var(--color-text);" style-hover="border-color: var(--color-text); color: var(--color-text);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 24px; width: 24px; flex: none;"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+          <span>
+            <span style="display: block; font-weight: 700; font-size: 18px;">البريد الإلكتروني</span>
+            <span style="display: block; margin-top: 2px; font-size: 14px; direction: ltr; text-align: start; opacity: 0.75;">{{ contactEmail }}</span>
+          </span>
+        </a>
+      </div>
+
+      <div style="border: 2px solid var(--color-divider); padding: 36px;">
+        <h3 style="margin: 0; font-weight: 700; font-size: 24px;">أو اكتب هنا</h3>
+        <p style="margin: 10px 0 0; font-size: 15px; color: var(--color-neutral-700);">ثلاث خانات، والرد في نفس يوم العمل.</p>
+
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="margin-top: 28px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+            <div class="field">
+              <label for="axen-name-ar" style="font-size: 14px;">الاسم</label>
+              <input id="axen-name-ar" class="input" type="text" required placeholder="اسمك" style="font-family: 'IBM Plex Sans Arabic', var(--font-body); min-height: 44px;">
+            </div>
+            <div class="field">
+              <label for="axen-biz-ar" style="font-size: 14px;">المشروع والمدينة</label>
+              <input id="axen-biz-ar" class="input" type="text" required placeholder="مثال: عيادة أسنان، عمّان" style="font-family: 'IBM Plex Sans Arabic', var(--font-body); min-height: 44px;">
+            </div>
+            <div class="field" style="grid-column: span 2;">
+              <label for="axen-msg-ar" style="font-size: 14px;">ما الذي تحتاجه؟</label>
+              <textarea id="axen-msg-ar" class="input" required rows="4" placeholder="ما البطيء الآن، وما تريده أن يصير" style="font-family: 'IBM Plex Sans Arabic', var(--font-body);"></textarea>
+            </div>
+            <div style="grid-column: span 2; display: flex; align-items: center; gap: 16px;">
+              <button type="submit" style="background: var(--color-accent); color: var(--color-bg); border: none; padding: 15px 24px; font-family: 'IBM Plex Sans Arabic', var(--font-body); font-size: 15px; font-weight: 600; cursor: pointer;" style-hover="background: var(--color-accent-600);">أرسل</button>
+              <span style="font-size: 14px; color: var(--color-neutral-600);">بلا قوائم بريدية، وبلا رسائل متابعة.</span>
+            </div>
+          </form>
+        </sc-if>
+
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 28px; border: 2px solid var(--color-accent); padding: 32px; display: flex; gap: 16px; align-items: flex-start;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 26px; width: 26px; flex: none;"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>
+            <div>
+              <div style="font-weight: 700; font-size: 19px;">وصلتنا رسالتك — شكرًا لك.</div>
+              <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.9; color: var(--color-neutral-800);">سنردّ في نفس يوم العمل. وإن كان الأمر مستعجلًا، واتساب أسرع.</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--color-accent); color: var(--color-bg);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 72px 40px; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px;">
+      <div>
+        <div style="font-size: 13px; font-weight: 600; opacity: 0.85;">عمّان، الأردن</div>
+        <div style="margin-top: 18px; font-weight: 700; font-size: 52px; line-height: 1.2; max-width: 20ch;">توقّف عن كتابة نفس الرد أربعين مرة في اليوم.</div>
+      </div>
+      <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer" style="flex: none; display: inline-flex; align-items: center; gap: 12px; background: var(--color-bg); color: var(--color-text); padding: 20px 26px; font-size: 17px; font-weight: 700;" style-hover="background: var(--color-text); color: var(--color-bg);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height: 20px; width: 20px;"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
+        راسلنا على واتساب
+      </a>
+    </div>
+  </section>
+
+  <footer style="border-top: 2px solid var(--color-divider);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 48px 40px; display: grid; grid-template-columns: 5fr 3fr 4fr; gap: 40px;">
+      <div>
+        <a href="#top" style="display: flex; align-items: center; gap: 12px;">
+          <svg viewBox="0 0 100 100" fill="none" style="height: 24px; width: 24px; color: var(--color-text);" aria-hidden="true">
+            <path d="M50 6 L96 92 L79 92 L50 33 L21 92 L4 92 Z" fill="currentColor"></path>
+            <path d="M50 41 L73 92 L60 92 L50 63 L40 92 L27 92 Z" fill="currentColor"></path>
+          </svg>
+          <span style="font-family: var(--font-heading); font-weight: 800; font-size: 17px; letter-spacing: 0.34em;">AXEN</span>
+        </a>
+        <p style="margin: 16px 0 0; max-width: 32ch; font-size: 15px; line-height: 1.85; color: var(--color-neutral-700);">مواقع ومتاجر إلكترونية وأتمتة واتساب، تُبنى على الطلب في عمّان.</p>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--color-neutral-600);">الصفحات</div>
+        <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+          <a href="#services">الخدمات</a>
+          <a href="#work">أعمالنا</a>
+          <a href="#pricing">الأسعار</a>
+          <a href="#process">كيف نعمل</a>
+          <a href="#about">من نحن</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--color-neutral-600);">للتواصل</div>
+        <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+          <a href="{{ whatsappHref }}" target="_blank" rel="noopener noreferrer">واتساب — <span style="direction: ltr; display: inline-block;">{{ whatsappDisplay }}</span></a>
+          <a href="{{ mailHref }}" style="direction: ltr; text-align: start;">{{ contactEmail }}</a>
+          <a href="AXEN Web.dc.html">English version</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px 40px;">
+      <div style="border-top: 1px solid var(--color-divider); padding-top: 20px; display: flex; justify-content: space-between; gap: 24px; font-size: 14px; color: var(--color-neutral-700);">
+        <span>© ٢٠٢٦ AXEN — عبدالله الحلحولي</span>
+        <span>عمّان، الأردن</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#ec3013&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#ec3013&quot;, &quot;#201e1d&quot;, &quot;#ae1800&quot;], &quot;section&quot;: &quot;Brand&quot;}, &quot;whatsappNumber&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;962790000000&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot;}, &quot;contactEmail&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;hello@axen.agency&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot;}}">
+const SCRIPT = [
+  { from: 'user', label: 'العميل · واتساب', text: 'مرحبا، بدي اطلب 2 شاورما دجاج و كولا', dir: 'rtl' },
+  { from: 'bot', label: 'وكيل AXEN', text: 'تم استلام الطلب: ٢× شاورما دجاج + ١× كولا. المجموع ٦.٥٠ دينار. تأكيد التوصيل إلى عبدون؟ (نعم/لا)', dir: 'rtl' },
+  { from: 'user', label: 'العميل · واتساب', text: 'نعم اكيد', dir: 'rtl' },
+  { from: 'bot', label: 'وكيل AXEN', text: 'تم التأكيد. الطلب #A-2481 قيد التوصيل. الوقت المتوقع ٢٥ دقيقة. جارٍ المزامنة…', dir: 'rtl' },
+  { from: 'system', label: 'النظام', text: 'DB WRITE → orders[A-2481] status=confirmed · synced in 240ms', dir: 'ltr' },
+];
+
+const ROLE = {
+  user: { justify: 'flex-start', bg: 'transparent', border: 'var(--color-neutral-700)', color: 'var(--color-neutral-200)' },
+  bot: { justify: 'flex-end', bg: 'var(--color-bg)', border: 'var(--color-bg)', color: 'var(--color-text)' },
+  system: { justify: 'flex-start', bg: 'transparent', border: 'var(--color-accent)', color: 'var(--color-accent-400)' },
+};
+
+class Component extends DCLogic {
+  state = { shown: 0, submitted: false };
+
+  componentDidMount() { this.run(); }
+  componentWillUnmount() { this.stop(); }
+
+  stop() { if (this.timer) { clearInterval(this.timer); this.timer = null; } }
+
+  run() {
+    this.stop();
+    this.setState({ shown: 0 });
+    this.timer = setInterval(() => {
+      this.setState((s) => {
+        const shown = s.shown + 1;
+        if (shown >= SCRIPT.length) this.stop();
+        return { shown };
+      });
+    }, 1100);
+  }
+
+  renderVals() {
+    const { shown, submitted } = this.state;
+    const number = (this.props.whatsappNumber ?? '962790000000').replace(/[^0-9]/g, '');
+    const email = this.props.contactEmail ?? 'hello@axen.agency';
+    const done = shown >= SCRIPT.length;
+    return {
+      accent: this.props.accent ?? '#ec3013',
+      whatsappHref: 'https://wa.me/' + number,
+      whatsappDisplay: '+' + number,
+      contactEmail: email,
+      mailHref: 'mailto:' + email,
+      lines: SCRIPT.slice(0, shown).map((l) => ({ ...l, ...ROLE[l.from] })),
+      statusLabel: done ? 'أُغلق الطلب · بلا تدخّل بشري' : 'الوكيل يستمع…',
+      replay: () => this.run(),
+      replayLabel: done ? 'أعد المحاكاة' : 'جارٍ التشغيل…',
+      submitted,
+      notSubmitted: !submitted,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>
