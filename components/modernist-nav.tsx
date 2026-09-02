@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { MessageCircle, Menu, X, ArrowUpRight } from 'lucide-react'
+import { MessageCircle, Menu, X } from 'lucide-react'
 import { WHATSAPP_NUMBER, CONTACT_EMAIL, getWhatsAppUrl } from '@/lib/i18n'
 
 export function ModernistHeader({
@@ -30,7 +30,7 @@ export function ModernistHeader({
     <header className="sticky top-0 z-50 bg-[var(--color-bg)] border-b-2 border-[var(--color-divider)]">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10 h-[72px] sm:h-[76px] flex items-center justify-between gap-4">
         {/* Brand Logo */}
-        <Link href={isAr ? '/ar' : '/'} className="flex items-center gap-3 shrink-0">
+        <Link href={isAr ? '/ar' : '/'} className="flex items-center gap-3 shrink-0 py-2">
           <svg viewBox="0 0 100 100" fill="none" className="h-6 w-6 text-[var(--color-text)]" aria-hidden="true">
             <path d="M50 6 L96 92 L79 92 L50 33 L21 92 L4 92 Z" fill="currentColor" />
             <path d="M50 41 L73 92 L60 92 L50 63 L40 92 L27 92 Z" fill="currentColor" />
@@ -38,10 +38,10 @@ export function ModernistHeader({
           <span className="font-extrabold text-[19px] tracking-[0.34em]">AXEN</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-7 text-[15px] font-medium">
+        {/* Desktop Navigation: visible at lg (>= 1024px) to prevent tablet collision */}
+        <nav className="hidden lg:flex items-center gap-7 text-[15px] font-medium">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-[var(--color-accent)] transition-colors">
+            <a key={link.href} href={link.href} className="hover:text-[var(--color-accent-700)] transition-colors py-2">
               {link.label}
             </a>
           ))}
@@ -49,30 +49,30 @@ export function ModernistHeader({
 
         {/* Right Actions */}
         <div className="flex items-center gap-2.5 sm:gap-3">
-          {/* Language Switch */}
+          {/* Language Switch with 44px touch target */}
           <Link
             href={isAr ? '/' : '/ar'}
-            className="border border-[var(--color-divider)] px-2.5 sm:px-3 py-1.5 text-xs sm:text-[13px] font-semibold tracking-wider hover:bg-[var(--color-surface)] transition-colors"
+            className="min-h-[44px] inline-flex items-center border border-[var(--color-divider)] px-3 py-2 text-xs sm:text-[13px] font-semibold tracking-wider hover:bg-[var(--color-surface)] transition-colors"
           >
             {isAr ? 'English' : 'العربية'}
           </Link>
 
-          {/* Desktop WhatsApp CTA */}
+          {/* Desktop WhatsApp CTA with whitespace-nowrap */}
           <a
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex bg-[var(--color-accent)] text-[var(--color-bg)] px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-[15px] font-semibold hover:bg-[var(--color-accent-600)] transition-colors items-center gap-2"
+            className="hidden sm:inline-flex min-h-[44px] items-center gap-2 bg-[var(--color-accent)] text-[var(--color-bg)] px-5 py-2.5 text-xs sm:text-[15px] font-semibold whitespace-nowrap hover:bg-[var(--color-accent-600)] transition-colors"
           >
-            <MessageCircle className="h-4 w-4" />
+            <MessageCircle className="h-4 w-4 shrink-0" />
             <span>{isAr ? 'راسلنا على واتساب' : 'WhatsApp us'}</span>
           </a>
 
-          {/* Mobile Menu Hamburger Button */}
+          {/* Mobile Menu Hamburger Button with 44x44px touch target */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden border border-[var(--color-divider)] p-2 text-[var(--color-text)] hover:bg-[var(--color-surface)] transition-colors"
+            className="lg:hidden min-h-[44px] min-w-[44px] inline-flex items-center justify-center border border-[var(--color-divider)] p-2.5 text-[var(--color-text)] hover:bg-[var(--color-surface)] transition-colors"
             aria-label={mobileMenuOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -82,17 +82,17 @@ export function ModernistHeader({
 
       {/* Mobile Architectural Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t-2 border-[var(--color-divider)] bg-[var(--color-bg)] px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
+        <div className="lg:hidden border-t-2 border-[var(--color-divider)] bg-[var(--color-bg)] px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col divide-y divide-[var(--color-divider)]">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-3.5 flex items-center justify-between text-base font-semibold text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors"
+                className="py-4 flex items-center justify-between text-base font-semibold text-[var(--color-text)] hover:text-[var(--color-accent-700)] transition-colors"
               >
                 <span>{link.label}</span>
-                <span className="text-xs text-[var(--color-neutral-500)] font-mono">{link.num}</span>
+                <span className="text-xs text-[var(--color-neutral-700)] font-mono">{link.num}</span>
               </a>
             ))}
           </nav>
@@ -103,7 +103,7 @@ export function ModernistHeader({
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2.5 bg-[var(--color-accent)] text-[var(--color-bg)] py-3.5 text-sm font-bold hover:bg-[var(--color-accent-600)] transition-colors"
+              className="w-full min-h-[48px] flex items-center justify-center gap-2.5 bg-[var(--color-accent)] text-[var(--color-bg)] py-3.5 text-sm font-bold hover:bg-[var(--color-accent-600)] transition-colors"
             >
               <MessageCircle className="h-4 w-4" />
               <span>{isAr ? 'راسلنا على واتساب' : 'Message us on WhatsApp'}</span>
@@ -139,27 +139,27 @@ export function ModernistFooter({ lang }: { lang: 'ar' | 'en' }) {
         </div>
 
         <div>
-          <div className="text-[13px] font-bold text-[var(--color-neutral-600)]">{isAr ? 'الصفحات' : 'Navigation'}</div>
+          <div className="text-[13px] font-bold text-[var(--color-neutral-700)]">{isAr ? 'الصفحات' : 'Navigation'}</div>
           <div className="mt-3.5 flex flex-col gap-2.5 text-[15px]">
-            <a href={isAr ? '/ar#services' : '/#services'} className="hover:text-[var(--color-accent)] transition-colors">{isAr ? 'الخدمات' : 'Services'}</a>
-            <a href={isAr ? '/ar#work' : '/#work'} className="hover:text-[var(--color-accent)] transition-colors">{isAr ? 'أعمالنا' : 'Work'}</a>
-            <a href={isAr ? '/ar#pricing' : '/#pricing'} className="hover:text-[var(--color-accent)] transition-colors">{isAr ? 'الأسعار' : 'Pricing'}</a>
-            <a href={isAr ? '/ar#process' : '/#process'} className="hover:text-[var(--color-accent)] transition-colors">{isAr ? 'كيف نعمل' : 'Process'}</a>
-            <a href={isAr ? '/ar#about' : '/#about'} className="hover:text-[var(--color-accent)] transition-colors">{isAr ? 'من نحن' : 'About'}</a>
+            <a href={isAr ? '/ar#services' : '/#services'} className="hover:text-[var(--color-accent-700)] transition-colors">{isAr ? 'الخدمات' : 'Services'}</a>
+            <a href={isAr ? '/ar#work' : '/#work'} className="hover:text-[var(--color-accent-700)] transition-colors">{isAr ? 'أعمالنا' : 'Work'}</a>
+            <a href={isAr ? '/ar#pricing' : '/#pricing'} className="hover:text-[var(--color-accent-700)] transition-colors">{isAr ? 'الأسعار' : 'Pricing'}</a>
+            <a href={isAr ? '/ar#process' : '/#process'} className="hover:text-[var(--color-accent-700)] transition-colors">{isAr ? 'كيف نعمل' : 'Process'}</a>
+            <a href={isAr ? '/ar#about' : '/#about'} className="hover:text-[var(--color-accent-700)] transition-colors">{isAr ? 'من نحن' : 'About'}</a>
           </div>
         </div>
 
         <div>
-          <div className="text-[13px] font-bold text-[var(--color-neutral-600)]">{isAr ? 'للتواصل' : 'Channels'}</div>
+          <div className="text-[13px] font-bold text-[var(--color-neutral-700)]">{isAr ? 'للتواصل' : 'Channels'}</div>
           <div className="mt-3.5 flex flex-col gap-2.5 text-[15px]">
-            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">
-              {isAr ? 'واتساب — ' : 'WhatsApp — '}
-              <span className="dir-ltr inline-block">{whatsappDisplay}</span>
+            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent-700)] transition-colors flex items-center gap-1.5">
+              <span>{isAr ? 'واتساب — ' : 'WhatsApp — '}</span>
+              <span dir="ltr" className="inline-block">{whatsappDisplay}</span>
             </a>
-            <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[var(--color-accent)] transition-colors dir-ltr text-start">
+            <a href={`mailto:${CONTACT_EMAIL}`} dir="ltr" className="hover:text-[var(--color-accent-700)] transition-colors text-start">
               {CONTACT_EMAIL}
             </a>
-            <Link href={isAr ? '/' : '/ar'} className="text-[var(--color-accent)] font-semibold hover:underline">
+            <Link href={isAr ? '/' : '/ar'} className="text-[var(--color-accent-700)] font-semibold hover:underline">
               {isAr ? 'English version' : 'النسخة العربية'}
             </Link>
           </div>
@@ -168,7 +168,7 @@ export function ModernistFooter({ lang }: { lang: 'ar' | 'en' }) {
 
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 pb-10">
         <div className="border-t border-[var(--color-divider)] pt-5 flex flex-col sm:flex-row justify-between gap-4 text-sm text-[var(--color-neutral-700)]">
-          <span>© ٢٠٢٦ AXEN — عبدالله الحلحولي</span>
+          <span>{isAr ? '© ٢٠٢٦ AXEN — عبدالله الحلحولي' : '© 2026 AXEN — Abdalla Alhalhouli'}</span>
           <span>{isAr ? 'عمّان، الأردن' : 'Amman, Jordan'}</span>
         </div>
       </div>

@@ -100,7 +100,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       style={{
         background: 'var(--color-bg)',
         color: 'var(--color-text)',
-        fontFamily: isAr ? "'IBM Plex Sans Arabic', system-ui, sans-serif" : "'Archivo', system-ui, sans-serif",
+        fontFamily: isAr ? 'var(--font-arabic)' : 'var(--font-heading)',
         minHeight: '100vh',
       }}
     >
@@ -111,7 +111,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       <section id="top" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 grid grid-cols-1 lg:grid-cols-[7fr_5fr]">
           <div className="py-16 sm:py-24 lg:py-28 pe-0 lg:pe-14">
-            <div className="text-[13px] font-bold tracking-widest uppercase text-[var(--color-accent)]">
+            <div className="text-[13px] font-bold tracking-widest uppercase text-[var(--color-accent-700)]">
               {isAr ? 'عمّان، الأردن — برمجيات تُبنى على الطلب' : 'Amman, Jordan — software built to order'}
             </div>
             <h1 className="mt-6 font-extrabold text-4xl sm:text-5xl lg:text-[58px] leading-[1.12] tracking-tight max-w-[18ch]">
@@ -127,14 +127,14 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-[var(--color-accent)] text-[var(--color-bg)] px-6 py-4 text-[16px] font-semibold hover:bg-[var(--color-accent-600)] transition-colors"
+                className="inline-flex min-h-[48px] items-center gap-2.5 bg-[var(--color-accent)] text-[var(--color-bg)] px-6 py-3.5 text-[16px] font-semibold hover:bg-[var(--color-accent-600)] transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>{isAr ? 'راسلنا على واتساب' : 'Message us on WhatsApp'}</span>
               </a>
               <a
                 href="#terminal"
-                className="inline-flex items-center border border-[var(--color-divider)] px-6 py-4 text-[16px] font-medium text-[var(--color-text)] hover:bg-[var(--color-surface)] transition-colors"
+                className="inline-flex min-h-[48px] items-center border border-[var(--color-divider)] px-6 py-3.5 text-[16px] font-medium text-[var(--color-text)] hover:bg-[var(--color-surface)] transition-colors"
               >
                 {isAr ? 'شاهد طلبًا يُغلق نفسه' : 'See a real order close itself'}
               </a>
@@ -143,7 +143,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
 
           <div className="hidden lg:grid border-s-2 border-[var(--color-divider)] bg-[var(--color-surface)] place-items-center p-14">
             <Image
-              src="/axen-lockup.png"
+              src="/axen-lockup.webp"
               alt="AXEN"
               width={340}
               height={340}
@@ -154,28 +154,28 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
         </div>
       </section>
 
-      {/* ── METRICS BAR (4 Columns) ── */}
+      {/* ── METRICS BAR (4 Columns Aligned) ── */}
       <section className="border-b-2 border-[var(--color-divider)]">
-        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-x lg:divide-x-0 rtl:divide-x-reverse divide-[var(--color-divider)]">
-          <div className="py-7 pe-6">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 grid grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 divide-x sm:divide-x rtl:divide-x-reverse divide-[var(--color-divider)]">
+          <div className="p-6 sm:p-7">
             <div className="font-extrabold text-2xl sm:text-[28px]">{isAr ? '٢–٤ أسابيع' : '2–4 weeks'}</div>
             <div className="mt-2 text-sm text-[var(--color-neutral-700)]">
               {isAr ? 'من الفكرة إلى الإطلاق' : 'From brief to live'}
             </div>
           </div>
-          <div className="py-7 px-6 border-s lg:border-s border-[var(--color-divider)]">
+          <div className="p-6 sm:p-7">
             <div className="font-extrabold text-2xl sm:text-[28px]">{isAr ? 'مهندس واحد' : 'One engineer'}</div>
             <div className="mt-2 text-sm text-[var(--color-neutral-700)]">
               {isAr ? 'عبدالله — من التخطيط للتسليم' : 'Abdalla — planning to delivery'}
             </div>
           </div>
-          <div className="py-7 px-6 border-s lg:border-s border-[var(--color-divider)]">
+          <div className="p-6 sm:p-7 border-t sm:border-t-0 border-[var(--color-divider)]">
             <div className="font-extrabold text-2xl sm:text-[28px]">ClinicFlow</div>
             <div className="mt-2 text-sm text-[var(--color-neutral-700)]">
               {isAr ? 'نظامنا الخاص، يعمل اليوم' : 'Our own system, running today'}
             </div>
           </div>
-          <div className="py-7 ps-6 border-s lg:border-s border-[var(--color-divider)]">
+          <div className="p-6 sm:p-7 border-t sm:border-t-0 border-[var(--color-divider)]">
             <div className="font-extrabold text-2xl sm:text-[28px]">{isAr ? 'الكود ملكك' : 'You own it'}</div>
             <div className="mt-2 text-sm text-[var(--color-neutral-700)]">
               {isAr ? 'يُسلَّم لك بالكامل' : 'Source code handed over'}
@@ -188,7 +188,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       <section id="terminal" ref={terminalRef} className="scroll-mt-20 bg-[#201e1d] text-[#f3f2f2] border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-14">
           <div>
-            <div className="text-[13px] font-bold text-[#ec3013]">
+            <div className="text-[13px] font-bold tracking-wider uppercase text-[#ec3013]">
               {isAr ? '٠١ — سير عمل حقيقي' : '01 — Live workflow'}
             </div>
             <h2 className="mt-5 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[1.25] text-[#f3f2f2]">
@@ -285,7 +285,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                 <div className="text-xs text-[#9b9797]">{isAr ? 'مزامنة القاعدة' : 'DB sync'}</div>
               </div>
               <div className="p-3.5">
-                <div className="font-extrabold text-lg text-[#f3f2f2]">٠</div>
+                <div className="font-extrabold text-lg text-[#f3f2f2]">{isAr ? '٠' : '0'}</div>
                 <div className="text-xs text-[#9b9797]">{isAr ? 'تدخّل بشري' : 'Human input'}</div>
               </div>
             </div>
@@ -296,7 +296,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       {/* ── 02 SERVICES ── */}
       <section id="services" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 pt-20">
-          <div className="text-[13px] font-bold text-[var(--color-accent)]">
+          <div className="text-[13px] font-bold tracking-wider uppercase text-[var(--color-accent-700)]">
             {isAr ? '٠٢ — الخدمات' : '02 — Services'}
           </div>
           <h2 className="mt-5 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[1.25] max-w-[24ch]">
@@ -314,7 +314,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
           <div className="py-8 md:pe-8">
             <div className="flex items-baseline justify-between gap-4">
               <Code2 className="h-6 w-6 text-[var(--color-text)]" />
-              <span className="font-bold text-sm text-[var(--color-neutral-500)]">{isAr ? '٠١' : '01'}</span>
+              <span className="font-bold text-sm text-[var(--color-neutral-700)]">{isAr ? '٠١' : '01'}</span>
             </div>
             <h3 className="mt-5 font-bold text-[23px] leading-[1.35]">
               {isAr ? 'مواقع ومتاجر إلكترونية' : 'Websites & Online Stores'}
@@ -324,17 +324,17 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                 ? 'موقع يفتح بسرعة، يُقرأ جيدًا بالعربي والإنجليزي، ويبيع. مبني صفحة صفحة، لا مسحوب من قالب.'
                 : 'Fast sites that load in under a second, read perfectly in Arabic and English, and sell. Built page by page, not exported from templates.'}
             </p>
-            <ul className="mt-5 pt-5 list-none border-t border-[var(--color-divider)] flex flex-col gap-3 text-[15px]">
+            <ul className="mt-5 pt-5 list-none border-t border-[var(--color-divider)] flex flex-col gap-3 text-[15px] p-0">
               <li className="flex gap-2.5 items-start">
-                <Check className="h-4 w-4 text-[var(--color-accent)] mt-1 shrink-0" />
+                <Check className="h-4 w-4 text-[var(--color-accent-700)] mt-1 shrink-0" />
                 <span>{isAr ? 'صفحات المنتجات والسلة والدفع' : 'Product catalog, cart, and checkout'}</span>
               </li>
               <li className="flex gap-2.5 items-start">
-                <Check className="h-4 w-4 text-[var(--color-accent)] mt-1 shrink-0" />
+                <Check className="h-4 w-4 text-[var(--color-accent-700)] mt-1 shrink-0" />
                 <span>{isAr ? 'عربي وإنجليزي، الاثنان بنفس الجودة' : 'Bilingual RTL & LTR first-class'}</span>
               </li>
               <li className="flex gap-2.5 items-start">
-                <Check className="h-4 w-4 text-[var(--color-accent)] mt-1 shrink-0" />
+                <Check className="h-4 w-4 text-[var(--color-accent-700)] mt-1 shrink-0" />
                 <span>{isAr ? 'تستلم الكود والمستودع بالكامل' : 'Full source code & repository handover'}</span>
               </li>
             </ul>
@@ -344,7 +344,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
           <div className="py-8 md:px-8">
             <div className="flex items-baseline justify-between gap-4">
               <MessageSquareShare className="h-6 w-6 text-[var(--color-text)]" />
-              <span className="font-bold text-sm text-[var(--color-neutral-500)]">{isAr ? '٠٢' : '02'}</span>
+              <span className="font-bold text-sm text-[var(--color-neutral-700)]">{isAr ? '٠٢' : '02'}</span>
             </div>
             <h3 className="mt-5 font-bold text-[23px] leading-[1.35]">
               {isAr ? 'ردود واتساب وإنستغرام' : 'WhatsApp & Instagram Automation'}
@@ -354,17 +354,17 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                 ? 'طلبات ومواعيد وأسئلة تُجاب في ثوانٍ، بلهجة العميل نفسها. ويحوّل المحادثة لك في أي لحظة تحتاج إنسانًا.'
                 : 'Orders, appointments, and inquiries answered in seconds, in the customer’s dialect. Smooth handoff to a human whenever needed.'}
             </p>
-            <ul className="mt-5 pt-5 list-none border-t border-[var(--color-divider)] flex flex-col gap-3 text-[15px]">
+            <ul className="mt-5 pt-5 list-none border-t border-[var(--color-divider)] flex flex-col gap-3 text-[15px] p-0">
               <li className="flex gap-2.5 items-start">
-                <Check className="h-4 w-4 text-[var(--color-accent)] mt-1 shrink-0" />
+                <Check className="h-4 w-4 text-[var(--color-accent-700)] mt-1 shrink-0" />
                 <span>{isAr ? 'يأخذ الطلب أو الموعد من أوله لآخره' : 'Handles complete orders and bookings'}</span>
               </li>
               <li className="flex gap-2.5 items-start">
-                <Check className="h-4 w-4 text-[var(--color-accent)] mt-1 shrink-0" />
+                <Check className="h-4 w-4 text-[var(--color-accent-700)] mt-1 shrink-0" />
                 <span>{isAr ? 'يرسل التذكيرات والمتابعات تلقائيًا' : 'Automated follow-ups & reminders'}</span>
               </li>
               <li className="flex gap-2.5 items-start">
-                <Check className="h-4 w-4 text-[var(--color-accent)] mt-1 shrink-0" />
+                <Check className="h-4 w-4 text-[var(--color-accent-700)] mt-1 shrink-0" />
                 <span>{isAr ? 'واجهة واتساب الرسمية (Cloud API)' : 'Official Meta WhatsApp Cloud API'}</span>
               </li>
             </ul>
@@ -374,7 +374,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
           <div className="py-8 md:ps-8">
             <div className="flex items-baseline justify-between gap-4">
               <Workflow className="h-6 w-6 text-[var(--color-text)]" />
-              <span className="font-bold text-sm text-[var(--color-neutral-500)]">{isAr ? '٠٣' : '03'}</span>
+              <span className="font-bold text-sm text-[var(--color-neutral-700)]">{isAr ? '٠٣' : '03'}</span>
             </div>
             <h3 className="mt-5 font-bold text-[23px] leading-[1.35]">
               {isAr ? 'أنظمة تربط أدواتك' : 'Systems Connecting Your Tools'}
@@ -384,17 +384,17 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                 ? 'المواعيد والمخزون والفواتير والجداول في مكان واحد بدل أربعة. إن كان له واجهة برمجية، يمكن ربطه.'
                 : 'Appointments, inventory, invoicing, and sheets in one place instead of four. If it has an API, it connects.'}
             </p>
-            <ul className="mt-5 pt-5 list-none border-t border-[var(--color-divider)] flex flex-col gap-3 text-[15px]">
+            <ul className="mt-5 pt-5 list-none border-t border-[var(--color-divider)] flex flex-col gap-3 text-[15px] p-0">
               <li className="flex gap-2.5 items-start">
-                <Check className="h-4 w-4 text-[var(--color-accent)] mt-1 shrink-0" />
+                <Check className="h-4 w-4 text-[var(--color-accent-700)] mt-1 shrink-0" />
                 <span>{isAr ? 'لوحات يقرأها موظفوك بلا تدريب' : 'Intuitive dashboards with zero staff training'}</span>
               </li>
               <li className="flex gap-2.5 items-start">
-                <Check className="h-4 w-4 text-[var(--color-accent)] mt-1 shrink-0" />
+                <Check className="h-4 w-4 text-[var(--color-accent-700)] mt-1 shrink-0" />
                 <span>{isAr ? 'مزامنة الجداول وقواعد البيانات' : 'Two-way database & Google Sheets sync'}</span>
               </li>
               <li className="flex gap-2.5 items-start">
-                <Check className="h-4 w-4 text-[var(--color-accent)] mt-1 shrink-0" />
+                <Check className="h-4 w-4 text-[var(--color-accent-700)] mt-1 shrink-0" />
                 <span>{isAr ? 'صلاحيات، فكل شخص يرى ما يخصّه' : 'Granular role-based access control'}</span>
               </li>
             </ul>
@@ -405,7 +405,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       {/* ── 03 SELECTED WORK ── */}
       <section id="work" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20">
-          <div className="text-[13px] font-bold text-[var(--color-accent)]">
+          <div className="text-[13px] font-bold tracking-wider uppercase text-[var(--color-accent-700)]">
             {isAr ? '٠٣ — أعمالنا' : '03 — Selected Work'}
           </div>
           <h2 className="mt-5 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[1.25]">
@@ -417,20 +417,20 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
               : 'ClinicFlow is our proprietary system, live and in production today. The others are built on the same architecture.'}
           </p>
 
-          {/* Featured Hero Project: ClinicFlow */}
+          {/* Featured Hero Project: ClinicFlow with REAL screenshot */}
           <div className="grid grid-cols-1 lg:grid-cols-[7fr_5fr] border-2 border-[var(--color-divider)]">
-            <figure className="m-0 aspect-[16/10] overflow-hidden">
+            <figure className="m-0 aspect-[16/10] overflow-hidden bg-[var(--color-surface)]">
               <Image
-                src="/projects/web-platform.png"
-                alt="ClinicFlow"
+                src="/projects/clinicflow-dashboard.webp"
+                alt="ClinicFlow Dashboard"
                 width={800}
                 height={500}
-                className="w-full h-full object-cover grayscale contrast-[1.08] hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover grayscale-[0.35] sm:grayscale hover:grayscale-0 transition-all duration-500"
               />
             </figure>
             <div className="p-8 sm:p-9 border-t lg:border-t-0 lg:border-s-2 border-[var(--color-divider)] flex flex-col bg-[var(--color-surface)]">
               <div className="flex items-center gap-2.5 flex-wrap">
-                <span className="border border-[var(--color-accent)] text-[var(--color-accent)] text-xs px-2.5 py-1 font-semibold">
+                <span className="border border-[var(--color-accent-700)] text-[var(--color-accent-700)] text-xs px-2.5 py-1 font-semibold">
                   {isAr ? 'نظامنا الخاص' : 'Proprietary Platform'}
                 </span>
                 <span className="bg-[#f8f4f4] text-[var(--color-text)] text-xs px-2.5 py-1 font-semibold">
@@ -452,7 +452,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
               <div className="mt-6 pt-5 border-t border-[var(--color-divider)]">
                 <Link
                   href={isAr ? '/ar/work/clinicflow' : '/work/clinicflow'}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[var(--color-accent)] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[var(--color-accent-700)] hover:underline"
                 >
                   <span>{isAr ? 'اقرأ دراسة الحالة الكاملة' : 'Read Full Case Study'}</span>
                   <ArrowUpRight className="h-4 w-4" />
@@ -464,13 +464,13 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
           {/* 3 Grid Project Cards */}
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
             <article className="border-2 border-[var(--color-divider)] flex flex-col bg-[var(--color-surface)]">
-              <figure className="m-0 aspect-[16/10] overflow-hidden border-b-2 border-[var(--color-divider)]">
+              <figure className="m-0 aspect-[16/10] overflow-hidden border-b-2 border-[var(--color-divider)] bg-[var(--color-surface)]">
                 <Image
-                  src="/projects/whatsapp-automation.png"
+                  src="/projects/whatsapp-automation.webp"
                   alt="WhatsApp Automation"
                   width={400}
                   height={250}
-                  className="w-full h-full object-cover grayscale contrast-[1.08] hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale-[0.35] sm:grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </figure>
               <div className="p-6 flex flex-col flex-1">
@@ -490,13 +490,13 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
             </article>
 
             <article className="border-2 border-[var(--color-divider)] flex flex-col bg-[var(--color-surface)]">
-              <figure className="m-0 aspect-[16/10] overflow-hidden border-b-2 border-[var(--color-divider)]">
+              <figure className="m-0 aspect-[16/10] overflow-hidden border-b-2 border-[var(--color-divider)] bg-[var(--color-surface)]">
                 <Image
-                  src="/projects/ecommerce-site.png"
+                  src="/projects/ecommerce-site.webp"
                   alt="E-Commerce"
                   width={400}
                   height={250}
-                  className="w-full h-full object-cover grayscale contrast-[1.08] hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale-[0.35] sm:grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </figure>
               <div className="p-6 flex flex-col flex-1">
@@ -516,13 +516,13 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
             </article>
 
             <article className="border-2 border-[var(--color-divider)] flex flex-col bg-[var(--color-surface)]">
-              <figure className="m-0 aspect-[16/10] overflow-hidden border-b-2 border-[var(--color-divider)]">
+              <figure className="m-0 aspect-[16/10] overflow-hidden border-b-2 border-[var(--color-divider)] bg-[var(--color-surface)]">
                 <Image
-                  src="/projects/api-integration.png"
+                  src="/projects/api-integration.webp"
                   alt="API Integration"
                   width={400}
                   height={250}
-                  className="w-full h-full object-cover grayscale contrast-[1.08] hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale-[0.35] sm:grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </figure>
               <div className="p-6 flex flex-col flex-1">
@@ -547,7 +547,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       {/* ── 04 PRICING ── */}
       <section id="pricing" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 pt-20">
-          <div className="text-[13px] font-bold text-[var(--color-accent)]">
+          <div className="text-[13px] font-bold tracking-wider uppercase text-[var(--color-accent-700)]">
             {isAr ? '٠٤ — الأسعار' : '04 — Pricing'}
           </div>
           <h2 className="mt-5 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[1.25] max-w-[24ch]">
@@ -563,7 +563,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 pb-20 grid grid-cols-1 md:grid-cols-3 border-t-2 border-[var(--color-divider)] divide-y md:divide-y-0 md:divide-x rtl:md:divide-x-reverse divide-[var(--color-divider)]">
           {/* Plan 1 */}
           <div className="py-8 md:pe-8 flex flex-col">
-            <div className="text-[13px] font-semibold text-[var(--color-neutral-600)]">
+            <div className="text-[13px] font-semibold text-[var(--color-neutral-700)]">
               {isAr ? 'جاهز للاستخدام' : 'Ready to deploy'}
             </div>
             <h3 className="mt-3.5 font-bold text-[26px]">ClinicFlow</h3>
@@ -573,7 +573,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                 ? 'للعيادات التي تريد النظام الجاهز. يُشغَّل خلال أيام، لا أسابيع.'
                 : 'For clinics needing the turn-key receptionist. Deployed in days, not weeks.'}
             </p>
-            <ul className="mt-5 pt-5 border-t border-[var(--color-divider)] list-none flex flex-col gap-3 text-[15px]">
+            <ul className="mt-5 pt-5 border-t border-[var(--color-divider)] list-none flex flex-col gap-3 text-[15px] p-0">
               <li>{isAr ? 'المواعيد وملفات المرضى' : 'Appointments & patient records'}</li>
               <li>{isAr ? 'الحجز والتذكير على واتساب' : 'WhatsApp booking & automated reminders'}</li>
               <li>{isAr ? 'الاستضافة والتحديثات والدعم' : 'Managed hosting, updates, and support'}</li>
@@ -590,7 +590,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
 
           {/* Plan 2: Featured */}
           <div className="py-8 md:px-8 bg-[var(--color-surface)] flex flex-col">
-            <div className="text-[13px] font-semibold text-[var(--color-accent)]">
+            <div className="text-[13px] font-semibold text-[var(--color-accent-700)]">
               {isAr ? 'الأكثر طلبًا' : 'Most Popular'}
             </div>
             <h3 className="mt-3.5 font-bold text-[26px]">{isAr ? 'بناء مخصّص' : 'Custom Build'}</h3>
@@ -600,7 +600,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                 ? 'نحدّد النطاق، نبني، ونسلّمك الكود. بلا رسوم شهرية، وبلا رخصة لكل مستخدم.'
                 : 'We define the scope, build, and hand over the code. Zero monthly license fees, zero user tax.'}
             </p>
-            <ul className="mt-5 pt-5 border-t border-[var(--color-divider)] list-none flex flex-col gap-3 text-[15px]">
+            <ul className="mt-5 pt-5 border-t border-[var(--color-divider)] list-none flex flex-col gap-3 text-[15px] p-0">
               <li>{isAr ? 'نطاق وسعر مكتوبان وثابتان' : 'Fixed written scope and price'}</li>
               <li>{isAr ? 'يعمل خلال ٢–٤ أسابيع' : 'Live in 2–4 weeks'}</li>
               <li>{isAr ? 'الكود والمستودع وجلسة شرح' : 'Full code, repository, and handover session'}</li>
@@ -617,7 +617,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
 
           {/* Plan 3 */}
           <div className="py-8 md:ps-8 flex flex-col">
-            <div className="text-[13px] font-semibold text-[var(--color-neutral-600)]">
+            <div className="text-[13px] font-semibold text-[var(--color-neutral-700)]">
               {isAr ? 'بلا متابعة منك' : 'Hands-off'}
             </div>
             <h3 className="mt-3.5 font-bold text-[26px]">{isAr ? 'خدمة مُدارة' : 'Managed Service'}</h3>
@@ -627,7 +627,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                 ? 'نبنيه ونشغّله — استضافة ومراقبة وتعديلات مقابل مبلغ شهري ثابت.'
                 : 'We build and run it — hosting, 24/7 uptime monitoring, and small monthly edits for a fixed retainer.'}
             </p>
-            <ul className="mt-5 pt-5 border-t border-[var(--color-divider)] list-none flex flex-col gap-3 text-[15px]">
+            <ul className="mt-5 pt-5 border-t border-[var(--color-divider)] list-none flex flex-col gap-3 text-[15px] p-0">
               <li>{isAr ? 'استضافة ومراقبة مستمرة' : 'Managed infrastructure & monitoring'}</li>
               <li>{isAr ? 'تعديلات صغيرة كل شهر' : 'Included monthly tweaks & improvements'}</li>
               <li>{isAr ? 'توقف متى شئت وتأخذ الكود' : 'Cancel anytime and keep all source code'}</li>
@@ -648,7 +648,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       <section id="process" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-14">
           <div>
-            <div className="text-[13px] font-bold text-[var(--color-accent)]">
+            <div className="text-[13px] font-bold tracking-wider uppercase text-[var(--color-accent-700)]">
               {isAr ? '٠٥ — كيف نعمل' : '05 — The Process'}
             </div>
             <h2 className="mt-5 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[1.25]">
@@ -665,7 +665,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
 
           <div>
             <div className="grid grid-cols-[60px_1fr] sm:grid-cols-[76px_1fr] border-t-2 border-[var(--color-divider)] py-5">
-              <div className="font-bold text-base text-[var(--color-accent)]">{isAr ? '٠١' : '01'}</div>
+              <div className="font-bold text-base text-[var(--color-accent-700)]">{isAr ? '٠١' : '01'}</div>
               <div>
                 <h4 className="m-0 font-bold text-[19px]">{isAr ? 'مكالمة — ١٥ دقيقة' : '15-Minute Call'}</h4>
                 <p className="mt-2 text-[15px] leading-[1.9] text-[var(--color-neutral-800)]">
@@ -677,7 +677,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
             </div>
 
             <div className="grid grid-cols-[60px_1fr] sm:grid-cols-[76px_1fr] border-t border-[var(--color-divider)] py-5">
-              <div className="font-bold text-base text-[var(--color-accent)]">{isAr ? '٠٢' : '02'}</div>
+              <div className="font-bold text-base text-[var(--color-accent-700)]">{isAr ? '٠٢' : '02'}</div>
               <div>
                 <h4 className="m-0 font-bold text-[19px]">{isAr ? 'نطاق وسعر مكتوبان' : 'Written Scope & Price'}</h4>
                 <p className="mt-2 text-[15px] leading-[1.9] text-[var(--color-neutral-800)]">
@@ -689,7 +689,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
             </div>
 
             <div className="grid grid-cols-[60px_1fr] sm:grid-cols-[76px_1fr] border-t border-[var(--color-divider)] py-5">
-              <div className="font-bold text-base text-[var(--color-accent)]">{isAr ? '٠٣' : '03'}</div>
+              <div className="font-bold text-base text-[var(--color-accent-700)]">{isAr ? '٠٣' : '03'}</div>
               <div>
                 <h4 className="m-0 font-bold text-[19px]">{isAr ? 'البناء — ٢ إلى ٤ أسابيع' : 'Build — 2 to 4 Weeks'}</h4>
                 <p className="mt-2 text-[15px] leading-[1.9] text-[var(--color-neutral-800)]">
@@ -701,7 +701,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
             </div>
 
             <div className="grid grid-cols-[60px_1fr] sm:grid-cols-[76px_1fr] border-t border-[var(--color-divider)] py-5">
-              <div className="font-bold text-base text-[var(--color-accent)]">{isAr ? '٠٤' : '04'}</div>
+              <div className="font-bold text-base text-[var(--color-accent-700)]">{isAr ? '٠٤' : '04'}</div>
               <div>
                 <h4 className="m-0 font-bold text-[19px]">{isAr ? 'التسليم' : 'Handover & Deployment'}</h4>
                 <p className="mt-2 text-[15px] leading-[1.9] text-[var(--color-neutral-800)]">
@@ -713,7 +713,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
             </div>
 
             <div className="grid grid-cols-[60px_1fr] sm:grid-cols-[76px_1fr] border-t border-b-2 border-[var(--color-divider)] py-5">
-              <div className="font-bold text-base text-[var(--color-accent)]">{isAr ? '٠٥' : '05'}</div>
+              <div className="font-bold text-base text-[var(--color-accent-700)]">{isAr ? '٠٥' : '05'}</div>
               <div>
                 <h4 className="m-0 font-bold text-[19px]">{isAr ? 'الدعم — إن أردته فقط' : 'Support — Only if Desired'}</h4>
                 <p className="mt-2 text-[15px] leading-[1.9] text-[var(--color-neutral-800)]">
@@ -730,7 +730,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       {/* ── 06 WHY AXEN ── */}
       <section id="why" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20">
-          <div className="text-[13px] font-bold text-[var(--color-accent)]">
+          <div className="text-[13px] font-bold tracking-wider uppercase text-[var(--color-accent-700)]">
             {isAr ? '٠٦ — لماذا AXEN' : '06 — The AXEN Standard'}
           </div>
           <h2 className="mt-5 mb-10 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[1.25] max-w-[26ch]">
@@ -779,7 +779,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-14 items-start">
           <div className="m-0 border-2 border-[var(--color-divider)] aspect-[4/5] bg-[var(--color-surface)] flex flex-col items-center justify-center p-8 text-center">
             <span className="grid h-28 w-28 place-items-center rounded-2xl bg-[var(--color-accent)] text-[#f3f2f2] font-extrabold text-5xl shadow-md">
-              ع
+              {isAr ? 'ع' : 'A'}
             </span>
             <div className="mt-6 font-bold text-xl">{isAr ? 'عبدالله الحلحولي' : 'Abdalla Alhalhouli'}</div>
             <div className="mt-1 text-sm text-[var(--color-neutral-700)]">
@@ -788,7 +788,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
           </div>
 
           <div>
-            <div className="text-[13px] font-bold text-[var(--color-accent)]">
+            <div className="text-[13px] font-bold tracking-wider uppercase text-[var(--color-accent-700)]">
               {isAr ? '٠٧ — من ستتعامل معه' : '07 — The Founder'}
             </div>
             <h2 className="mt-5 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[1.25]">
@@ -810,19 +810,19 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
             <div className="mt-8 grid grid-cols-3 border-t-2 border-[var(--color-divider)] divide-x rtl:divide-x-reverse divide-[var(--color-divider)]">
               <div className="py-5 pe-5">
                 <div className="font-bold text-base">{isAr ? 'عمّان' : 'Amman'}</div>
-                <div className="mt-1.5 text-xs text-[var(--color-neutral-600)]">
+                <div className="mt-1.5 text-xs text-[var(--color-neutral-700)]">
                   {isAr ? 'المقر ومكان العمل' : 'Headquarters & Base'}
                 </div>
               </div>
               <div className="py-5 px-5">
                 <div className="font-bold text-base">{isAr ? 'تواصل مباشر' : 'Direct Access'}</div>
-                <div className="mt-1.5 text-xs text-[var(--color-neutral-600)]">
+                <div className="mt-1.5 text-xs text-[var(--color-neutral-700)]">
                   {isAr ? 'بلا وسطاء' : 'Zero middle-men'}
                 </div>
               </div>
               <div className="py-5 ps-5">
                 <div className="font-bold text-base">{isAr ? 'عربي / إنجليزي' : 'AR + EN'}</div>
-                <div className="mt-1.5 text-xs text-[var(--color-neutral-600)]">
+                <div className="mt-1.5 text-xs text-[var(--color-neutral-700)]">
                   {isAr ? 'العمل باللغتين' : 'Fluent bilingual'}
                 </div>
               </div>
@@ -834,7 +834,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       {/* ── 08 FAQ ── */}
       <section id="faq" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20">
-          <div className="text-[13px] font-bold text-[var(--color-accent)]">
+          <div className="text-[13px] font-bold tracking-wider uppercase text-[var(--color-accent-700)]">
             {isAr ? '٠٨ — أسئلة' : '08 — FAQ'}
           </div>
           <h2 className="mt-5 mb-10 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[1.25]">
@@ -898,7 +898,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       <section id="contact" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-14">
           <div>
-            <div className="text-[13px] font-bold text-[var(--color-accent)]">
+            <div className="text-[13px] font-bold tracking-wider uppercase text-[var(--color-accent-700)]">
               {isAr ? '٠٩ — تواصل' : '09 — Contact'}
             </div>
             <h2 className="mt-5 font-bold text-3xl sm:text-4xl lg:text-[40px] leading-[1.25]">
@@ -919,7 +919,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
               <MessageCircle className="h-6 w-6 shrink-0" />
               <div>
                 <span className="block font-bold text-lg">{isAr ? 'واتساب' : 'WhatsApp'}</span>
-                <span className="block mt-0.5 text-sm opacity-75 dir-ltr">{whatsappDisplay}</span>
+                <span className="block mt-0.5 text-sm opacity-75" dir="ltr">{whatsappDisplay}</span>
               </div>
               <ArrowUpRight className="h-5 w-5 ms-auto shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
@@ -931,7 +931,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
               <Mail className="h-6 w-6 shrink-0" />
               <div>
                 <span className="block font-bold text-lg">{isAr ? 'البريد الإلكتروني' : 'Direct Email'}</span>
-                <span className="block mt-0.5 text-sm opacity-75 dir-ltr">{CONTACT_EMAIL}</span>
+                <span className="block mt-0.5 text-sm opacity-75" dir="ltr">{CONTACT_EMAIL}</span>
               </div>
             </a>
           </div>
@@ -939,7 +939,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
           <div className="border-2 border-[var(--color-divider)] p-8 sm:p-9 bg-[var(--color-surface)]">
             <h3 className="m-0 font-bold text-2xl">{isAr ? 'أو اكتب هنا' : 'Or write to us directly'}</h3>
             <p className="mt-2.5 text-[15px] text-[var(--color-neutral-700)]">
-              {isAr ? 'ثلاث خانات، والرد في نفس يوم العمل.' : 'Three fields, same-day response guaranteed.'}
+              {isAr ? 'ثلاث خانات، ورد سريع خلال ساعات العمل.' : 'Three fields, fast response during business hours.'}
             </p>
 
             {!submitted ? (
@@ -955,7 +955,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder={isAr ? 'اسمك الكريم' : 'Full Name'}
-                    className="w-full min-h-[44px] px-3.5 py-2 text-sm bg-[var(--color-bg)] border border-[var(--color-divider)] focus:border-[var(--color-accent)] outline-none"
+                    className="w-full min-h-[44px] px-3.5 py-2 text-sm bg-[var(--color-bg)] border border-[var(--color-divider)] text-[var(--color-text)] focus:border-[var(--color-accent-700)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent-700)]"
                   />
                 </div>
 
@@ -970,7 +970,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                     value={formData.biz}
                     onChange={(e) => setFormData({ ...formData, biz: e.target.value })}
                     placeholder={isAr ? 'مثال: عيادة أسنان، عمّان' : 'e.g. Dental clinic, Amman'}
-                    className="w-full min-h-[44px] px-3.5 py-2 text-sm bg-[var(--color-bg)] border border-[var(--color-divider)] focus:border-[var(--color-accent)] outline-none"
+                    className="w-full min-h-[44px] px-3.5 py-2 text-sm bg-[var(--color-bg)] border border-[var(--color-divider)] text-[var(--color-text)] focus:border-[var(--color-accent-700)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent-700)]"
                   />
                 </div>
 
@@ -985,30 +985,39 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                     value={formData.msg}
                     onChange={(e) => setFormData({ ...formData, msg: e.target.value })}
                     placeholder={isAr ? 'ما البطيء الآن، وما تريده أن يصير…' : 'Tell us what you want to engineer…'}
-                    className="w-full px-3.5 py-2 text-sm bg-[var(--color-bg)] border border-[var(--color-divider)] focus:border-[var(--color-accent)] outline-none resize-y"
+                    className="w-full px-3.5 py-2 text-sm bg-[var(--color-bg)] border border-[var(--color-divider)] text-[var(--color-text)] focus:border-[var(--color-accent-700)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent-700)] resize-y"
                   />
                 </div>
 
                 <div className="sm:col-span-2 flex flex-wrap items-center gap-4 pt-2">
                   <button
                     type="submit"
-                    className="bg-[var(--color-accent)] text-[var(--color-bg)] px-6 py-3.5 text-[15px] font-semibold hover:bg-[var(--color-accent-600)] transition-colors"
+                    className="min-h-[48px] bg-[var(--color-accent)] text-[var(--color-bg)] px-6 py-3.5 text-[15px] font-semibold hover:bg-[var(--color-accent-600)] transition-colors"
                   >
                     {isAr ? 'أرسل الطلب عبر واتساب' : 'Submit via WhatsApp'}
                   </button>
-                  <span className="text-xs text-[var(--color-neutral-600)]">
+                  <span className="text-xs text-[var(--color-neutral-700)]">
                     {isAr ? 'بلا قوائم بريدية، وبلا إزعاج.' : 'Zero marketing spam. Pure direct engineering.'}
                   </span>
                 </div>
               </form>
             ) : (
-              <div className="mt-7 border-2 border-[var(--color-accent)] p-7 flex gap-4 items-start bg-[var(--color-bg)]">
-                <CheckCircle2 className="h-6 w-6 text-[var(--color-accent)] shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-bold text-lg">{isAr ? 'وصلتنا رسالتك — شكرًا لك.' : 'Message received — thank you.'}</div>
+              <div className="mt-7 border-2 border-[var(--color-accent-700)] p-7 flex flex-col sm:flex-row gap-5 items-start bg-[var(--color-bg)]">
+                <CheckCircle2 className="h-6 w-6 text-[var(--color-accent-700)] shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <div className="font-bold text-lg">{isAr ? 'فتحنا لك واتساب والرسالة جاهزة — اضغط إرسال.' : 'WhatsApp is opened with your message ready — click Send.'}</div>
                   <p className="mt-2 text-sm leading-[1.8] text-[var(--color-neutral-800)]">
-                    {isAr ? 'فتحنا محادثة واتساب لتأكيد التفاصيل فوراً.' : 'WhatsApp is opened with your message pre-filled.'}
+                    {isAr ? 'إن لم تُفتح المحادثة تلقائيًا بسبب حظر النوافذ، اضغط الزر أدناه:' : 'If WhatsApp did not launch automatically, click the button below:'}
                   </p>
+                  <a
+                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(isAr ? `طلب استشارة من موقع AXEN:\nالاسم: ${formData.name}\nالمشروع: ${formData.biz}\nالتفاصيل: ${formData.msg}` : `Consultation request from AXEN website:\nName: ${formData.name}\nBusiness: ${formData.biz}\nDetails: ${formData.msg}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex min-h-[44px] items-center gap-2 bg-[var(--color-accent)] text-[var(--color-bg)] px-5 py-2.5 text-sm font-semibold hover:bg-[var(--color-accent-600)] transition-colors"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    <span>{isAr ? 'اضغط هنا لفتح واتساب الآن' : 'Open WhatsApp Now'}</span>
+                  </a>
                 </div>
               </div>
             )}
@@ -1020,18 +1029,18 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       <section className="bg-[var(--color-accent)] text-[var(--color-bg)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-16 sm:py-20 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
           <div>
-            <div className="text-[13px] font-bold opacity-85 uppercase tracking-widest">
+            <div className="text-[13px] font-bold opacity-90 uppercase tracking-widest text-[#f8f4f4]">
               {isAr ? 'عمّان، الأردن' : 'Amman, Jordan'}
             </div>
-            <div className="mt-4 font-bold text-3xl sm:text-5xl lg:text-[52px] leading-[1.15] max-w-[20ch]">
+            <h2 className="mt-4 font-bold text-3xl sm:text-5xl lg:text-[52px] leading-[1.15] max-w-[20ch]">
               {isAr ? 'توقّف عن كتابة نفس الرد أربعين مرة في اليوم.' : 'Stop typing the exact same reply forty times a day.'}
-            </div>
+            </h2>
           </div>
           <a
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center gap-3 bg-[var(--color-bg)] text-[var(--color-text)] px-7 py-5 text-[17px] font-bold hover:bg-[var(--color-text)] hover:text-[var(--color-bg)] transition-colors shadow-lg"
+            className="shrink-0 inline-flex min-h-[56px] items-center gap-3 bg-[var(--color-bg)] text-[var(--color-text)] px-7 py-4 text-[17px] font-bold hover:bg-[var(--color-text)] hover:text-[var(--color-bg)] transition-colors shadow-lg"
           >
             <MessageCircle className="h-5 w-5" />
             <span>{isAr ? 'راسلنا على واتساب' : 'Message us on WhatsApp'}</span>

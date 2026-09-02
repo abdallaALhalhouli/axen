@@ -17,14 +17,14 @@ export function ClinicFlowCaseStudy({ lang = 'ar' }: { lang?: Lang }) {
       <div className="max-w-4xl mx-auto">
         <Link
           href={backHref}
-          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--color-neutral-600)] hover:text-[var(--color-accent)] transition-colors"
+          className="inline-flex min-h-[44px] items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--color-neutral-700)] hover:text-[var(--color-accent-700)] transition-colors"
         >
           <Back className="h-3.5 w-3.5" />
           {c.back}
         </Link>
 
-        <header className="mt-10">
-          <span className="text-[13px] font-bold tracking-wider text-[var(--color-accent)] uppercase">
+        <header className="mt-8">
+          <span className="text-[13px] font-bold tracking-wider text-[var(--color-accent-700)] uppercase">
             {c.eyebrow}
           </span>
           <h1 className="mt-4 text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-[var(--color-text)]">
@@ -39,7 +39,7 @@ export function ClinicFlowCaseStudy({ lang = 'ar' }: { lang?: Lang }) {
         <dl className="mt-12 grid grid-cols-2 border-2 border-[var(--color-divider)] sm:grid-cols-4 divide-y sm:divide-y-0 divide-x rtl:divide-x-reverse divide-[var(--color-divider)] bg-[var(--color-surface)]">
           {c.facts.map((fact) => (
             <div key={fact.label} className="p-6">
-              <dt className="text-xs font-semibold text-[var(--color-neutral-600)] uppercase">
+              <dt className="text-xs font-semibold text-[var(--color-neutral-700)] uppercase">
                 {fact.label}
               </dt>
               <dd className="mt-2 text-lg sm:text-xl font-extrabold text-[var(--color-text)] leading-snug">
@@ -54,7 +54,7 @@ export function ClinicFlowCaseStudy({ lang = 'ar' }: { lang?: Lang }) {
           <div className="grid gap-px border-2 border-[var(--color-divider)] bg-[var(--color-divider)] sm:grid-cols-3">
             {c.problems.map((problem, i) => (
               <div key={problem.title} className="bg-[var(--color-bg)] p-6">
-                <span className="text-xs font-mono font-bold text-[var(--color-accent)]">
+                <span className="text-xs font-mono font-bold text-[var(--color-accent-700)]">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-3 text-base sm:text-lg font-bold leading-snug text-[var(--color-text)]">
@@ -70,14 +70,14 @@ export function ClinicFlowCaseStudy({ lang = 'ar' }: { lang?: Lang }) {
 
         {/* ── The Flow ── */}
         <Section title={c.flowTitle} intro={c.flowIntro}>
-          <ol className="border-2 border-[var(--color-divider)] bg-[var(--color-surface)] divide-y divide-[var(--color-divider)]">
+          <ol className="border-2 border-[var(--color-divider)] bg-[var(--color-surface)] divide-y divide-[var(--color-divider)] list-none p-0">
             {c.flow.map((item, i) => (
               <li
                 key={item.step}
                 className="flex flex-col gap-2 p-6 sm:flex-row sm:gap-6"
               >
                 <div className="flex shrink-0 items-baseline gap-3 sm:w-56">
-                  <span className="text-xs font-mono font-bold text-[var(--color-accent)]">
+                  <span className="text-xs font-mono font-bold text-[var(--color-accent-700)]">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <span className="text-base font-bold text-[var(--color-text)]">
@@ -103,7 +103,7 @@ export function ClinicFlowCaseStudy({ lang = 'ar' }: { lang?: Lang }) {
                     alt={shot.caption}
                     fill
                     sizes="(max-width: 896px) 100vw, 896px"
-                    className="object-cover object-top grayscale contrast-[1.05] hover:grayscale-0 transition-all duration-500"
+                    className="object-cover object-top grayscale-[0.35] sm:grayscale contrast-[1.05] hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
                 <figcaption className="mt-3 px-2 text-sm leading-relaxed text-[var(--color-neutral-700)]">
@@ -122,7 +122,7 @@ export function ClinicFlowCaseStudy({ lang = 'ar' }: { lang?: Lang }) {
                 key={rule}
                 className="flex items-start gap-4 p-5"
               >
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-accent)]" />
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-accent-700)]" />
                 <span className="text-sm sm:text-[15px] leading-relaxed text-[var(--color-text)]">{rule}</span>
               </li>
             ))}
@@ -137,7 +137,7 @@ export function ClinicFlowCaseStudy({ lang = 'ar' }: { lang?: Lang }) {
                 key={row.label}
                 className="flex items-baseline justify-between gap-4 bg-[var(--color-bg)] p-5"
               >
-                <dt className="text-xs font-semibold text-[var(--color-neutral-600)] uppercase">
+                <dt className="text-xs font-semibold text-[var(--color-neutral-700)] uppercase">
                   {row.label}
                 </dt>
                 <dd className="text-end font-mono text-xs font-bold text-[var(--color-text)]">{row.value}</dd>
@@ -151,7 +151,7 @@ export function ClinicFlowCaseStudy({ lang = 'ar' }: { lang?: Lang }) {
           <ul className="space-y-3 list-none p-0">
             {c.honest.map((item) => (
               <li key={item} className="flex items-start gap-3.5">
-                <X className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-accent)]" />
+                <X className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-accent-700)]" />
                 <span className="text-sm sm:text-[15px] leading-relaxed text-[var(--color-neutral-800)]">
                   {item}
                 </span>
@@ -172,7 +172,7 @@ export function ClinicFlowCaseStudy({ lang = 'ar' }: { lang?: Lang }) {
             href={getWhatsAppUrl('clinicflow', lang)}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2.5 bg-[var(--color-accent)] px-7 py-4 text-sm font-bold text-[var(--color-bg)] hover:bg-[var(--color-accent-600)] transition-colors"
+            className="mt-8 inline-flex min-h-[48px] items-center gap-2.5 bg-[var(--color-accent)] px-7 py-4 text-sm font-bold text-[var(--color-bg)] hover:bg-[var(--color-accent-600)] transition-colors"
           >
             <MessageCircle className="h-4 w-4" />
             <span>{c.ctaButton}</span>

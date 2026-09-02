@@ -74,6 +74,15 @@
   --input: #d7d3d3;
   --primary: #ec3013;
   --primary-foreground: #f3f2f2;
+  --secondary: #eae9e9;
+  --secondary-foreground: #201e1d;
+  --muted: #eae9e9;
+  --muted-foreground: #605d5d;
+  --popover: #f8f4f4;
+  --popover-foreground: #201e1d;
+  --destructive: #ae1800;
+  --accent-foreground: #ae1800;
+  --ink-on: #eef1ee;
   --ring: #ec3013;
 }
 
@@ -109,7 +118,10 @@
   }
   /* Arabic needs more leading than Latin at the same size; without this the
      diacritics and descenders collide at display sizes. */
+  [dir='rtl'],
   [dir='rtl'] body,
+  body[dir='rtl'],
+  div[dir='rtl'],
   [dir='rtl'] .font-arabic-active {
     font-family: var(--font-arabic);
     line-height: 1.85;
@@ -122,7 +134,10 @@
   }
   [dir='rtl'] h1,
   [dir='rtl'] h2,
-  [dir='rtl'] h3 {
+  [dir='rtl'] h3,
+  div[dir='rtl'] h1,
+  div[dir='rtl'] h2,
+  div[dir='rtl'] h3 {
     letter-spacing: 0;
     line-height: 1.4;
   }
@@ -261,22 +276,26 @@
 }
 
 .btn-primary {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+  background-color: var(--color-accent);
+  color: var(--color-bg);
   border: 1px solid transparent;
 }
 .btn-primary:hover {
-  background-color: #0b4f47;
-  color: #ffffff;
+  background-color: var(--color-accent-600);
+  color: var(--color-bg);
+}
+.btn-primary:active {
+  background-color: var(--color-accent-700);
 }
 
 .btn-whatsapp {
-  background-color: #0e6e63;
+  background-color: var(--color-whatsapp);
   color: #ffffff;
   border: 1px solid transparent;
 }
 .btn-whatsapp:hover {
-  background-color: #0b4f47;
+  background-color: var(--color-whatsapp-dark);
+  color: #ffffff;
 }
 
 .btn-secondary {

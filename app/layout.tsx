@@ -104,13 +104,20 @@ export default function RootLayout({
       className={`${ibmPlexArabic.variable} ${archivo.variable} ${geistMono.variable}`}
     >
       <body className="antialiased selection:bg-[#ec3013]/25 selection:text-[#201e1d]">
-        {/* Marks JS as alive before paint, so scroll reveals may hide their
-            content. Without JS the .reveal rule stays visible. */}
+        {/* Ensures proper lang/dir before first paint, and marks JS alive */}
         <script
           dangerouslySetInnerHTML={{
-            __html: "document.documentElement.classList.add('js')",
+            __html:
+              "document.documentElement.classList.add('js');if(window.location.pathname==='/ar'||window.location.pathname.startsWith('/ar/')){document.documentElement.lang='ar';document.documentElement.dir='rtl';}else{document.documentElement.lang='en';document.documentElement.dir='ltr';}",
           }}
         />
+        {/* Accessible skip to main content */}
+        <a
+          href="#top"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-[100] focus:bg-[#ae1800] focus:text-[#f3f2f2] focus:px-4 focus:py-2.5 focus:font-bold focus:shadow-lg"
+        >
+          Skip to content / تخطَّ إلى المحتوى
+        </a>
         <StructuredData />
         {children}
       </body>
