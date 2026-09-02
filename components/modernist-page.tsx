@@ -156,26 +156,26 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
 
       {/* ── METRICS BAR (4 Columns Aligned) ── */}
       <section className="border-b-2 border-[var(--color-divider)]">
-        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 grid grid-cols-2 lg:grid-cols-4">
-          <div className="p-6 sm:p-7 border-b lg:border-b-0 border-e rtl:border-e-0 rtl:border-s lg:rtl:border-s border-[var(--color-divider)]">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-x rtl:divide-x-reverse divide-[var(--color-divider)]">
+          <div className="p-6 sm:p-7">
             <div className="font-extrabold text-2xl sm:text-[28px]">{isAr ? '٢–٤ أسابيع' : '2–4 weeks'}</div>
             <div className="mt-2 text-sm text-[var(--color-neutral-700)]">
               {isAr ? 'من الفكرة إلى الإطلاق' : 'From brief to live'}
             </div>
           </div>
-          <div className="p-6 sm:p-7 border-b lg:border-b-0 lg:border-e lg:rtl:border-e-0 lg:rtl:border-s border-[var(--color-divider)]">
+          <div className="p-6 sm:p-7">
             <div className="font-extrabold text-2xl sm:text-[28px]">{isAr ? 'مهندس واحد' : 'One engineer'}</div>
             <div className="mt-2 text-sm text-[var(--color-neutral-700)]">
               {isAr ? 'عبدالله — من التخطيط للتسليم' : 'Abdalla — planning to delivery'}
             </div>
           </div>
-          <div className="p-6 sm:p-7 border-e rtl:border-e-0 rtl:border-s lg:rtl:border-s lg:border-e border-[var(--color-divider)]">
+          <div className="p-6 sm:p-7 border-t lg:border-t-0 border-[var(--color-divider)]">
             <div className="font-extrabold text-2xl sm:text-[28px]">ClinicFlow</div>
             <div className="mt-2 text-sm text-[var(--color-neutral-700)]">
               {isAr ? 'نظامنا الخاص، يعمل اليوم' : 'Our own system, running today'}
             </div>
           </div>
-          <div className="p-6 sm:p-7">
+          <div className="p-6 sm:p-7 border-t lg:border-t-0 border-[var(--color-divider)]">
             <div className="font-extrabold text-2xl sm:text-[28px]">{isAr ? 'الكود ملكك' : 'You own it'}</div>
             <div className="mt-2 text-sm text-[var(--color-neutral-700)]">
               {isAr ? 'يُسلَّم لك بالكامل' : 'Source code handed over'}
