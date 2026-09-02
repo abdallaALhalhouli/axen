@@ -98,12 +98,9 @@
     border-radius: 2px;
   }
 
-  /* A sticky header must not sit on top of whatever the keyboard just
-     focused, and anchor jumps should clear it too. */
   html {
+    scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
-  }
-  html {
     @apply bg-background;
   }
   body {

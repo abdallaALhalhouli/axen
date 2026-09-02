@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -11,13 +11,11 @@ import {
   Code2,
   Workflow,
   MessageSquareShare,
-  Layers,
-  Sparkles,
-  Phone,
   Mail,
   CheckCircle2,
 } from 'lucide-react'
 import { WHATSAPP_NUMBER, CONTACT_EMAIL, getWhatsAppUrl } from '@/lib/i18n'
+import { ModernistHeader, ModernistFooter } from '@/components/modernist-nav'
 
 export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
   const isAr = lang === 'ar'
@@ -41,9 +39,29 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       ]
 
   const [shown, setShown] = useState(0)
-  const [running, setRunning] = useState(true)
+  const [running, setRunning] = useState(false)
+  const [hasStarted, setHasStarted] = useState(false)
+  const terminalRef = useRef<HTMLElement>(null)
+
+  // Trigger terminal simulation when scrolled into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasStarted) {
+          setHasStarted(true)
+          setRunning(true)
+        }
+      },
+      { threshold: 0.25 }
+    )
+    if (terminalRef.current) {
+      observer.observe(terminalRef.current)
+    }
+    return () => observer.disconnect()
+  }, [hasStarted])
 
   useEffect(() => {
+    if (!running) return
     if (shown >= terminalScript.length) {
       setRunning(false)
       return
@@ -52,7 +70,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       setShown((s) => s + 1)
     }, 1100)
     return () => clearTimeout(timer)
-  }, [shown, terminalScript.length])
+  }, [running, shown, terminalScript.length])
 
   const replay = () => {
     setShown(0)
@@ -87,56 +105,10 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       }}
     >
       {/* ── HEADER ── */}
-      <header className="sticky top-0 z-50 bg-[var(--color-bg)] border-b-2 border-[var(--color-divider)]">
-        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 h-[72px] sm:h-[76px] flex items-center justify-between gap-6">
-          <Link href={isAr ? '/ar' : '/'} className="flex items-center gap-3">
-            <svg viewBox="0 0 100 100" fill="none" className="h-6 w-6 text-[var(--color-text)]" aria-hidden="true">
-              <path d="M50 6 L96 92 L79 92 L50 33 L21 92 L4 92 Z" fill="currentColor" />
-              <path d="M50 41 L73 92 L60 92 L50 63 L40 92 L27 92 Z" fill="currentColor" />
-            </svg>
-            <span className="font-extrabold text-[19px] tracking-[0.34em]">AXEN</span>
-          </Link>
-
-          <nav className="hidden md:flex items-center gap-7 text-[15px] font-medium">
-            <a href="#services" className="hover:text-[var(--color-accent)] transition-colors">
-              {isAr ? 'الخدمات' : 'Services'}
-            </a>
-            <a href="#work" className="hover:text-[var(--color-accent)] transition-colors">
-              {isAr ? 'أعمالنا' : 'Work'}
-            </a>
-            <a href="#pricing" className="hover:text-[var(--color-accent)] transition-colors">
-              {isAr ? 'الأسعار' : 'Pricing'}
-            </a>
-            <a href="#process" className="hover:text-[var(--color-accent)] transition-colors">
-              {isAr ? 'كيف نعمل' : 'Process'}
-            </a>
-            <a href="#faq" className="hover:text-[var(--color-accent)] transition-colors">
-              {isAr ? 'أسئلة' : 'FAQ'}
-            </a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href={isAr ? '/' : '/ar'}
-              className="border border-[var(--color-divider)] px-3 py-1.5 text-xs sm:text-[13px] font-semibold tracking-wider hover:bg-[var(--color-surface)] transition-colors"
-            >
-              {isAr ? 'English' : 'العربية'}
-            </Link>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[var(--color-accent)] text-[var(--color-bg)] px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-[15px] font-semibold hover:bg-[var(--color-accent-600)] transition-colors flex items-center gap-2"
-            >
-              <MessageCircle className="h-4 w-4" />
-              <span>{isAr ? 'راسلنا على واتساب' : 'WhatsApp us'}</span>
-            </a>
-          </div>
-        </div>
-      </header>
+      <ModernistHeader lang={lang} />
 
       {/* ── HERO ── */}
-      <section id="top" className="border-b-2 border-[var(--color-divider)]">
+      <section id="top" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 grid grid-cols-1 lg:grid-cols-[7fr_5fr]">
           <div className="py-16 sm:py-24 lg:py-28 pe-0 lg:pe-14">
             <div className="text-[13px] font-bold tracking-widest uppercase text-[var(--color-accent)]">
@@ -213,7 +185,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       </section>
 
       {/* ── 01 TERMINAL (Live Workflow Simulation) ── */}
-      <section id="terminal" className="bg-[#201e1d] text-[#f3f2f2] border-b-2 border-[var(--color-divider)]">
+      <section id="terminal" ref={terminalRef} className="scroll-mt-20 bg-[#201e1d] text-[#f3f2f2] border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-14">
           <div>
             <div className="text-[13px] font-bold text-[#ec3013]">
@@ -322,7 +294,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       </section>
 
       {/* ── 02 SERVICES ── */}
-      <section id="services" className="border-b-2 border-[var(--color-divider)]">
+      <section id="services" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 pt-20">
           <div className="text-[13px] font-bold text-[var(--color-accent)]">
             {isAr ? '٠٢ — الخدمات' : '02 — Services'}
@@ -431,7 +403,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       </section>
 
       {/* ── 03 SELECTED WORK ── */}
-      <section id="work" className="border-b-2 border-[var(--color-divider)]">
+      <section id="work" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20">
           <div className="text-[13px] font-bold text-[var(--color-accent)]">
             {isAr ? '٠٣ — أعمالنا' : '03 — Selected Work'}
@@ -573,7 +545,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       </section>
 
       {/* ── 04 PRICING ── */}
-      <section id="pricing" className="border-b-2 border-[var(--color-divider)]">
+      <section id="pricing" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 pt-20">
           <div className="text-[13px] font-bold text-[var(--color-accent)]">
             {isAr ? '٠٤ — الأسعار' : '04 — Pricing'}
@@ -673,7 +645,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       </section>
 
       {/* ── 05 PROCESS ── */}
-      <section id="process" className="border-b-2 border-[var(--color-divider)]">
+      <section id="process" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-14">
           <div>
             <div className="text-[13px] font-bold text-[var(--color-accent)]">
@@ -756,7 +728,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       </section>
 
       {/* ── 06 WHY AXEN ── */}
-      <section id="why" className="border-b-2 border-[var(--color-divider)]">
+      <section id="why" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20">
           <div className="text-[13px] font-bold text-[var(--color-accent)]">
             {isAr ? '٠٦ — لماذا AXEN' : '06 — The AXEN Standard'}
@@ -803,7 +775,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       </section>
 
       {/* ── 07 ABOUT / FOUNDER ── */}
-      <section id="about" className="border-b-2 border-[var(--color-divider)]">
+      <section id="about" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-14 items-start">
           <div className="m-0 border-2 border-[var(--color-divider)] aspect-[4/5] bg-[var(--color-surface)] flex flex-col items-center justify-center p-8 text-center">
             <span className="grid h-28 w-28 place-items-center rounded-2xl bg-[var(--color-accent)] text-[#f3f2f2] font-extrabold text-5xl shadow-md">
@@ -860,7 +832,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       </section>
 
       {/* ── 08 FAQ ── */}
-      <section id="faq" className="border-b-2 border-[var(--color-divider)]">
+      <section id="faq" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20">
           <div className="text-[13px] font-bold text-[var(--color-accent)]">
             {isAr ? '٠٨ — أسئلة' : '08 — FAQ'}
@@ -923,7 +895,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       </section>
 
       {/* ── 09 CONTACT ── */}
-      <section id="contact" className="border-b-2 border-[var(--color-divider)]">
+      <section id="contact" className="scroll-mt-20 border-b-2 border-[var(--color-divider)]">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-20 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-14">
           <div>
             <div className="text-[13px] font-bold text-[var(--color-accent)]">
@@ -1068,58 +1040,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t-2 border-[var(--color-divider)]">
-        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[5fr_3fr_4fr] gap-10">
-          <div>
-            <Link href={isAr ? '/ar' : '/'} className="flex items-center gap-3">
-              <svg viewBox="0 0 100 100" fill="none" className="h-6 w-6 text-[var(--color-text)]" aria-hidden="true">
-                <path d="M50 6 L96 92 L79 92 L50 33 L21 92 L4 92 Z" fill="currentColor" />
-                <path d="M50 41 L73 92 L60 92 L50 63 L40 92 L27 92 Z" fill="currentColor" />
-              </svg>
-              <span className="font-extrabold text-[17px] tracking-[0.34em]">AXEN</span>
-            </Link>
-            <p className="mt-4 max-w-[32ch] text-[15px] leading-[1.85] text-[var(--color-neutral-700)]">
-              {isAr
-                ? 'مواقع ومتاجر إلكترونية وأتمتة واتساب، تُبنى على الطلب في عمّان.'
-                : 'Websites, online stores, and WhatsApp automation engineered to order in Amman.'}
-            </p>
-          </div>
-
-          <div>
-            <div className="text-[13px] font-bold text-[var(--color-neutral-600)]">{isAr ? 'الصفحات' : 'Navigation'}</div>
-            <div className="mt-3.5 flex flex-col gap-2.5 text-[15px]">
-              <a href="#services" className="hover:text-[var(--color-accent)] transition-colors">{isAr ? 'الخدمات' : 'Services'}</a>
-              <a href="#work" className="hover:text-[var(--color-accent)] transition-colors">{isAr ? 'أعمالنا' : 'Work'}</a>
-              <a href="#pricing" className="hover:text-[var(--color-accent)] transition-colors">{isAr ? 'الأسعار' : 'Pricing'}</a>
-              <a href="#process" className="hover:text-[var(--color-accent)] transition-colors">{isAr ? 'كيف نعمل' : 'Process'}</a>
-              <a href="#about" className="hover:text-[var(--color-accent)] transition-colors">{isAr ? 'من نحن' : 'About'}</a>
-            </div>
-          </div>
-
-          <div>
-            <div className="text-[13px] font-bold text-[var(--color-neutral-600)]">{isAr ? 'للتواصل' : 'Channels'}</div>
-            <div className="mt-3.5 flex flex-col gap-2.5 text-[15px]">
-              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)] transition-colors">
-                {isAr ? 'واتساب — ' : 'WhatsApp — '}
-                <span className="dir-ltr inline-block">{whatsappDisplay}</span>
-              </a>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[var(--color-accent)] transition-colors dir-ltr text-start">
-                {CONTACT_EMAIL}
-              </a>
-              <Link href={isAr ? '/' : '/ar'} className="text-[var(--color-accent)] font-semibold hover:underline">
-                {isAr ? 'English version' : 'النسخة العربية'}
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 pb-10">
-          <div className="border-t border-[var(--color-divider)] pt-5 flex flex-col sm:flex-row justify-between gap-4 text-sm text-[var(--color-neutral-700)]">
-            <span>© ٢٠٢٦ AXEN — عبدالله الحلحولي</span>
-            <span>{isAr ? 'عمّان، الأردن' : 'Amman, Jordan'}</span>
-          </div>
-        </div>
-      </footer>
+      <ModernistFooter lang={lang} />
     </div>
   )
 }
