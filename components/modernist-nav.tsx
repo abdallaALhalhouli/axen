@@ -57,23 +57,33 @@ export function ModernistHeader({
             {isAr ? 'English' : 'العربية'}
           </Link>
 
-          {/* Desktop WhatsApp CTA with whitespace-nowrap */}
+          {/* Desktop WhatsApp CTA with whitespace-nowrap and brand green */}
           <a
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex min-h-[44px] items-center gap-2 bg-[var(--color-accent)] text-[var(--color-bg)] px-5 py-2.5 text-xs sm:text-[15px] font-semibold whitespace-nowrap hover:bg-[var(--color-accent-600)] transition-colors"
+            className="hidden sm:inline-flex min-h-[44px] items-center gap-2 bg-[var(--color-whatsapp)] text-white px-5 py-2.5 text-xs sm:text-[15px] font-semibold whitespace-nowrap hover:bg-[var(--color-whatsapp-dark)] transition-colors shadow-sm"
           >
             <MessageCircle className="h-4 w-4 shrink-0" />
             <span>{isAr ? 'راسلنا على واتساب' : 'WhatsApp us'}</span>
           </a>
 
-          {/* Mobile Menu Hamburger Button with 44x44px touch target */}
+          {/* Mobile Menu Hamburger Button with 44x44px touch target & full ARIA */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden min-h-[44px] min-w-[44px] inline-flex items-center justify-center border border-[var(--color-divider)] p-2.5 text-[var(--color-text)] hover:bg-[var(--color-surface)] transition-colors"
-            aria-label={mobileMenuOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
+            aria-label={
+              mobileMenuOpen
+                ? isAr
+                  ? 'إغلاق القائمة'
+                  : 'Close navigation menu'
+                : isAr
+                ? 'فتح القائمة'
+                : 'Open navigation menu'
+            }
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -82,7 +92,7 @@ export function ModernistHeader({
 
       {/* Mobile Architectural Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t-2 border-[var(--color-divider)] bg-[var(--color-bg)] px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
+        <div id="mobile-menu" className="lg:hidden border-t-2 border-[var(--color-divider)] bg-[var(--color-bg)] px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col divide-y divide-[var(--color-divider)]">
             {navLinks.map((link) => (
               <a
@@ -103,7 +113,7 @@ export function ModernistHeader({
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full min-h-[48px] flex items-center justify-center gap-2.5 bg-[var(--color-accent)] text-[var(--color-bg)] py-3.5 text-sm font-bold hover:bg-[var(--color-accent-600)] transition-colors"
+              className="w-full min-h-[48px] flex items-center justify-center gap-2.5 bg-[var(--color-whatsapp)] text-white py-3.5 text-sm font-bold hover:bg-[var(--color-whatsapp-dark)] transition-colors shadow-sm"
             >
               <MessageCircle className="h-4 w-4" />
               <span>{isAr ? 'راسلنا على واتساب' : 'Message us on WhatsApp'}</span>
