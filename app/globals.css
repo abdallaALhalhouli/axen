@@ -290,12 +290,13 @@
 
 .btn-whatsapp {
   background-color: var(--color-whatsapp);
-  color: #ffffff;
+  color: var(--color-text);
   border: 1px solid transparent;
+  font-weight: 700;
 }
 .btn-whatsapp:hover {
-  background-color: var(--color-whatsapp-dark);
-  color: #ffffff;
+  background-color: #20ba5a;
+  color: var(--color-text);
 }
 
 .btn-secondary {

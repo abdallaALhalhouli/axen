@@ -127,7 +127,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[48px] items-center gap-2.5 bg-[var(--color-whatsapp)] text-white px-6 py-3.5 text-[16px] font-semibold hover:bg-[var(--color-whatsapp-dark)] transition-colors shadow-sm"
+                className="inline-flex min-h-[48px] items-center gap-2.5 bg-[var(--color-whatsapp)] text-[var(--color-text)] px-6 py-3.5 text-[16px] font-bold hover:bg-[#20ba5a] transition-colors shadow-sm"
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>{isAr ? 'راسلنا على واتساب' : 'Message us on WhatsApp'}</span>
@@ -992,7 +992,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                 <div className="sm:col-span-2 flex flex-wrap items-center gap-4 pt-2">
                   <button
                     type="submit"
-                    className="min-h-[48px] bg-[var(--color-whatsapp)] text-white px-6 py-3.5 text-[15px] font-semibold hover:bg-[var(--color-whatsapp-dark)] transition-colors shadow-sm"
+                    className="min-h-[48px] bg-[var(--color-whatsapp)] text-[var(--color-text)] px-6 py-3.5 text-[15px] font-bold hover:bg-[#20ba5a] transition-colors shadow-sm"
                   >
                     {isAr ? 'أرسل الطلب عبر واتساب' : 'Submit via WhatsApp'}
                   </button>
@@ -1013,7 +1013,7 @@ export function ModernistPage({ lang }: { lang: 'ar' | 'en' }) {
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(isAr ? `طلب استشارة من موقع AXEN:\nالاسم: ${formData.name}\nالمشروع: ${formData.biz}\nالتفاصيل: ${formData.msg}` : `Consultation request from AXEN website:\nName: ${formData.name}\nBusiness: ${formData.biz}\nDetails: ${formData.msg}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex min-h-[44px] items-center gap-2 bg-[var(--color-whatsapp)] text-white px-5 py-2.5 text-sm font-semibold hover:bg-[var(--color-whatsapp-dark)] transition-colors shadow-sm"
+                    className="mt-4 inline-flex min-h-[44px] items-center gap-2 bg-[var(--color-whatsapp)] text-[var(--color-text)] px-5 py-2.5 text-sm font-bold hover:bg-[#20ba5a] transition-colors shadow-sm"
                   >
                     <MessageCircle className="h-4 w-4" />
                     <span>{isAr ? 'اضغط هنا لفتح واتساب الآن' : 'Open WhatsApp Now'}</span>

@@ -57,12 +57,12 @@ export function ModernistHeader({
             {isAr ? 'English' : 'العربية'}
           </Link>
 
-          {/* Desktop WhatsApp CTA with whitespace-nowrap and brand green */}
+          {/* Desktop WhatsApp CTA with dark ink on brand green (8.37:1 AAA contrast) */}
           <a
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex min-h-[44px] items-center gap-2 bg-[var(--color-whatsapp)] text-white px-5 py-2.5 text-xs sm:text-[15px] font-semibold whitespace-nowrap hover:bg-[var(--color-whatsapp-dark)] transition-colors shadow-sm"
+            className="hidden sm:inline-flex min-h-[44px] items-center gap-2 bg-[var(--color-whatsapp)] text-[var(--color-text)] px-5 py-2.5 text-xs sm:text-[15px] font-bold whitespace-nowrap hover:bg-[#20ba5a] transition-colors shadow-sm"
           >
             <MessageCircle className="h-4 w-4 shrink-0" />
             <span>{isAr ? 'راسلنا على واتساب' : 'WhatsApp us'}</span>
@@ -90,37 +90,39 @@ export function ModernistHeader({
         </div>
       </div>
 
-      {/* Mobile Architectural Drawer */}
-      {mobileMenuOpen && (
-        <div id="mobile-menu" className="lg:hidden border-t-2 border-[var(--color-divider)] bg-[var(--color-bg)] px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
-          <nav className="flex flex-col divide-y divide-[var(--color-divider)]">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-4 flex items-center justify-between text-base font-semibold text-[var(--color-text)] hover:text-[var(--color-accent-700)] transition-colors"
-              >
-                <span>{link.label}</span>
-                <span className="text-xs text-[var(--color-neutral-700)] font-mono">{link.num}</span>
-              </a>
-            ))}
-          </nav>
-
-          <div className="mt-6 pt-5 border-t border-[var(--color-divider)] flex flex-col gap-3">
+      {/* Mobile Architectural Drawer - Always in DOM for aria-controls */}
+      <div
+        id="mobile-menu"
+        aria-hidden={!mobileMenuOpen}
+        className={`${mobileMenuOpen ? 'block' : 'hidden'} lg:hidden border-t-2 border-[var(--color-divider)] bg-[var(--color-bg)] px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200`}
+      >
+        <nav className="flex flex-col divide-y divide-[var(--color-divider)]">
+          {navLinks.map((link) => (
             <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
+              key={link.href}
+              href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full min-h-[48px] flex items-center justify-center gap-2.5 bg-[var(--color-whatsapp)] text-white py-3.5 text-sm font-bold hover:bg-[var(--color-whatsapp-dark)] transition-colors shadow-sm"
+              className="py-4 flex items-center justify-between text-base font-semibold text-[var(--color-text)] hover:text-[var(--color-accent-700)] transition-colors"
             >
-              <MessageCircle className="h-4 w-4" />
-              <span>{isAr ? 'راسلنا على واتساب' : 'Message us on WhatsApp'}</span>
+              <span>{link.label}</span>
+              <span className="text-xs text-[var(--color-neutral-700)] font-mono">{link.num}</span>
             </a>
-          </div>
+          ))}
+        </nav>
+
+        <div className="mt-6 pt-5 border-t border-[var(--color-divider)] flex flex-col gap-3">
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-full min-h-[48px] flex items-center justify-center gap-2.5 bg-[var(--color-whatsapp)] text-[var(--color-text)] py-3.5 text-sm font-bold hover:bg-[#20ba5a] transition-colors shadow-sm"
+          >
+            <MessageCircle className="h-4 w-4" />
+            <span>{isAr ? 'راسلنا على واتساب' : 'Message us on WhatsApp'}</span>
+          </a>
         </div>
-      )}
+      </div>
     </header>
   )
 }
